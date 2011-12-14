@@ -8,4 +8,9 @@
 			<arg value="build/ffdawfix.xpi"/>
 		</exec>
 	</target>
+	<target name="opendoc">
+		<exec executable="firefox">
+			<arg value="www/index.html"/>
+		</exec>
+	</target>
 </project>
