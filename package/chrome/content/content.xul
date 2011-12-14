@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<overlay id="ffdawfix" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="chrome://ffdawfix/content/main.js" type="application/x-javascript" />
+</overlay>

@@ -1,0 +1,132 @@
+body,html,div,iframe {
+	min-height: 0px;
+}
+
+html {
+	background-color: transparent;
+}
+
+#div_menu {
+	margin: -10px;
+	cursor:pointer;
+}
+
+.cih, .cihp,
+.ci1, .ci2,  
+.chand, .mitem,
+.BG0, .BG1,
+#btSmiles, #btTranslit,
+#InpImg, #btClearTop,
+#btClearBottom
+{
+	cursor:pointer;
+}
+
+table.list td
+{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.ffdawfix_i {
+}
+
+.ffdawfix_chat {
+}
+
+.ffdawfix_stat_header {
+	font-weight: bold;
+}
+
+.ffdawfix_stat_line_short {
+	float: left;
+	position: relative;
+	width: 30px;
+	background-color: white;
+	font-size: 8px;
+	margin-top: 2px;
+}
+
+.ffdawfix_stat_fill {
+	position: relative;
+}
+
+.lbStrengthValue,
+.lbDexValue,
+.lbLuckValue
+ {
+	/*float: right;
+	position: relative;*/
+	display: inline-block;
+	text-align: right;
+	width: 30px;
+	font-weight: bold;
+}
+
+.lbStrengthLine,
+.lbDexLine,
+.lbLuckLine
+{
+/*	float: left;
+	position: relative;
+	*/
+	display: inline-block;
+	width: 70px;
+	background-color: white;
+	font-size: 8px;
+	margin-top: 2px;
+	text-align: left;
+	border: 1px solid black;
+}
+
+.lbStrengthValue {color: red;}
+.lbDexValue {color: green;}
+.lbLuckValue {color: blue;}
+
+.lbStrengthLine {border-color: red;}
+.lbDexLine {border-color: green;}
+.lbLuckLine {border-color: blue;}
+
+.lbStrengthFill {background-color: red;}
+.lbDexFill {background-color: green;}
+.lbLuckFill {background-color: blue;}
+
+.lbStrengthExtFill {background-color: orange;}
+.lbDexExtFill {background-color: lime;}
+.lbLuckExtFill {background-color: aqua;}
+
+.ffdawfix_stat_value {
+	float: right;
+	position: relative;
+	text-align: right;
+	width: 50px;
+}
+
+.ffdawfix_timer_panel {
+	display: inline-block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.ffdawfix_timer_time {
+	font-weight: bold;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+}
+
+.ffdawfix_timer_link {
+		cursor: pointer;
+		text-decoration: underline;
+		margin-right: 5px;
+		margin-left: 5px;
+}
+
+#wwin {
+	overflow-x: hidden;
+}

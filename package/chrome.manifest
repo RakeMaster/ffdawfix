@@ -1,0 +1,12 @@
+content ffdawfix chrome/content/
+content ffdawfix chrome/content/ contentaccessible=yes
+
+overlay chrome://browser/content/browser.xul chrome://ffdawfix/content/content.xul
+overlay chrome://navigator/content/navigator.xul chrome://ffdawfix/content/content.xul
+
+resource ffdawfix resource/
+
+locale  ffdawfix  en-US  locale/en-US/
+locale  ffdawfix  ru-RU  locale/ru-RU/
+
+skin    ffdawfix  classic/1.0 chrome/skin/classic/
