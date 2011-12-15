@@ -1,0 +1,17 @@
+1. Unix style endlines
+2. Only tabs for indetions
+3. Only spaces for aligments
+
+You can use Eclipse for development
+http://eclipse.org
+
+Add 
+http://eclipse.org/egit/
+to use git from eclipse
+
+Add JavaScript and XML tools
+
+"Ant" is used to build archive (build.xml)
+Can be build from ant perspective of Eclipse
+
+Commit messages should be ONLY in English
