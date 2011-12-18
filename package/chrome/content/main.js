@@ -225,39 +225,6 @@ ru.dclan.ffdawfix = {
 		}
 		if(!doc.location) return;
 		var loc = doc.location.href;
-		//Lets check. Maybe we do not need to do any fixes at all
-		//Maybe we need to mask first and reload page?
-		if(ths.isLoginPage(loc)) {
-			var notIE = doc.getElementById('pnlNotIE');
-			//We are not IE
-			var pname = "general.useragent.override";
-			var mypname = "ru.dclan.ffdawfix.useragent.override";
-			var maskAs = "Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.0)";
-
-			if(notIE) {
-				var cur = ths.getStringPreference(pname);
-				if(cur == maskAs) return;
-				if(cur) {
-					//Save the old value
-					ths.setStringPreference(mypname,cur);
-				}
-				//Mask
-				ths.setStringPreference(pname,maskAs);
-				//And reload the page. We will be in else branch next time
-				doc.location.reload();
-				return;
-			} else {
-				var old = ths.getStringPreference(mypname);
-				if(old) {
-					//retrive saved
-					ths.setStringPreference(pname,old);
-					ths.clearUserPref(mypname);
-				} else	{
-					//or drop
-					ths.clearUserPref(pname);
-				}
-			}
-		}
 
 		if (domain == "darkagesworld.com" || domain == "smuta.com") {
 			ths.injectJS(doc, "all.js");
@@ -271,7 +238,40 @@ ru.dclan.ffdawfix = {
 			var s = "";
 			ths.loadDaw(doc, loc);
 		}
+	},
+	log :function(message) {
+		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);  
+		consoleService.logStringMessage(message);  
 	}
 }
+
+ru.dclan.ffdawfix.httpRequestObserver = {
+	observe: function(subject, topic, data) {
+		//important to have next line before trying to access subject.URI
+		var httpChannel = subject.QueryInterface(Components.interfaces.nsIHttpChannel);
+		var url = subject.URI.spec.toLowerCase();
+		var loginPage = "http://darkagesworld.com/vr/default.aspx";
+		if (topic == "http-on-modify-request" && url.search(loginPage) == 0 ) {
+			// Set ie6 user agent
+			httpChannel.setRequestHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.00; Windows NT 5.0)", false);
+		}
+	},
+
+	get observerService() {
+		return Components.classes["@mozilla.org/observer-service;1"]
+			.getService(Components.interfaces.nsIObserverService);
+	},
+
+	register: function() {
+		this.observerService.addObserver(this, "http-on-modify-request", false);
+		ru.dclan.ffdawfix.log("Registered");
+	},  
+
+	unregister: function() {
+		this.observerService.removeObserver(this, "http-on-modify-request");
+	}
+};
+
+ru.dclan.ffdawfix.httpRequestObserver.register();
 
 window.addEventListener('load', function() ru.dclan.ffdawfix.startup(), false);
