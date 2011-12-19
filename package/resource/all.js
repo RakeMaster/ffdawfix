@@ -222,17 +222,6 @@ function fixInput() {
 		}
 	}
 
-	//Support of NON EXISTING innerText added to IE by fucking stupid Micro & Soft
-	//Do not use innerText in your code or you will be burn in HELL!
-	HTMLElement.prototype.__defineGetter__("innerText", function () {
-		var ths = (this.target)?this.target:this;
-		return ths.textContent;
-	});
-	HTMLElement.prototype.__defineSetter__("innerText", function (val) {
-		var ths = (this.target)?this.target:this;
-		ths.textContent = val;
-	});
-
 	//Workaroung for another FUCKING invention from Billys company
 	window.showModelessDialog = function(url, loc, p) {
 		p = p.replace(/dialog/g,"");

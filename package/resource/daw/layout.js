@@ -188,12 +188,6 @@ function fixChat() {
 		window.arint = function(win, t) {}
 	}
 
-	if(window.DoUserInfo) {
-		var str = String(window.DoUserInfo);
-		str = str.replace(/innerText/g, "textContent");
-		eval("window.DoUserInfo = " + str);
-	}
-
 	if(window.RetrieveData) {
 		var str = String(window.RetrieveData);
 		str = str.replace(/if \(cmd\.soundUrl\)/,"if (cmd.soundUrl) {top.window.play_sound(cmd.soundUrl);} else if(false) ");

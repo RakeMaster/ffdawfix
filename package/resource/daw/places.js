@@ -30,20 +30,6 @@ function renewImage() {
 }
 
 (function() {
-	//Fix clock
-	if(window.clock) {
-		window.clock = function() {
-			var dte = new Date();
-			dte.setTime(dte.getTime() - top.clockCorrection);
-			var h = dte.getHours();
-			var m = dte.getMinutes();
-			var s = dte.getSeconds();
-			if (m <= 9) m = '0' + m;
-			if (s <= 9) s = '0' + s;
-			var time = h + ':' + m + ':' + s;
-			document.getElementById('timespan').innerHTML = time;
-		}
-	}
 	//Fix menu
 	var menu_ref = document.getElementById('menu_ref');
 	if(menu_ref) {

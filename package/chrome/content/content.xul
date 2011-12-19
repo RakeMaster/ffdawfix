@@ -1,4 +1,18 @@
 <?xml version="1.0"?>
 <overlay id="ffdawfix" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<script src="chrome://ffdawfix/content/main.js" type="application/x-javascript" />
+<!-- CORE section -->
+	<script src="chrome://ffdawfix/content/core/namespace.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/core/utils.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/core/login.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/core/replace_listener.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/core/onload.js" type="application/x-javascript" />
+<!-- REPLACE section -->
+	<script src="chrome://ffdawfix/content/replace/citymap.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/layout.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/css.js" type="application/x-javascript" />
+	
+	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
 </overlay>
