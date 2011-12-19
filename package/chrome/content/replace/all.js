@@ -4,6 +4,8 @@ ru.dclan.ffdawfix.replace.observer.add(
 			url.search(".js") != -1
 			||
 			url.search(".htm") != -1
+			||
+			url.search(".aspx") == url.length - 5
 		);
 	}
 	,
