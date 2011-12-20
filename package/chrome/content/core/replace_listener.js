@@ -60,8 +60,12 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 			binaryOutputStream.setOutputStream(storageStream.getOutputStream(0));
 			binaryOutputStream.writeBytes(changed, count);
 
-			this.originalListener.onDataAvailable(request, context,
-				storageStream.newInputStream(0), 0, count);
+			try {
+				this.originalListener.onDataAvailable(request, context,
+						storageStream.newInputStream(0), 0, count);
+			} catch(e) {
+				ru.dclan.ffdawfix.utils.log(e);
+			}
 		}
 
 		this.originalListener.onStopRequest(request, context, statusCode);
