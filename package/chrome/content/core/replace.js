@@ -25,7 +25,8 @@ ru.dclan.ffdawfix.replace.observer = {
 			}
 		}
 		if(lst.length > 0) {
-			var newListener = new ru.dclan.ffdawfix.ReplaceListener(lst);
+			var RL = ru.dclan.ffdawfix.ReplaceListener;
+			var newListener = new RL(lst);
 			subject.QueryInterface(Ci.nsITraceableChannel);
 			newListener.originalListener = subject.setNewListener(newListener);
 		}

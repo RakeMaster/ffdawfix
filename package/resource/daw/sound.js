@@ -23,7 +23,7 @@ function get_sound_place() {
 function install_sound() {
 	var doc = top.window.frames["chouter"].document;
 	var sp = null;
-	injectTag("body",function(node) {
+	injectTag("body", function(node) {
 		sp = document.createElement("div");
 		sp.id = "sound_place";
 		sp.style.position = "absoulte";

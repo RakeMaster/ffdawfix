@@ -13,11 +13,7 @@ ru.dclan.ffdawfix.onload = {
 		var prefix = "ru.dclan.ffdawfix.";
 		var utils = ru.dclan.ffdawfix.utils;
 		utils.injectCSS(doc,"daw.css");
-		//This is a login page
-		if(utils.isLoginPage(loc)) {
-			utils.injectJS(doc, "daw/login.js");
-			return;
-		}
+
 		var stats = utils.getBool(pm, prefix, "stats");
 		if(utils.checkLocation(loc, "/vr/common/FighterInfo.aspx")) {
 			var prefs = {};
@@ -105,10 +101,6 @@ ru.dclan.ffdawfix.onload = {
 			}
 			return;
 		}
-		if(utils.checkLocation(loc, "/vr/smiles/smiles")) {
-			utils.injectJS(doc, "daw/smile.js");
-			return;
-		}
 		if(utils.getBool(pm, prefix, "itemStats") && utils.checkLocation(loc, "/vr/Menus/BackPack.aspx")) {
 			utils.injectJS(doc, "daw/extra/itemstats.js");
 			return;
@@ -159,6 +151,6 @@ ru.dclan.ffdawfix.onload = {
 	},
 }
 
-//window.addEventListener('load', function() ru.dclan.ffdawfix.onload.startup(), false);
+window.addEventListener('load', function() ru.dclan.ffdawfix.onload.startup(), false);
 
 ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.onload");

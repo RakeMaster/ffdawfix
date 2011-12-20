@@ -6,13 +6,7 @@
 			panel.style.display = (panel.style.display == 'none') ? '' : 'none'; 
 		}
 	}
-	//Rerun digest
-	injectTag('script', function(node) {
-		var src = node.innerHTML;
-		if(src.search("ctrl.innerHTML = ctrlstr;") != -1) {
-			runScript("var " + src);
-		}
-	});
+
 	injectCSSText("body,td {font-size: 12px;}");
 
 	var rep = getClassFirst('frm_repbody');
@@ -27,6 +21,7 @@
 		}
 	}
 
+	// Emulating navigate function (used at dropdown page selector)
 	if(!window.navigate) {
 		window.navigate = function(loc) {
 			location.href = loc;

@@ -8,6 +8,7 @@
 	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/onload.js" type="application/x-javascript" />
 <!-- REPLACE section -->
+	<script src="chrome://ffdawfix/content/replace/smiles.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/citymap.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/layout.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
