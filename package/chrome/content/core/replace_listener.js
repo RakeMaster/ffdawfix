@@ -56,15 +56,23 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 		{
 			var storageStream = CCIN("@mozilla.org/storagestream;1", "nsIStorageStream");
 			var binaryOutputStream = CCIN("@mozilla.org/binaryoutputstream;1", "nsIBinaryOutputStream");
-			storageStream.init(8192, count, null);
-			binaryOutputStream.setOutputStream(storageStream.getOutputStream(0));
-			binaryOutputStream.writeBytes(changed, count);
+			
+			if(count > 0) { 
+				storageStream.init(1024, count, null);
+				binaryOutputStream.setOutputStream(storageStream.getOutputStream(0));
 
-			try {
-				this.originalListener.onDataAvailable(request, context,
+				try {
+					binaryOutputStream.writeBytes(changed, count);
+				} catch(e) {
+					ru.dclan.ffdawfix.utils.log("Exception on writeBytes: " + e);
+				}
+
+				try {
+					this.originalListener.onDataAvailable(request, context,
 						storageStream.newInputStream(0), 0, count);
-			} catch(e) {
-				ru.dclan.ffdawfix.utils.log(e);
+				} catch(e) {
+					ru.dclan.ffdawfix.utils.log("Exception on passing data to onDataAvailable: " + e);
+				}
 			}
 		}
 
