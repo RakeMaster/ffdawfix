@@ -4,6 +4,9 @@ ru.dclan.ffdawfix.utils = {
 	checkLocation : function(location, part) {
 		return location.toLowerCase().search( part.toLowerCase() ) != -1;
 	},
+	encode: function(text) {
+		return unescape(encodeURIComponent( text ));
+	},
 	injectCSS : function(doc, name) {
 		var src = 'resource://ffdawfix/' + name;
 		var style = doc.createElement('link');
@@ -29,10 +32,12 @@ ru.dclan.ffdawfix.utils = {
 		var utils = ru.dclan.ffdawfix.utils; 
 		return utils.checkLocation(loc, "/vr/Default.aspx");
 	},
-	getBool : function(prefManager, prefix, name, def) {
+	getBool : function(name, def) {
+		var pm = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+		var prefix = "ru.dclan.ffdawfix.";
 		var prefName = prefix + name;
 		try {
-			return prefManager.getBoolPref(prefName);
+			return pm.getBoolPref(prefName);
 		} catch(e) {}
 		if(def) return true;
 		return false;

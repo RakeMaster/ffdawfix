@@ -14,11 +14,11 @@ ru.dclan.ffdawfix.onload = {
 		var utils = ru.dclan.ffdawfix.utils;
 		utils.injectCSS(doc,"daw.css");
 
-		var stats = utils.getBool(pm, prefix, "stats");
+		var stats = utils.getBool( "stats");
 		if(utils.checkLocation(loc, "/vr/common/FighterInfo.aspx")) {
 			var prefs = {};
-			prefs.ringsFix = utils.getBool(pm, prefix, "ringsFix", true);
-			prefs.giftsFix = utils.getBool(pm, prefix, "giftsFix", true);
+			prefs.ringsFix = utils.getBool( "ringsFix", true);
+			prefs.giftsFix = utils.getBool( "giftsFix", true);
 			utils.injectPrefs(doc, prefs);
 			utils.injectJS(doc, "daw/extra/info.js");
 			if(stats) {
@@ -28,16 +28,16 @@ ru.dclan.ffdawfix.onload = {
 		}
 		if(utils.checkLocation(loc, "/vr/battle/battle.aspx")) {
 			var prefs = {};
-			prefs.battleLinks   = utils.getBool(pm, prefix, "battleLinks");
-			prefs.battleCounter = utils.getBool(pm, prefix, "battleCounter");
-			prefs.battleHealth  = utils.getBool(pm, prefix, "battleHealth");
-			prefs.battleSmall   = utils.getBool(pm, prefix, "battleSmall");
+			prefs.battleLinks   = utils.getBool( "battleLinks");
+			prefs.battleCounter = utils.getBool( "battleCounter");
+			prefs.battleHealth  = utils.getBool( "battleHealth");
+			prefs.battleSmall   = utils.getBool( "battleSmall");
 			utils.injectPrefs(doc, prefs);
-			if(utils.getBool(pm, prefix, "title")) {
+			if(utils.getBool( "title")) {
 				utils.injectJS(doc, "daw/extra/title.js");
 			}
 			utils.injectJS(doc, "daw/battle.js");
-			if(utils.getBool(pm, prefix, "dice")) {
+			if(utils.getBool( "dice")) {
 				utils.injectJS(doc, "daw/extra/dice.js");
 			}
 			if(stats) {
@@ -50,7 +50,7 @@ ru.dclan.ffdawfix.onload = {
 			return;
 		}
 		if(utils.checkLocation(loc, "/vr/Places/")) {
-			if(utils.getBool(pm, prefix, "title")) {
+			if(utils.getBool( "title")) {
 				utils.injectJS(doc, "daw/extra/title.js");
 			}
 			//Disabled
@@ -68,13 +68,10 @@ ru.dclan.ffdawfix.onload = {
 				utils.injectCSS(doc, "scrolling.css");
 			}
 
-			if(utils.getBool(pm, prefix, "liveTimers")) {
+			if(utils.getBool( "liveTimers")) {
 				utils.injectJS(doc, "daw/extra/timers.js");
 			}
 
-			if(utils.getBool(pm, prefix, "tripButton")) {
-				utils.injectJS(doc, "daw/extra/tripbutton.js");
-			}
 			if(stats) {
 				utils.injectJS(doc, "daw/extra/stats.js");
 			}
@@ -95,13 +92,13 @@ ru.dclan.ffdawfix.onload = {
 		}
 		if(utils.checkLocation(loc, "/vr/Cht/ChPeople")) {
 			utils.injectJS(doc, "daw/chpeople.js");
-			if(utils.getBool(pm, prefix, "chatList")) {
+			if(utils.getBool( "chatList")) {
 				//utils.injectJS(doc,"daw/ajax.js");
 				utils.injectJS(doc,"daw/extra/chatlist.js");
 			}
 			return;
 		}
-		if(utils.getBool(pm, prefix, "itemStats") && utils.checkLocation(loc, "/vr/Menus/BackPack.aspx")) {
+		if(utils.getBool( "itemStats") && utils.checkLocation(loc, "/vr/Menus/BackPack.aspx")) {
 			utils.injectJS(doc, "daw/extra/itemstats.js");
 			return;
 		}
