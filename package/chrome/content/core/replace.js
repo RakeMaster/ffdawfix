@@ -4,13 +4,18 @@ ru.dclan.ffdawfix.replace = {};
 ru.dclan.ffdawfix.replace.observer = {
 	rlist: [],
 	observe: function(subject, topic, data) {
+		var cached = true;
 		if (
-				topic != "http-on-examine-response"
-				&&
-				topic != "http-on-examine-cached-response"
-				&&
-				topic != "http-on-examine-merged-response"
-			) return;
+				topic == "http-on-examine-response"
+				||
+				topic == "http-on-examine-merged-response"
+		) {
+			cached = false;
+		} else if( topic == "http-on-examine-cached-response" ) {
+			cached = true;
+		} else {
+			return;
+		}
 		//important to have next line before trying to access subject.URI
 		var httpChannel = subject.QueryInterface(Components.interfaces.nsIHttpChannel);
 		var url = subject.URI.spec.toLowerCase();

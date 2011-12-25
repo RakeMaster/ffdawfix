@@ -11,8 +11,8 @@ ru.dclan.ffdawfix.replace.observer.add(
 	function(text) {
 		// add new row
 		var u8 = ru.dclan.ffdawfix.utils.encode;
-		text = text.replace( /<div id="Head_pnlMail([12])">\s*<img([^>]+)>\s*/, 
-				'<div id="Head_pnlMail\$1" style="white-space: nowrap">'
+		text = text.replace( /pnlMail([12])">\s*<img([^>]+)>\s*/, 
+				'pnlMail\$1" style="white-space: nowrap">'
 				+ '<img\$2>'
 				+ '<a style="font-size: 20pt; color: red; font-weight: bold;" href="/vr/Places/Group.aspx?Create=1">'
 				+ u8("Поход")
