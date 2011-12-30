@@ -61,7 +61,7 @@ table.list td
 	position: relative;*/
 	display: inline-block;
 	text-align: right;
-	width: 30px;
+	width: 40px;
 	font-weight: bold;
 }
 
@@ -81,21 +81,19 @@ table.list td
 	border: 1px solid black;
 }
 
-.lbStrengthValue {color: red;}
-.lbDexValue {color: green;}
-.lbLuckValue {color: blue;}
+.lbStrengthValue, .lbDexValue, .lbLuckValue {color: #000000;}
 
-.lbStrengthLine {border-color: red;}
-.lbDexLine {border-color: green;}
-.lbLuckLine {border-color: blue;}
+.lbStrengthLine {border-color: #500000;}
+.lbDexLine {border-color: #003300;}
+.lbLuckLine {border-color: #003399;}
 
-.lbStrengthFill {background-color: red;}
-.lbDexFill {background-color: green;}
-.lbLuckFill {background-color: blue;}
+.lbStrengthFill {background-color: #700000;}
+.lbDexFill {background-color: #009900;}
+.lbLuckFill {background-color: #0066cc;}
 
-.lbStrengthExtFill {background-color: orange;}
-.lbDexExtFill {background-color: lime;}
-.lbLuckExtFill {background-color: aqua;}
+.lbStrengthExtFill {background-color: #b00000;}
+.lbDexExtFill {background-color: #00cc66;}
+.lbLuckExtFill {background-color: #00ccff;}
 
 .ffdawfix_stat_value {
 	float: right;
