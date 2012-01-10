@@ -4,8 +4,8 @@ ru.dclan.ffdawfix.replace.observer.add(
 	}
 	,
 	function(text) {
-		text = text.replace( /TOP=(\d+);/g, 'top: \$1px;');
-		text = text.replace( /LEFT=(\d+);/g, 'left: \$1px;');
+		text = text.replace( /TOP=(\d+)px\s*;/g, 'top: \$1px;');
+		text = text.replace( /LEFT=(\d+)px\s*;/g, 'left: \$1px;');
 		return text;
 	}
 );
