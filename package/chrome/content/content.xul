@@ -3,7 +3,6 @@
 <!-- CORE section -->
 	<script src="chrome://ffdawfix/content/core/namespace.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/utils.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/core/login.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/replace_listener.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/onload.js" type="application/x-javascript" />
