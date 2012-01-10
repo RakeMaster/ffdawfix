@@ -6,22 +6,6 @@ html {
 	background-color: transparent;
 }
 
-#div_menu {
-	margin: -10px;
-	cursor:pointer;
-}
-
-.cih, .cihp,
-.ci1, .ci2,  
-.chand, .mitem,
-.BG0, .BG1,
-#btSmiles, #btTranslit,
-#InpImg, #btClearTop,
-#btClearBottom
-{
-	cursor:pointer;
-}
-
 table.list td
 {
 	padding-top: 0px;
