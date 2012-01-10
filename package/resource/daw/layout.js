@@ -123,21 +123,7 @@ function fixChat() {
 		mf.setAttribute('frameborder', 1);
 		document.getElementById('cht').setAttribute('cols', '*,250px');
 	}
-	//Menu fix
-	if(window.OpenMenu) {
-		window.OpenMenu = function(win, evnt) {
-			var div_menu = win.document.getElementById('div_menu');
-			if (div_menu.style.display == 'none') {
-				x = mouseX(evnt) + 'px';
-				y = mouseY(evnt) + 'px';
-				div_menu.style.display = "";
-				div_menu.style.left = x;
-				div_menu.style.position = 'absolute';
-				div_menu.style.top = y;
-				div_menu.innerHTML = '<div style="cursor: pointer;text-align: right; position: absolute; top: 0px; right: 2px;" onclick="top.CloseMenu(window)"><b>[X]</b></div>' + MenuStr;
-			}
-		}
-	}
+
 	//Rmenu fix
 	if(window.OpenRMenu) {
 		window.OpenRMenu = function(win) {
@@ -151,7 +137,6 @@ function fixChat() {
 		}
 	}
 
-	//Why did you forget to set dimentions Humpy? (px)
 	if(window.MenuLnk) {
 		MenuLnk = function (win, i) {
 			var div_menu = win.document.getElementById('div_menu');

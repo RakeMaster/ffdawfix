@@ -29,6 +29,15 @@ function renewImage() {
 	}
 }
 
+function correctOnMouseOut(event) {
+	e = event.toElement || event.relatedTarget;
+	if (e.parentNode == this || e == this) {
+		return;
+	}
+	this.oldOnMouseOut(event);
+}
+
+
 (function() {
 	//Fix menu
 	var menu_ref = document.getElementById('menu_ref');
@@ -38,13 +47,9 @@ function renewImage() {
 		var out = menu_ref.onmouseout;
 		var over = menu_ref.onmouseover;
 
-		menu_ref.onmouseout  = null;
-		menu_ref.onmouseover = null;
-
-		menu_ref.onclick = over;
-
-		div_menu.onmouseout  = null;
-		div_menu.onmouseover = null;
+		menu_ref.onmouseout = null;
+		div_menu.oldOnMouseOut = out;
+		div_menu.onmouseout = correctOnMouseOut;
 	}
 
 	fixLists();
