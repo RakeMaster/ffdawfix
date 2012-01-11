@@ -49,29 +49,32 @@ function createDiv(className, parent) {
 }
 
 function TestSuite() {
-	this.tests = [];
-	this.ui = {};
-	this.ui.wrapper = createDiv("test_wrapper");
-
-	this.ui.run = document.createElement( "button" );
-	this.ui.run.textContent = "Run";
-	this.ui.wrapper.appendChild( this.ui.run );
-
-	this.ui.stat = createDiv("test_stat", this.ui.wrapper);
-	var bar = createDiv("test_bar", this.ui.wrapper);
-	this.ui.fill = createDiv("test_bar_fill", bar);
-	this.success = 0;
-	this.failed = 0;
-	this.ui.header = createDiv("test_header", this.ui.wrapper);
-
-	this.logTrc =  function(m) {};
-	this.logErr =  function(m) {};
-	this.logCheck =  function(m) {};
-	this.onDone =  function() {};
 }
 
 TestSuite.prototype = {
+	initUI: function() {
+		this.tests = [];
+		this.ui = {};
+		this.ui.wrapper = createDiv("test_wrapper");
+
+		this.ui.run = document.createElement( "button" );
+		this.ui.run.textContent = "Run";
+		this.ui.wrapper.appendChild( this.ui.run );
+
+		this.ui.stat = createDiv("test_stat", this.ui.wrapper);
+		var bar = createDiv("test_bar", this.ui.wrapper);
+		this.ui.fill = createDiv("test_bar_fill", bar);
+		this.success = 0;
+		this.failed = 0;
+		this.ui.header = createDiv("test_header", this.ui.wrapper);
+
+		this.logTrc =  function(m) {};
+		this.logErr =  function(m) {};
+		this.logCheck =  function(m) {};
+		this.onDone =  function() {};
+	},
 	init: function(name) {
+		this.initUI();
 		this.testName = name;
 		this.ui.header.textContent = name;
 		this.ui.run.onclick = this.run.bind(this);
@@ -170,4 +173,19 @@ function include(name) {
 	script.setAttribute('type', 'text/javascript');
 	script.setAttribute('src', src);
 	document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function createTest( name , object ) {
+	var id = "Test" + name;
+	if(window[id]) {
+		alert("Duplicate test with name " + name);
+	}
+	window[id] = function() {};
+	window[id].prototype = new TestSuite();
+	//copy methods
+	for(var i in object) {
+		if(!window[id].prototype[i]) {
+			window[id].prototype[i] = object[i];
+		}
+	}
 }

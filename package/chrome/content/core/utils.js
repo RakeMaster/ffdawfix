@@ -43,8 +43,10 @@ ru.dclan.ffdawfix.utils = {
 		return false;
 	},
 	log :function(message) {
-		var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);  
-		consoleService.logStringMessage(message);  
+		try {
+			var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);  
+			consoleService.logStringMessage(message);
+		} catch(e) {}
 	},
 	trackLoad :function(module) {
 		ru.dclan.ffdawfix.utils.log(module + " module loaded");
