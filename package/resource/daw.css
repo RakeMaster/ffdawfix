@@ -112,3 +112,14 @@ table.list td
 #wwin {
 	overflow-x: hidden;
 }
+
+.cih, .cihp,
+.ci1, .ci2,  
+.chand, .mitem,
+.BG0, .BG1,
+#btSmiles, #btTranslit,
+#InpImg, #btClearTop,
+#btClearBottom
+{
+	cursor:pointer;
+}
