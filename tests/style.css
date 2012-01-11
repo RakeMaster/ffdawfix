@@ -1,0 +1,49 @@
+.test_wrapper {
+	display: inline-block;
+}
+
+.test_header {
+	font-weight: bold;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.test_bar {
+	border: 1px solid black;
+	width: 200px;
+	display: inline-block;
+}
+
+.test_bar_fill {
+	height: 10px;
+	display: inline-block;
+	background-color: green;
+}
+
+.test_stat,
+.test_stat_ok,
+.test_stat_fail 
+{
+	display: inline-block;
+	color: grey;
+	width: 50px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.test_stat_ok {
+	color: green;
+}
+
+.test_stat_fail {
+	color: red;
+}
+
+.test_error_message {
+	font-weight: bold;
+	color: red;
+}
+
+.test_check_message {
+	color: green;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>tst</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<script language="JavaScript" type="text/javascript" src="main.js"></script>
+	<script language="JavaScript" type="text/javascript" src="tests.js"></script>
+</head>
+<body onload="load()">
+	<div id="wrapper"></div>
+	<button onclick="clearLog();">Clear Log</button>
+	<hr>
+	<div id="log"></div>
+	<script>
+		function clearLog() {
+			document.getElementById("log").innerHTML = "<div id=\"logHead\"></div><div id=\"logTail\"></div>";
+		}
+		clearLog();
+		function addUI(ts) {
+			var d = document.createElement("div");
+			d.appendChild(ts.getUI());
+			document.getElementById("wrapper").appendChild(d);
+		}
+		function tst() {
+		}
+		function err() { abss();
+		}
+		function logMsg(m, cl) {
+			var d = document.createElement("div");
+			d.textContent = m;
+			d.innerHTML = d.innerHTML.replace(/\n/g, "<br><dd>");
+			if(cl) {
+				d.className = cl;
+			}
+			document.getElementById("log").insertBefore(d, document.getElementById("logHead").nextSibling);
+		}
+		function logErr(m) {
+			logMsg(m, "test_error_message");
+		}
+		function logCheck(m) {
+			logMsg(m, "test_check_message");
+		}
+		function logTrc(m) {
+			logMsg(m);
+		}
+		function load() {
+			for(var i in window) {
+				var check = (i != "TestSuite") && (i.substr(0,4) == "Test");
+				if(check) {
+					var el = window[i];
+					var ts = new el();
+					ts.init(i);
+					ts.logTrc = logTrc;
+					ts.logErr = logErr;
+					ts.logCheck = logCheck;
+					addUI(ts);
+					ts.run();
+				}
+			}
+		}
+	</script>
+</body>
+</html>
