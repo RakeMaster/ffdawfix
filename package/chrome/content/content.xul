@@ -4,7 +4,7 @@
 	<script src="chrome://ffdawfix/content/core/namespace.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/utils.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/replace_listener.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/core/replacers.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/onload.js" type="application/x-javascript" />
 <!-- REPLACE section -->
 	<script src="chrome://ffdawfix/content/replace/smiles.js" type="application/x-javascript" />
@@ -18,4 +18,7 @@
 	
 <!-- EXTRA section -->
 	<script src="chrome://ffdawfix/content/replace/extra/tripbutton.js" type="application/x-javascript" />
+	
+<!-- REPLACE engine should be included the after all replacers -->
+	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
 </overlay>

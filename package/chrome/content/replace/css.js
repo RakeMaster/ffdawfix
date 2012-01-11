@@ -1,5 +1,5 @@
-ru.dclan.ffdawfix.replace.observer.add(
-	function(url) {
+ru.dclan.ffdawfix.replacers.css = {
+	check: function(url) {
 		return (
 			url.search(".css") != -1
 			||
@@ -7,9 +7,8 @@ ru.dclan.ffdawfix.replace.observer.add(
 			||
 			url.search(".aspx") == url.length - 5
 		);
-	}
-	,
-	function(text) {
+	},
+	replace: function(text) {
 		var helper = function(t, name) {
 			t = t.replace( new RegExp("scrollbar-" + name + "-color[^;]+;", 'gi'), '');
 			return t;
@@ -27,4 +26,4 @@ ru.dclan.ffdawfix.replace.observer.add(
 		
 		return text;
 	}
-);
+};

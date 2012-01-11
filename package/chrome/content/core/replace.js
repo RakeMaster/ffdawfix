@@ -24,9 +24,9 @@ ru.dclan.ffdawfix.replace.observer = {
 		if(url.search("jquery") != -1) return;
 		var lst = [];
 		for(var i = 0; i < this.rlist.length; ++i) {
-			var checker = this.rlist[i].checker;
+			var checker = this.rlist[i].check;
 			if(checker(url)) {
-				lst.push(this.rlist[i].replacer);
+				lst.push(this.rlist[i].replace);
 			}
 		}
 		if(lst.length > 0) {
@@ -46,16 +46,28 @@ ru.dclan.ffdawfix.replace.observer = {
 		this.observerService.addObserver(this, "http-on-examine-response", false);
 		this.observerService.addObserver(this, "http-on-examine-cached-response", false);
 		this.observerService.addObserver(this, "http-on-examine-merged-response", false);
+		this.rlist = [];
+		var rs = ru.dclan.ffdawfix.replacers;
+		var errors = "";
+		for(var i in rs) {
+			var cur = rs[i];
+			if(!cur.check) {
+				errors += ( "ru.dclan.ffdawfix.replacers." + i + " have no check function!\n");
+				continue;
+			}
+			if(!cur.replace) {
+				errors += ( "ru.dclan.ffdawfix.replacers." + i + " have no replace function!\n");
+				continue;
+			}
+			ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.replacers." + i);
+			this.rlist.push(cur)
+		}
 	},  
 
 	unregister: function() {
 		this.observerService.removeObserver(this, "http-on-examine-response");
 		this.observerService.removeObserver(this, "http-on-examine-cached-response");
 		this.observerService.removeObserver(this, "http-on-examine-merged-response");
-	},
-	
-	add: function(c, r) {
-		this.rlist.push({checker: c, replacer: r});
 	}
 };
 

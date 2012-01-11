@@ -1,14 +1,13 @@
-ru.dclan.ffdawfix.replace.observer.add(
-	function(url) {
+ru.dclan.ffdawfix.replacers.tripbutton = {
+	check: function(url) {
 		var r = (
 				ru.dclan.ffdawfix.utils.getBool("tripButton") 
 				&&
 			(url.search("http://darkagesworld.com/vr/places/") == 0)
 		);
 		return r;
-	}
-	,
-	function(text) {
+	},
+	replace: function(text) {
 		// add new row
 		var u8 = ru.dclan.ffdawfix.utils.encode;
 		text = text.replace( /pnlMail([12])">\s*<img([^>]+)>\s*/, 
@@ -23,5 +22,4 @@ ru.dclan.ffdawfix.replace.observer.add(
 				);
 		return text;
 	}
-);
-ru.dclan.ffdawfix.utils.trackLoad("Extra tripbutton");
+};

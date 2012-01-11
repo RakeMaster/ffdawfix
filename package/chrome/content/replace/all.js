@@ -1,5 +1,5 @@
-ru.dclan.ffdawfix.replace.observer.add(
-	function(url) {
+ru.dclan.ffdawfix.replacers.all = {
+	check: function(url) {
 		return (
 			url.search(".js") != -1
 			||
@@ -7,9 +7,8 @@ ru.dclan.ffdawfix.replace.observer.add(
 			||
 			url.search(".aspx") == url.length - 5
 		);
-	}
-	,
-	function(text) {
+	},
+	replace: function(text) {
 		text = text.replace( /\.innerText/g, '.textContent');
 
 		//text = text.replace( /document\s*\.\s*all/g, 'document.getElementById');
@@ -17,4 +16,4 @@ ru.dclan.ffdawfix.replace.observer.add(
 		text = text.replace( /document[\s]*[\.][\s]*frames/g, 'window.frames');
 		return text;
 	}
-);
+};
