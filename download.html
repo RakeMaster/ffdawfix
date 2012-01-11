@@ -5,12 +5,28 @@
 </head>
 <body>
 <h1>Скачать</h1>
-<div><a href="https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_2_5.xpi">Установить последнюю версию</a> (Версия 0.2.5)</div>
-<br>
+<div id="download_link"></div>
+<script>
+function loadXML(url) {
+	$.ajax({
+		type: "GET",
+		url: url,
+		dataType: "xml",
+		success: function(xml) {
+			var v = $(xml).find('em\\:version').text();
+			var l = $(xml).find('em\\:em:updateLink').text();
+			document.getElementById("download_link").innerHTML = 
+			"<a href=\"" + l + "\">Установить последнюю версию</a> (Версия " + v + ")";
+		}
+	});
+}
+loadXML('https://github.com/downloads/RakeMaster/ffdawfix/update.rdf');
+</script>
+<br/>
 <div>
 Благодарности принимаются в виде подарка игрушки Лисы персонажу
 <a target="_blank" href="http://darkagesworld.com/vr/common/FighterInfo.aspx?username=%u043E%u0413%u0440%u0430%u0431%u043B%u0418%u0442%u0435%u043B%u044C">оГраблИтель</a></div>
-<div><img src="img/fox.gif" title="Кэп: это Лиса"></div>
+<div><img src="img/fox.gif" title="Кэп: это Лиса"/></div>
 
 </body>
 </html>
