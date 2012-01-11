@@ -16,10 +16,10 @@
 		</em:localized>
 
 		<em:name>DarkAgesWorld in Firefox</em:name>
-		<em:version>0.2.4</em:version>
+		<em:version>0.2.5</em:version>
 		<em:description>Fixes allowing to play DarkAgesWorld in Firefox
 		</em:description>
-		<em:updateURL>http://github.com/downloads/RakeMaster/ffdawfix/update.rdf</em:updateURL>
+		<em:updateURL>http://rakemaster.github.com/ffdawfix/update.rdf</em:updateURL>
 		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcHq0xbSjhai7RYk7F18dLkx+gzGYZ350yNP8oTTBvDI5URHokLc0podE9xsTsH81V3vBZz4jqvnw05DnkiDXupcifqnvuzwmup2y8inIPPuUWOIELPpZ1PlrsZNjtU6/OVOVloBjLVbAdHeuE/ULjKFXqXilUCy9dfGHI2jqM+QIDAQAB</em:updateKey>
 		<em:creator>Dmitri Novikov</em:creator>
 		<em:optionsURL>chrome://ffdawfix/content/preferences.xul
