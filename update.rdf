@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-	<RDF:Description>
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<RDF:Description about="urn:mozilla:extension:ffdawfix@dclan.ru">
 		<em:updates>
 			<RDF:Seq>
-				<!-- Each li is a different version of the same add-on -->
 				<RDF:li>
 					<RDF:Description>
-						<em:version>0.2.5</em:version> <!-- This is the version number of the add-on -->
-
-						<!-- One targetApplication for each application the add-on is compatible 
-							with -->
+						<em:version>0.2.5</em:version>
 						<em:targetApplication>
 							<RDF:Description>
 								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-								<em:minVersion>3.5</em:minVersion>
-								<em:maxVersion>99.99.99</em:maxVersion>
+								<em:minVersion>3.0</em:minVersion>
+								<em:maxVersion>99.*</em:maxVersion>
 								<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_2_5.xpi</em:updateLink>
+								<em:updateHash>sha1:ac3c63be8b57502df4792ffc84d07c3c43b9d21d </em:updateHash>
 							</RDF:Description>
 						</em:targetApplication>
 					</RDF:Description>
 				</RDF:li>
 			</RDF:Seq>
 		</em:updates>
+		<em:signature>MIGTMA0GCSqGSIb3DQEBDQUAA4GBAMmSqczA2z5Hns3RRgAu/jWRO0S29tlafcBao3v4lHv3c+azJ8MkLgbhxpkvE/vxKO9RB73dl+z1b66lRXBzV3jVeqe5v6z/W+qxJ4ibL+r3yp0rUNi3pt08R5eH5D5B3UHL/e/X0ED2bELoNldBNCvQQYisA7Do48LC8qLvWEC3</em:signature>
 	</RDF:Description>
 </RDF:RDF>
