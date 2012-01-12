@@ -49,16 +49,14 @@ ru.dclan.ffdawfix.onload = {
 			utils.injectJS(doc, "daw/groupnear.js");
 			return;
 		}
-		if(utils.checkLocation(loc, "/vr/Places/")) {
-			if(utils.getBool( "title")) {
+		if( utils.checkLocation( loc, "/vr/Places/" ) ) {
+			if( utils.getBool( "title" ) ) {
 				utils.injectJS(doc, "daw/extra/title.js");
 			}
-			//Disabled
-			if(false) {
-				//if(utils.getBool(pm,prefix,"stationAutoTrip") && utils.checkLocation(loc,"/vr/places/Station.aspx")) {
-				//We are changing location. No need to load any other scripts
-				utils.injectJS(doc, "daw/extra/autotrip.js");
-				return;
+			if( utils.getBool( "altMenu" ) ) {
+				utils.injectJS(doc, "daw/extra/altmenu.js");
+			} else {
+				utils.injectJS(doc, "daw/menu.js");
 			}
 
 			utils.injectJS(doc, "daw/ajax.js");

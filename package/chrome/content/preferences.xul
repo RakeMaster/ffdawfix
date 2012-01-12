@@ -7,31 +7,20 @@
 
 	<prefpane id="generalPane" flex="1">
 		<preferences>
-			<preference name="ru.dclan.ffdawfix.tripButton" id="tripButton"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.ringsFix" id="ringsFix"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.giftsFix" id="giftsFix"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleLinks" id="battleLinks"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleCounter" id="battleCounter"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.liveTimers" id="liveTimers"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleHealth" id="battleHealth"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleSmall" id="battleSmall"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.chatList" id="chatList"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.itemStats" id="itemStats"
-				type="bool" />
-			<preference name="ru.dclan.ffdawfix.stats" id="stats"
-				type="bool" />
+			<preference name="ru.dclan.ffdawfix.tripButton" id="tripButton" type="bool" />
+			<preference name="ru.dclan.ffdawfix.ringsFix" id="ringsFix" type="bool" />
+			<preference name="ru.dclan.ffdawfix.giftsFix" id="giftsFix" type="bool" />
+			<preference name="ru.dclan.ffdawfix.battleLinks" id="battleLinks" type="bool" />
+			<preference name="ru.dclan.ffdawfix.battleCounter" id="battleCounter" type="bool" />
+			<preference name="ru.dclan.ffdawfix.liveTimers" id="liveTimers" type="bool" />
+			<preference name="ru.dclan.ffdawfix.battleHealth" id="battleHealth" type="bool" />
+			<preference name="ru.dclan.ffdawfix.battleSmall" id="battleSmall" type="bool" />
+			<preference name="ru.dclan.ffdawfix.chatList" id="chatList" type="bool" />
+			<preference name="ru.dclan.ffdawfix.itemStats" id="itemStats" type="bool" />
+			<preference name="ru.dclan.ffdawfix.stats" id="stats" type="bool" />
 			<preference name="ru.dclan.ffdawfix.dice" id="dice" type="bool" />
-			<preference name="ru.dclan.ffdawfix.title" id="title"
-				type="bool" />
+			<preference name="ru.dclan.ffdawfix.title" id="title" type="bool" />
+			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool" />
 		</preferences>
 		<hbox align="center">
 			<groupbox label="" flex="1">
@@ -48,6 +37,7 @@
 				<checkbox preference="stats" label="Статы полосками" />
 				<checkbox preference="dice" label="Кубик" />
 				<checkbox preference="title" label="Имя персонажа в заголовке" />
+				<checkbox preference="altMenu" label="Алтернативное меню" />
 			</groupbox>
 		</hbox>
 	</prefpane>
