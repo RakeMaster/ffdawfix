@@ -12,7 +12,7 @@
 								<em:minVersion>3.0</em:minVersion>
 								<em:maxVersion>99.*</em:maxVersion>
 								<em:updateLink>http://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_2_6.xpi</em:updateLink>
-								<em:updateHash>sha1:a2bfb031fba435409289c3020f589c19dafebdcef</em:updateHash>
+								<em:updateHash>sha1:2bfb031fba435409289c3020f589c19dafebdcef</em:updateHash>
 							</RDF:Description>
 						</em:targetApplication>
 					</RDF:Description>
