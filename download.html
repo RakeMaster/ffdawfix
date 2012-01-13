@@ -20,7 +20,8 @@ function loadXML(url) {
 		}
 	});
 }
-loadXML('update.rdf');
+var now = (new Date()).getTime();
+loadXML('update.rdf?' + now);
 </script>
 <br/>
 <div>
