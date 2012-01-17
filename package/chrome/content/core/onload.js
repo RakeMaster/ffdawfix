@@ -77,10 +77,6 @@ ru.dclan.ffdawfix.onload = {
 			utils.injectJS(doc, "daw/pplouter.js");
 			return;
 		}
-		if(utils.checkLocation(loc, "Cht/ChOuter")) {
-			utils.injectJS(doc, "daw/chouter.js");
-			return;
-		}
 		if(utils.checkLocation(loc, "/vr/Layout.aspx")) {
 			utils.injectJS(doc,"daw/sound.js");
 			utils.injectJS(doc,"daw/layout.js");
