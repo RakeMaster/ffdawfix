@@ -55,8 +55,6 @@ ru.dclan.ffdawfix.onload = {
 			}
 			if( utils.getBool( "altMenu" ) ) {
 				utils.injectJS(doc, "daw/extra/altmenu.js");
-			} else {
-				utils.injectJS(doc, "daw/menu.js");
 			}
 
 			utils.injectJS(doc, "daw/ajax.js");
