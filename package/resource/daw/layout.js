@@ -121,7 +121,7 @@ function fixChat() {
 	if(mf) {
 		mf.style.borderColor = 'black';
 		mf.setAttribute('frameborder', 1);
-		document.getElementById('cht').setAttribute('cols', '*,250px');
+		document.getElementsByName('cht')[0].setAttribute('cols', '*, 250px');
 	}
 
 	//Rmenu fix
