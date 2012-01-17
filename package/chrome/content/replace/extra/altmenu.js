@@ -1,4 +1,4 @@
-ru.dclan.ffdawfix.replacers.tripbutton = {
+ru.dclan.ffdawfix.replacers.altMenu = {
 	check: function(url) {
 		var r = (
 				ru.dclan.ffdawfix.utils.getBool("altMenu") 
