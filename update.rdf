@@ -5,14 +5,14 @@
 			<RDF:Seq>
 				<RDF:li>
 					<RDF:Description>
-						<em:version>0.2.7</em:version>
+						<em:version>0.2.8</em:version>
 						<em:targetApplication>
 							<RDF:Description>
 								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 								<em:minVersion>3.0</em:minVersion>
 								<em:maxVersion>99.*</em:maxVersion>
-								<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_2_7.xpi</em:updateLink>
-								<em:updateHash>sha256:73b9cc37a590cc73140cf0183ceb0d4c7bead25f33a0791f3a4af25174dbd393</em:updateHash>
+								<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_2_8.xpi</em:updateLink>
+								<em:updateHash>sha256:d5ab013e86a3bb21ad9dffa3fc0aa3fe9c7bbf177445839e619a8d05114f269b</em:updateHash>
 							</RDF:Description>
 						</em:targetApplication>
 					</RDF:Description>
@@ -20,7 +20,7 @@
 			</RDF:Seq>
 		</em:updates>
 		<em:signature>
-			MIGTMA0GCSqGSIb3DQEBDQUAA4GBABq1WskucBjJsi8E8GepJu+ckvKjJWpDDnfBR+20LJnVtImgf4BWE2L7vNkteRzNCJxqnhkWH72e70YgQu7hWYdj3bfvaqwr4SIHzgVuq9MlX2LEB7YsLm6sWwi9Xsgl471IFttqpUJJqQoHY444uH6k3eLiFiDWsTc1+9CyufHN
+			MIGTMA0GCSqGSIb3DQEBDQUAA4GBACjSzUrqZk0ZHTrHRdv/3Gby3+sRdUULLVpz5ByetjObOwmoeh5i0Qf0IrMvcPCQSEfyrkNeC90Ou3RCKUKwcdbgDscGHSffkPrU43T+f5mcftuckEPdOPQWjg4yGqH2w+y8dXisvLi0idaVabQJl2lE4x9S5Z1Pcf8lNIF+Bq4g
 		</em:signature>
 	</RDF:Description>
 </RDF:RDF>
