@@ -73,15 +73,29 @@ function ff_selectRoom(roomId) {
 			p.parentNode.removeChild(p);
 		}
 	});
-	menu_ref.parentNode.style.textAlign = "right";
-	var tr = menu_ref.parentNode.parentNode;
-	tr = tr.nextSibling;
-	while(!tr.tagName) {
-		tr = tr.nextSibling;
-	}
-	tr.parentNode.removeChild(tr);
 
 	//GROUPS
 	addUpdateRoomHandler(fixRooms);
 	//endof compact
+	
+	// Change table to divs
+	var cl = document.getElementById("peopleList");
+	var header = document.createElement("div"); //  <td style="text-align: right;" align="center" background="/vr/uimg/sbg.jpg">
+	header.style.background = "url(/vr/uimg/sbg.jpg)";
+	header.style.position = "absolute";
+	header.style.width = "100%";
+	header.style.textAlign = "right";
+	header.innerHTML = document.getElementById("menu_ref").parentNode.innerHTML;
+	var table = document.getElementById("Table1");
+	var tableParent = table.parentNode;
+
+	tableParent.appendChild(header);
+	tableParent.appendChild(cl);
+	tableParent.removeChild(table);
+	
+	cl.style.top = "20px";
+	cl.style.bottom = "0px";
+	cl.style.position = "fixed";
+	cl.style.width = "100%";
+	cl.style.overflowY = "scroll";
 })();
