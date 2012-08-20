@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="216" y="168" width="689" height="489" text="Browser&#xA;http://..." measuredWidth="689" measuredHeight="489"/>
+  <widgets xsi:type="model:HLine" id="2" x="216" y="448" width="689" measuredWidth="689" measuredHeight="6"/>
+  <widgets xsi:type="model:VLine" id="3" x="696" y="448" height="209" measuredWidth="6" measuredHeight="209"/>
+  <widgets xsi:type="model:HLine" id="4" x="696" y="472" width="204" measuredWidth="204" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="5" x="701" y="451" text="Комнаты: " measuredWidth="63" measuredHeight="23">
+    <font underline="false"/>
+  </widgets>
+  <widgets xsi:type="model:VScrollbar" id="6" x="883" y="477" height="180" measuredWidth="17" measuredHeight="180" value="25"/>
+  <widgets xsi:type="model:Checkbox" id="17" x="885" y="450" measuredWidth="21" measuredHeight="23" selected="true">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="18" x="845" y="455" width="17" height="15" measuredWidth="17" measuredHeight="15" icon="export (custom)"/>
+  <widgets xsi:type="model:Label" id="19" x="763" y="451" text="Г" measuredWidth="12" measuredHeight="23">
+    <font bold="true" underline="false"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="20" x="774" y="451" text="O" measuredWidth="14" measuredHeight="23">
+    <font bold="false" underline="true"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="21" x="826" y="455" width="17" height="15" measuredWidth="17" measuredHeight="15" icon="find (custom)"/>
+  <widgets xsi:type="model:Icon" id="22" x="864" y="455" width="17" height="15" measuredWidth="17" measuredHeight="15" icon="refresh (custom)"/>
+  <widgets xsi:type="model:Master" id="28" x="705" y="477" measuredWidth="122" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="29" x="705" y="500" measuredWidth="136" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+    <overrides>
+      <widgets ref="6" x="120">
+        <attributes key="foreground" value="#ff0000"/>
+      </widgets>
+      <widgets ref="4" text="Игрок2 \[11\] "/>
+    </overrides>
+  </widgets>
+  <widgets xsi:type="model:Master" id="30" x="705" y="523" measuredWidth="122" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="31" x="705" y="545" measuredWidth="122" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="32" x="705" y="568" measuredWidth="122" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="33" x="705" y="591" measuredWidth="122" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+  </widgets>
+  <widgets xsi:type="model:Master" id="34" x="705" y="614" measuredWidth="122" measuredHeight="24">
+    <screen xsi:type="model:Screen" href="player.screen#/"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

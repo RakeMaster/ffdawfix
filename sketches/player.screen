@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:WidgetGroup" id="1" x="10" y="10" measuredWidth="122" measuredHeight="24">
+    <widgets xsi:type="model:Checkbox" id="2" measuredWidth="21" measuredHeight="23">
+      <font underline="true"/>
+    </widgets>
+    <widgets xsi:type="model:Icon" id="3" x="27" y="1" width="25" height="23" measuredWidth="25" measuredHeight="23" foreground="#4c1130" icon="bullet (custom)"/>
+    <widgets xsi:type="model:Label" id="4" x="51" text="Игрок1 \[9\] " measuredWidth="67" measuredHeight="23">
+      <font underline="true"/>
+    </widgets>
+    <widgets xsi:type="model:Icon" id="5" x="16" y="4" width="17" height="15" measuredWidth="17" measuredHeight="15" foreground="#00ff00" icon="apple (custom)"/>
+    <widgets xsi:type="model:Icon" id="6" x="106" y="4" measuredWidth="16" measuredHeight="16" foreground="#0000ff" icon="filled-arrow-down (small)"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
