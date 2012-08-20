@@ -19,11 +19,6 @@
 				</RDF:li>
 			</RDF:Seq>
 		</em:updates>
-        <em:signature>
-            MIGRMAsGCSqGSIb3DQEBDQOBgQAs2bt3KBq5hHD0wKiKTp54SPbcRvH1IBQ6UDC5
-            xclkVPz+LrPOp7mH6AfrOcKQo3F03V4yjYQoxNDPMtNBwe/8O6Kt1hYkRvvWOnPY
-            ay6b9nSSfYwAskCEkMLtXWUteFcdGbfLSa9LqFQ51dZGcqQzbJrbWcgYHQ+lAwWT
-            MUEx8w==
-        </em:signature>
+        <em:signature>MIGTMA0GCSqGSIb3DQEBDQUAA4GBAG/+4cs8+NubYZ33cwdGeimoTs/xg1KiQV+EolVNMafqVWQNj/n4m6AthXP+kQ9y1JMHd3fYHB2cQq5qXm+aGaebb/siwDl4cwHDQ3I/Vm9+o88MASV0ftBYi3fLicyQ7H0DS61CqtNedLIq9JbjA6e06Z+9ZnqU7fCiw4PNE7he</em:signature>
 	</RDF:Description>
 </RDF:RDF>
