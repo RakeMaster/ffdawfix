@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:List" id="1" x="441" y="355" text="[x] Голова&#xA;[ ] Плечи&#xA;[x] Руки&#xA;[] Ноги" measuredWidth="68" measuredHeight="92" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="68" height="22" text="[x] Голова"/>
+    <items x="0" y="24" width="68" height="22" text="[ ] Плечи"/>
+    <items x="0" y="46" width="68" height="22" text="[x] Руки"/>
+    <items x="0" y="68" width="68" height="22" text="[] Ноги"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="2" x="374" y="355" text="(o) Голова&#xA;( ) Плечи&#xA;() Руки&#xA;() Ноги" measuredWidth="68" measuredHeight="92" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="68" height="22" text="(o) Голова"/>
+    <items x="0" y="24" width="68" height="22" text="( ) Плечи"/>
+    <items x="0" y="46" width="68" height="22" text="() Руки"/>
+    <items x="0" y="68" width="68" height="22" text="() Ноги"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="3" x="399" y="504" text="[x] Голова&#xA;[ ] Плечи&#xA;[x] Руки&#xA;[] Ноги" measuredWidth="68" measuredHeight="92" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="68" height="22" text="[x] Голова"/>
+    <items x="0" y="24" width="68" height="22" text="[ ] Плечи"/>
+    <items x="0" y="46" width="68" height="22" text="[x] Руки"/>
+    <items x="0" y="68" width="68" height="22" text="[] Ноги"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="4" x="374" y="504" text="(o)&#xA;()&#xA;()&#xA;()" measuredWidth="26" measuredHeight="92" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="26" height="22" text="(o)"/>
+    <items x="0" y="24" width="26" height="22" text="()"/>
+    <items x="0" y="46" width="26" height="22" text="()"/>
+    <items x="0" y="68" width="26" height="22" text="()"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="5" x="466" y="508" measuredWidth="16" measuredHeight="16" icon="secure (small)"/>
+  <widgets xsi:type="model:Icon" id="6" x="466" y="552" measuredWidth="16" measuredHeight="16" foreground="#999999" icon="unsecure (small)"/>
+  <widgets xsi:type="model:Icon" id="10" x="466" y="528" measuredWidth="16" measuredHeight="16" foreground="#999999" icon="unsecure (small)"/>
+  <widgets xsi:type="model:Icon" id="11" x="466" y="576" measuredWidth="16" measuredHeight="16" foreground="#999999" icon="unsecure (small)"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>

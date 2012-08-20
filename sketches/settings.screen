@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:WidgetGroup" id="13" x="144" y="96" measuredWidth="281" measuredHeight="393">
+    <widgets xsi:type="model:Window" id="1" width="281" height="393" text="Настройки" measuredWidth="281" measuredHeight="393"/>
+    <widgets xsi:type="model:List" id="2" x="26" y="29" text="[x] Кнопка Поход&#xA;[x] Ссылки с колец (муж/жена)&#xA;[x] Ссылки с подарков в инфе&#xA;[x] Ссылки в логах, соратниках&#xA;[x] Счетчик ударов&#xA;[x] Живые таймеры&#xA;[x] Суммарные жизни комманд&#xA;[x] Уменьшенные аватары в бою&#xA;[x] Список чата (компактнее)&#xA;[x] Состояние вещей&#xA;[x] Статы полосками&#xA;[x] Кубик&#xA;[x] Имя персонажа в заголовке&#xA;[x] Алтернативное меню" measuredWidth="199" measuredHeight="312" border="false" alpha="0">
+      <font/>
+      <items x="0" y="2" width="199" height="22" text="[x] Кнопка Поход"/>
+      <items x="0" y="24" width="199" height="22" text="[x] Ссылки с колец (муж/жена)"/>
+      <items x="0" y="46" width="199" height="22" text="[x] Ссылки с подарков в инфе"/>
+      <items x="0" y="68" width="199" height="22" text="[x] Ссылки в логах, соратниках"/>
+      <items x="0" y="90" width="199" height="22" text="[x] Счетчик ударов"/>
+      <items x="0" y="112" width="199" height="22" text="[x] Живые таймеры"/>
+      <items x="0" y="134" width="199" height="22" text="[x] Суммарные жизни комманд"/>
+      <items x="0" y="156" width="199" height="22" text="[x] Уменьшенные аватары в бою"/>
+      <items x="0" y="178" width="199" height="22" text="[x] Список чата (компактнее)"/>
+      <items x="0" y="200" width="199" height="22" text="[x] Состояние вещей"/>
+      <items x="0" y="222" width="199" height="22" text="[x] Статы полосками"/>
+      <items x="0" y="244" width="199" height="22" text="[x] Кубик"/>
+      <items x="0" y="266" width="199" height="22" text="[x] Имя персонажа в заголовке"/>
+      <items x="0" y="288" width="199" height="22" text="[x] Алтернативное меню"/>
+    </widgets>
+    <widgets xsi:type="model:Button" id="3" x="184" y="358" width="73" text="Close" measuredWidth="73" measuredHeight="25">
+      <font/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="11" x="496" y="80" measuredWidth="259" measuredHeight="244">
+    <widgets xsi:type="model:Window" id="4" width="259" height="244" text="Настройки" measuredWidth="259" measuredHeight="244"/>
+    <widgets xsi:type="model:TabbedPane" id="6" x="10" y="29" width="241" height="199" text="Общее, Бой, Инфо" measuredWidth="241" measuredHeight="199" selection="0">
+      <items x="10" y="0" width="60" height="27" text="Общее"/>
+      <items x="70" y="0" width="41" height="27" text="Бой"/>
+      <items x="111" y="0" width="52" height="27" text="Инфо"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:List" id="7" x="26" y="66" text="[x] Кнопка Поход&#xA;[x] Живые таймеры&#xA;[x] Список чата (компактнее)&#xA;[x] Состояние вещей&#xA;[x] Имя персонажа в заголовке&#xA;[x] Алтернативное меню" measuredWidth="190" measuredHeight="136" border="false" alpha="0">
+      <font/>
+      <items x="0" y="2" width="190" height="22" text="[x] Кнопка Поход"/>
+      <items x="0" y="24" width="190" height="22" text="[x] Живые таймеры"/>
+      <items x="0" y="46" width="190" height="22" text="[x] Список чата (компактнее)"/>
+      <items x="0" y="68" width="190" height="22" text="[x] Состояние вещей"/>
+      <items x="0" y="90" width="190" height="22" text="[x] Имя персонажа в заголовке"/>
+      <items x="0" y="112" width="190" height="22" text="[x] Алтернативное меню"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="12" x="496" y="336" measuredWidth="259" measuredHeight="244">
+    <widgets xsi:type="model:Window" id="8" width="259" height="244" text="Настройки" measuredWidth="259" measuredHeight="244"/>
+    <widgets xsi:type="model:TabbedPane" id="9" x="10" y="29" width="241" height="199" text="Бой, Общее,  Инфо" measuredWidth="241" measuredHeight="199" selection="0">
+      <items x="10" y="0" width="41" height="27" text="Бой"/>
+      <items x="51" y="0" width="60" height="27" text="Общее"/>
+      <items x="111" y="0" width="55" height="27" text=" Инфо"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:List" id="10" x="26" y="66" text="[x] Ссылки в логах, соратниках&#xA;[x] Счетчик ударов&#xA;[x] Суммарные жизни комманд&#xA;[x] Уменьшенные аватары в бою&#xA;[x] Кубик&#xA;" measuredWidth="199" measuredHeight="114" border="false" alpha="0">
+      <font/>
+      <items x="0" y="2" width="199" height="22" text="[x] Ссылки в логах, соратниках"/>
+      <items x="0" y="24" width="199" height="22" text="[x] Счетчик ударов"/>
+      <items x="0" y="46" width="199" height="22" text="[x] Суммарные жизни комманд"/>
+      <items x="0" y="68" width="199" height="22" text="[x] Уменьшенные аватары в бою"/>
+      <items x="0" y="90" width="199" height="22" text="[x] Кубик"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:WidgetGroup" id="14" x="496" y="592" measuredWidth="259" measuredHeight="244">
+    <widgets xsi:type="model:Window" id="15" width="259" height="244" text="Настройки" measuredWidth="259" measuredHeight="244"/>
+    <widgets xsi:type="model:TabbedPane" id="16" x="10" y="29" width="241" height="199" text="Инфо, Бой, Общее" measuredWidth="241" measuredHeight="199" selection="0">
+      <items x="10" y="0" width="52" height="27" text="Инфо"/>
+      <items x="62" y="0" width="41" height="27" text="Бой"/>
+      <items x="103" y="0" width="60" height="27" text="Общее"/>
+      <font/>
+    </widgets>
+    <widgets xsi:type="model:List" id="17" x="26" y="66" text="[x] Ссылки с колец (муж/жена)&#xA;[x] Ссылки с подарков в инфе&#xA;[x] Состояние вещей&#xA;[x] Статы полосками&#xA;" measuredWidth="186" measuredHeight="92" border="false" alpha="0">
+      <font/>
+      <items x="0" y="2" width="186" height="22" text="[x] Ссылки с колец (муж/жена)"/>
+      <items x="0" y="24" width="186" height="22" text="[x] Ссылки с подарков в инфе"/>
+      <items x="0" y="46" width="186" height="22" text="[x] Состояние вещей"/>
+      <items x="0" y="68" width="186" height="22" text="[x] Статы полосками"/>
+    </widgets>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="18" x="10" y="10" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
