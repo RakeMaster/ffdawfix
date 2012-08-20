@@ -2,3 +2,16 @@ This is a web documentation, located at http://rakemaster.github.com/ffdawfix/
 
 The update.rdf file contains information on lates version
 The information from that file is used for download page and for firefox autoupdate
+
+Release version checklist:
+0. version tagged
+
+install.rdf
+1. Version changed
+2. updateKey set correcty
+
+update.rdf
+1. Version changed
+2. filepath changed
+3. sha256 replaced
+4. signed correctly
