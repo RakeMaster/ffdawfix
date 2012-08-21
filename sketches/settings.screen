@@ -74,7 +74,6 @@
       <items x="0" y="68" width="186" height="22" text="[x] Статы полосками"/>
     </widgets>
   </widgets>
-  <widgets xsi:type="model:Icon" id="18" x="10" y="10" measuredWidth="32" measuredHeight="32" icon="image (large)"/>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
