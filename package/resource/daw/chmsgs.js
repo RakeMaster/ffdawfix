@@ -1,7 +1,7 @@
 (function() {
-	var msgs = document.getElementById('msgs');
-	var p = msgs.parentNode;
-	p.innerHTML = "<br>" + p.innerHTML; 
-	var d = document.getElementById('d_menu');
-	d.parentNode.removeChild(d);
+	var dm = document.getElementById('d_menu');
+	dm.onmouseout = function(e) {
+		if (e.relatedTarget.id != "d_menu") return false;
+		top.CloseCMenu(window, window.event);
+	};
 })();

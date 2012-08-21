@@ -98,7 +98,7 @@ ru.dclan.ffdawfix.onload = {
 			utils.injectJS(doc, "daw/map.js");
 			return;
 		}
-		if(utils.checkLocation(loc, "/vr/Cht/ChMsgs3.htm")) {
+		if(utils.checkLocation(loc, "/vr/Cht/ChOuter1.htm")) {
 			utils.injectJS(doc, "daw/chmsgs.js");
 			return;
 		}
