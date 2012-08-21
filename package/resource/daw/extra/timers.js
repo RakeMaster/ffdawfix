@@ -24,6 +24,27 @@ function timerEndTime2(text) {
 	return timerEndTimeSec(m * 60 + s);
 }
 
+function timersForWorkshop(lbStat) {
+	var regex = /[^0-9]+/
+	var txt = lbStat.textContent;
+	var m = regex.exec(txt);
+	if(m && m[0] != txt) {
+		var left = timerEndTime2(txt);
+		if(left != -1) {
+			var regex = /(\d+)\s+мин/;
+			txt = txt.replace(regex,"");
+			regex = /(\d+)\s+сек/;
+			txt = txt.replace(regex,"");
+			regex = /\.\s*$/;
+			txt = txt.replace(regex,"");
+			lbStat.textContent = txt;
+			var statTime = document.createElement("span");
+			lbStat.appendChild(statTime);
+			addTimer(statTime, left);
+		}
+	}
+}
+
 function injectTimers() {
 	//Live timers addon
 	resetTimers();
@@ -38,26 +59,12 @@ function injectTimers() {
 		addTimer(lbTta, timerEndTime2(lbTta.textContent));
 	}
 	var lbStat = document.getElementById('lbStatus');
-	if(lbStat) {
-		var regex = /[^0-9]+/
-		var txt = lbStat.textContent;
-		var m = regex.exec(txt);
-		if(m && m[0] != txt) {
-			var left = timerEndTime2(txt);
-			if(left != -1) {
-				var regex = /(\d+)\s+мин/;
-				txt = txt.replace(regex,"");
-				regex = /(\d+)\s+сек/;
-				txt = txt.replace(regex,"");
-				regex = /\.\s*$/;
-				txt = txt.replace(regex,"");
-				lbStat.textContent = txt;
-				var statTime = document.createElement("span");
-				lbStat.appendChild(statTime);
-				addTimer(statTime, left);
-			}
-		}
-	}
+
+	injectTag("span", function(node) {
+		var suffix = "lbStatus";
+		if(node.id.indexOf(suffix, this.length - suffix.length) == -1) return; // Endswith
+		timersForWorkshop(node);
+	});
 }
 
 function injectAndStartTimers() {
