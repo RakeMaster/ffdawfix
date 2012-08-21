@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<RDF:Description about="urn:mozilla:extension:ffdawfix@dclan.ru">
-		<em:updates>
-			<RDF:Seq>
-				<RDF:li>
-					<RDF:Description>
-						<em:version>0.3.0</em:version>
-						<em:targetApplication>
-							<RDF:Description>
-								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-								<em:minVersion>3.0</em:minVersion>
-								<em:maxVersion>99.*</em:maxVersion>
-								<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_3_0.xpi</em:updateLink>
-								<em:updateHash>sha256:f646f3eab4bb5b16b0c79ba23eb9485108e473513b96da43b453a4dd82686f21</em:updateHash>
-							</RDF:Description>
-						</em:targetApplication>
-					</RDF:Description>
-				</RDF:li>
-			</RDF:Seq>
-		</em:updates>
+	<em:updates><RDF:Seq><RDF:li><RDF:Description>
+		<em:version>0.3.0</em:version>
+		<em:targetApplication>
+			<RDF:Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>3.0</em:minVersion>
+				<em:maxVersion>99.*</em:maxVersion>
+				<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_3_0.xpi</em:updateLink>
+				<em:updateHash>sha256:f646f3eab4bb5b16b0c79ba23eb9485108e473513b96da43b453a4dd82686f21</em:updateHash>
+			</RDF:Description>
+		</em:targetApplication>
+	</RDF:Description></RDF:li></RDF:Seq></em:updates>
         <em:signature>MIGTMA0GCSqGSIb3DQEBDQUAA4GBAKVKBPQb9Q0C1hXffSHPbqOl0zQZBM0LiB939d5yShuGMkA8OFyFigS71f1LnEOBW2Jk3p+ouxiwe93FP0bW1I11TK6EEf/hBLej99OASGpdkWf6Yldfmx2KaxXVagYw2SQlEw/YzayLz5efvscqeMGGQzBpSjxD6xuDBnn9gbH1</em:signature>
 	</RDF:Description>
 </RDF:RDF>
