@@ -1,44 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-
-<prefwindow id="ffdawfix-prefwindow" title="Настройки"
-	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	minwidth="200" minheight="100">
-
-	<prefpane id="generalPane" flex="1">
+<prefwindow id="ffdawfix-prefwindow" title="Настройки" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" minwidth="200" minheight="100" height="400">
 		<preferences>
-			<preference name="ru.dclan.ffdawfix.tripButton" id="tripButton" type="bool" />
-			<preference name="ru.dclan.ffdawfix.ringsFix" id="ringsFix" type="bool" />
-			<preference name="ru.dclan.ffdawfix.giftsFix" id="giftsFix" type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleLinks" id="battleLinks" type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleCounter" id="battleCounter" type="bool" />
-			<preference name="ru.dclan.ffdawfix.liveTimers" id="liveTimers" type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleHealth" id="battleHealth" type="bool" />
-			<preference name="ru.dclan.ffdawfix.battleSmall" id="battleSmall" type="bool" />
-			<preference name="ru.dclan.ffdawfix.chatList" id="chatList" type="bool" />
-			<preference name="ru.dclan.ffdawfix.itemStats" id="itemStats" type="bool" />
-			<preference name="ru.dclan.ffdawfix.stats" id="stats" type="bool" />
-			<preference name="ru.dclan.ffdawfix.dice" id="dice" type="bool" />
-			<preference name="ru.dclan.ffdawfix.title" id="title" type="bool" />
-			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool" />
+			<preference name="ru.dclan.ffdawfix.tripButton" id="tripButton" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.ringsFix" id="ringsFix" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.giftsFix" id="giftsFix" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.battleLinks" id="battleLinks" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.battleCounter" id="battleCounter" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.liveTimers" id="liveTimers" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.battleHealth" id="battleHealth" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.battleSmall" id="battleSmall" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.chatList" id="chatList" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.itemStats" id="itemStats" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.stats" id="stats" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.dice" id="dice" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.title" id="title" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool"/>
 		</preferences>
+	<prefpane id="FirstTab" flex="1" image="resource://ffdawfix/img/tab_1.png" label="Общее">
 		<hbox align="center">
-			<groupbox label="" flex="1">
-				<checkbox preference="tripButton" label="Кнопка Поход" />
-				<checkbox preference="ringsFix" label="Ссылки с колец (муж/жена)" />
-				<checkbox preference="giftsFix" label="Ссылки с подарков в инфе" />
-				<checkbox preference="battleLinks" label="Ссылки в логах, соратниках" />
-				<checkbox preference="battleCounter" label="Счетчик ударов" />
-				<checkbox preference="liveTimers" label="Живые таймеры" />
-				<checkbox preference="battleHealth" label="Суммарные жизни комманд" />
-				<checkbox preference="battleSmall" label="Уменьшенные аватары в бою" />
-				<checkbox preference="chatList" label="Список чата (компактнее)" />
-				<checkbox preference="itemStats" label="Состояние вещей" />
-				<checkbox preference="stats" label="Статы полосками" />
-				<checkbox preference="dice" label="Кубик" />
-				<checkbox preference="title" label="Имя персонажа в заголовке" />
-				<checkbox preference="altMenu" label="Алтернативное меню" />
+			<groupbox flex="1">
+				<checkbox preference="tripButton" label="Кнопка Поход"/>
+				<checkbox preference="liveTimers" label="Живые таймеры"/>
+				<checkbox preference="chatList" label="Список чата (компактнее)"/>
+				<checkbox preference="title" label="Имя персонажа в заголовке"/>
+				<checkbox preference="altMenu" label="Алтернативное меню"/>
 			</groupbox>
 		</hbox>
 	</prefpane>
+	<prefpane id="SecondTab" flex="1" label="Бой" image="resource://ffdawfix/img/tab_2.png">
+		<hbox align="center">
+			<groupbox flex="1">
+				<checkbox preference="battleLinks" label="Ссылки в логах, соратниках"/>
+				<checkbox preference="battleCounter" label="Счетчик ударов"/>
+				<checkbox preference="battleHealth" label="Суммарные жизни комманд"/>
+				<checkbox preference="battleSmall" label="Уменьшенные аватары в бою"/>
+				<checkbox preference="dice" label="Кубик"/>
+			</groupbox>
+		</hbox>
+</prefpane>
+	<prefpane id="ThirdTab" flex="1" label="Инфо" image="resource://ffdawfix/img/tab_3.png">
+		<hbox align="center">
+			<groupbox flex="1">
+				<checkbox preference="ringsFix" label="Ссылки с колец (муж/жена)"/>
+				<checkbox preference="giftsFix" label="Ссылки с подарков в инфе"/>
+				<checkbox preference="stats" label="Статы полосками"/>
+				<checkbox preference="itemStats" label="Состояние вещей"/>
+			</groupbox>
+		</hbox>
+
+</prefpane>
 </prefwindow>
