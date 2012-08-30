@@ -13,6 +13,7 @@
 	<script src="chrome://ffdawfix/content/replace/css.js" type="application/x-javascript" />
 	
 	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />
 	
 <!-- EXTRA section -->
 	<script src="chrome://ffdawfix/content/replace/extra/tripbutton.js" type="application/x-javascript" />
