@@ -4,6 +4,7 @@
 		<em:optionsURL>chrome://ffdawfix/content/preferences.xul
 		</em:optionsURL>
 		<em:id>ffdawfix@dclan.ru</em:id>
+		<em:iconURL>resource://ffdawfix/img/icon.png</em:iconURL>
 		<em:localized>
 			<Description>
 				<em:locale>ru-RU</em:locale>
