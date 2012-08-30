@@ -123,3 +123,13 @@ table.list td
 {
 	cursor:pointer;
 }
+#rbAttack_0, #rbAttack_1, #rbAttack_2, #rbAttack_3,
+#cblDefence_0, #cblDefence_1, #cblDefence_2, #cblDefence_3 
+{
+	-moz-transform: scale(1.5);
+}
+
+label {
+		cursor: pointer;
+		text-decoration: underline;
+}
