@@ -126,7 +126,9 @@ table.list td
 #rbAttack_0, #rbAttack_1, #rbAttack_2, #rbAttack_3,
 #cblDefence_0, #cblDefence_1, #cblDefence_2, #cblDefence_3 
 {
-	-moz-transform: scale(1.5);
+	width: 15px;
+	height: 15px;
+	-moz-appearance: none;
 }
 
 label {
