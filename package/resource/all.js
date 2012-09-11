@@ -170,17 +170,13 @@ function getPersLink(nick) {
 }
 
 function createPersLink(nick) {
-	nick = nick.replace(/^\s*/, "");
-	nick = nick.replace(/\s*$/, "");
 	var i = document.createElement('a');
-	i.href = getPersLink(nick);
+	i.href = getPersLink(nick.trim());
 	i.target = "_blank";
 	return i;
 }
 
 function createPersLinkWithText(nick) {
-	nick = nick.replace(/^\s*/, "");
-	nick = nick.replace(/\s*$/, "");
 	var i = createPersLink(nick);
 	i.textContent = nick;
 	return i;
