@@ -14,4 +14,6 @@ Add JavaScript and XML tools
 "Ant" is used to build archive (build.xml)
 Can be build from ant perspective of Eclipse
 
+use http://wireframesketcher.com/ to open *.screen files
+
 Commit messages should be ONLY in English
