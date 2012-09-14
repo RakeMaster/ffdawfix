@@ -59,7 +59,7 @@ function insertBefore(newChild, refChild) {
 	 refChild.parentNode.insertBefore(newChild,refChild); 
 } 
 
-(function() {
+ffAddOnLoad(function() {
 	var r = document.getElementById('EndTurn');
 	if(!r) return;
 	{
@@ -103,4 +103,4 @@ function insertBefore(newChild, refChild) {
 		b.onclick = function() { randomAttack(); submitAttack();};
 		insertAfter(b,r);
 	}
-})();
+});

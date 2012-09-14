@@ -1,4 +1,4 @@
-(function() {
+ffAddOnLoad(function() {
 	if(window.panelClick)
 	window.panelClick = function(ctrl) {
 		var panel = ctrl.parentNode.children[1];
@@ -27,4 +27,4 @@
 			location.href = loc;
 		}
 	}
-})();
+});

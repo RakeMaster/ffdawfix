@@ -25,9 +25,9 @@ function fixGiftLink(node) {
 	p.parentNode.replaceChild(a, p);
 }
 
-(function() {
+ffAddOnLoad(function() {
 	injectTag("img", function(node) {
 		if(ffdawfix.prefs.ringsFix) fixRingLink(node);
 		if(ffdawfix.prefs.giftsFix) fixGiftLink(node);
 	});
-})();
+});

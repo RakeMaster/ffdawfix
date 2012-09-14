@@ -22,7 +22,7 @@ function createItemStat(bar, statValue, maxValue, critical) {
 		bar.appendChild(line);
 }
 
-(function() {
+ffAddOnLoad(function() {
 	injectTag("td",function(node) {
 		var regex = /^\s*\[(\d+)\/(\d+)\]\s*$/;
 		var r = regex.exec(node.textContent);
@@ -36,4 +36,4 @@ function createItemStat(bar, statValue, maxValue, critical) {
 		node.innerHTML = "";
 		createItemStat(node, l, h, critical);
 	});
-})();
+});

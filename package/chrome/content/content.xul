@@ -11,6 +11,7 @@
 	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/css.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/inject.js" type="application/x-javascript" />
 	
 	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />

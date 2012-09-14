@@ -203,7 +203,7 @@ function setCheck(id) {
 	}
 }
 
-(function() {
+ffAddOnLoad(function() {
 	injectTag("td", function(node) {
 		if(node.onclick && String(node.onclick).search("EnemySelect")!=-1) {
 			node.onclick = null;
@@ -251,4 +251,4 @@ function setCheck(id) {
 		setCheck("cblDefence_" + i);
 	}
 	SetAttackType();
-})();
+});

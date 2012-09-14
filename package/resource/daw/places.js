@@ -29,11 +29,11 @@ function renewImage() {
 	}
 }
 
-(function() {
+ffAddOnLoad(function() {
 	fixLists();
 	renewImage();
 
 	addAjaxHandler(fixLists);
 	addAjaxHandler(fixA);
 	addAjaxHandler(renewImage);
-})();
+});

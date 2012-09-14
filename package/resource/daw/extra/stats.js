@@ -56,7 +56,7 @@ function  replaceStat(statId, statIdFull, max, statMin) {
 	return null;
 }
 
-(function() {
+ffAddOnLoad(function() {
 	var stats = new Array("lbStrength", "lbDex", "lbLuck");
 	var statsMin = {}
 	Array.forEach(stats, function(id) {statsMin[id] = 10000;} );
@@ -78,4 +78,4 @@ function  replaceStat(statId, statIdFull, max, statMin) {
 			replaceStat(id, node.id, max, statsMin[id]);
 		});
 	});
-})();
+});

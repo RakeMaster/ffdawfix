@@ -10,6 +10,6 @@ function fixFriends() {
 	});
 }
 
-(function() {
+ffAddOnLoad(function() {
 	fixFriends();
-})();
+});

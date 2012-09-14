@@ -24,7 +24,7 @@ if(window.Event && document.captureEvents) {
 
 document.onmousemove = getMousePos;
 
-(function() {
+ffAddOnLoad(function() {
 	var ia = document.getElementById("imgAreaMap");
 	if(!ia) return;
 	window.MapClick = function() {
@@ -46,4 +46,4 @@ document.onmousemove = getMousePos;
 	injectTag("area",function(node) {
 		if(!node.title && node.alt) node.title = node.alt;
 	});
-})();
+});

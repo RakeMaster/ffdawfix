@@ -2,6 +2,29 @@
 var timers = new Array();
 var timersTimeout = null;
 
+var ffOnLoadList = new Array();
+var ffLoaded = false;
+
+function ffAddOnLoad(f) {
+	if(ffLoaded) {
+		alert("onLoad already called");
+		f();
+	} else {
+		ffOnLoadList[ffOnLoadList.length] = f;
+	}
+}
+
+function ffOnLoad() {
+	if( !ffLoaded ) {
+		for(var i=0; i < ffOnLoadList.length; ++i) {
+			ffOnLoadList[i]();
+		}
+		ffLoaded = true;
+	}
+}
+
+window.addEventListener('load', function() ffOnLoad(), false);
+
 function trim(str) {
 	return str.replace(/^\s*([\S\s]*?)\s*$/, '$1');
 }
@@ -210,7 +233,7 @@ function fixInput() {
 	});
 }
 
-(function() {
+ffAddOnLoad(function() {
 	//What the FUCK is document.all??? Non of that thing in standard. Fuck the MS
 	if(!document.all) {
 		document.all = function(id, index) {
@@ -237,4 +260,4 @@ function fixInput() {
 	//
 	fixA();
 	fixInput();
-})();
+});

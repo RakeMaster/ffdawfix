@@ -8,9 +8,9 @@ if(!CCIN) {
 }
 
 // Copy response listener implementation.
-ru.dclan.ffdawfix.ReplaceListener = function(rl) {
+ru.dclan.ffdawfix.ReplaceListener = function(r) {
 	this.originalListener = null;
-	this.relacersList = rl;
+	this.replacer = r;
 	this.receivedData = [];   // array for incoming data.
 }
 
@@ -39,19 +39,7 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 
 	onStopRequest: function(request, context, statusCode) {
 		var original = this.receivedData.join('');
-		var changed = original;
-		for(var i = 0; i < this.relacersList.length; ++i) {
-			var replacer = this.relacersList[i];
-			var replacerText = "> " + i + " <" + replacer;
-			try {
-				changed = replacer(changed);
-			} catch(e) {
-				alert("Exception while executing replacer: " + e
-						+ "\n"
-						+ replacerText
-				);
-			}
-		}
+		var changed = this.replacer.replace( original );
 		var count = changed.length;
 		{
 			var storageStream = CCIN("@mozilla.org/storagestream;1", "nsIStorageStream");

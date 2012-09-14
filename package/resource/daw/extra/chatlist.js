@@ -36,7 +36,7 @@ function ff_selectRoom(roomId) {
 	GoCRoom(roomId);
 }
 
-(function() {
+ffAddOnLoad(function() {
 	var menu_ref = document.getElementById('menu_ref');
 	if(!menu_ref) return;
 	menu_ref.style.position = "relative";
@@ -98,4 +98,4 @@ function ff_selectRoom(roomId) {
 	cl.style.position = "fixed";
 	cl.style.width = "100%";
 	cl.style.overflowY = "scroll";
-})();
+});

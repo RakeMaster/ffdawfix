@@ -29,7 +29,7 @@ function getPersNameBattle() {
 	return nick;
 }
 
-(function() {
+ffAddOnLoad(function() {
 	var pn = getPersNameBattle();
 	if(!pn) {
 		pn = getPersName();
@@ -37,4 +37,4 @@ function getPersNameBattle() {
 	if(pn) {
 		top.setPersName(pn);
 	}
-})();
+});

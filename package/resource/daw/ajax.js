@@ -10,8 +10,8 @@ function fireAjaxHandlers() {
 	}
 }
 
-(function() {
+ffAddOnLoad(function() {
 	if(window.Sys && window.Sys.WebForms) {
 		Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(fireAjaxHandlers);
 	}
-})();
+});

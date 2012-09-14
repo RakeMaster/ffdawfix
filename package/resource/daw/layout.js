@@ -11,7 +11,13 @@ function setTitle(name) {
 	document.getElementsByTagName("title")[0].innerHTML = name;
 }
 
-(function() {
+ffAddOnLoad(function() {
+	window.originalAddAMsg = AddAMsg;
+	window.AddAMsg = function(txt) {
+		alert("MESSAGE: " + txt);
+		return originalAddAMsg(txt);
+	}
+	
 	var mf = document.getElementById('MasterFrameset');
 	if(mf) {
 		mf.style.borderColor = 'black';
@@ -41,4 +47,4 @@ function setTitle(name) {
 		str = str.replace(/if \(cmd\.soundUrl\)/,"if (cmd.soundUrl) {top.window.play_sound(cmd.soundUrl);} else if(false) ");
 		eval("window.RetrieveData = " + str);
 	}
-})();
+});

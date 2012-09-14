@@ -1,6 +1,90 @@
 // Contains HTML text replace logic
 
 ru.dclan.ffdawfix.replace = {};
+
+ru.dclan.ffdawfix.replace.StringReplacer = function(src, dst) {
+	this.src = src;
+	this.dst = dst;
+}
+
+ru.dclan.ffdawfix.replace.StringReplacer.prototype = {
+		run: function(txt) {
+			return txt.replace(this.src, this.dst);
+		},
+}
+
+//Copy response listener implementation.
+ru.dclan.ffdawfix.replace.Replacer = function(url) {
+	this.url = url;
+	this.replacers = [];
+	this.includes = [];
+	this.isEmpty = false;
+}
+
+ru.dclan.ffdawfix.replace.Replacer.prototype = {
+	emptify: function() {
+		this.isEmpty = true;
+	},
+	addReplacer: function( f ) {
+		this.replacers[ this.replacers.length ] = f;
+	},
+	addReplace: function( from, to ) {
+		this.addReplacer ( new ru.dclan.ffdawfix.replace.StringReplacer(from, to) );
+	},
+	needReplace: function() {
+		return this.isEmpty || (this.replacers.length > 0) || (this.includes.length > 0);
+	},
+	checkFlag: function( flag ) {
+		return ru.dclan.ffdawfix.utils.getBool( flag );
+	},
+	checkLocation: function( loc ) {
+		return ru.dclan.ffdawfix.utils.checkLocation( this.url, loc );
+	},
+	replace: function(txt) {
+		if(this.isEmpty) return "";
+		for(var i = 0; i < this.replacers.length; ++i) {
+			var cur = this.replacers[i];
+			try {
+				if(cur.run) {
+					txt = cur.run(txt);
+				} else {
+					txt = cur(txt);
+				}
+			} catch(e) {
+				alert( "Exception while executing replacer: " + e + "\n" );
+			}
+		}
+		if(this.includes.length > 0) {
+			var incs = this.includes.join('');
+			var rep = new ru.dclan.ffdawfix.replace.StringReplacer("</head>", incs + "</head>");
+			txt = rep.run(txt);
+		}
+		return txt;
+	}
+	,addToHead: function( str ) {
+		this.includes[this.includes.length] = str;
+	},
+	addCSS : function( name ) {
+		var src = 'resource://ffdawfix/' + name;
+		this.addToHead( '<link rel="stylesheet" type="text/css" href="' + src + '" />' );
+	},
+	addJS : function( name ) {
+		var src = 'resource://ffdawfix/' + name;
+		this.addToHead( '<script type="text/javascript" src="' + src + '"></script>' );
+	},
+	addJSText : function( text ) {
+		this.addToHead( '<script type="text/javascript"><!-- ' + text+ ' --></script>' );
+	},
+	addPrefs: function( prefs ) {
+		var utils = ru.dclan.ffdawfix.utils;
+		var prefsJS = "var ffdawfix = {};\nffdawfix.prefs={};\n";
+		for(var i in prefs) {
+			prefsJS += "ffdawfix.prefs." + i + "=" + prefs[i] + ";\n";
+		}
+		this.addJSText( prefsJS );
+	},
+}
+
 ru.dclan.ffdawfix.replace.observer = {
 	rlist: [],
 	observe: function(subject, topic, data) {
@@ -22,16 +106,13 @@ ru.dclan.ffdawfix.replace.observer = {
 		if(url.search("http://darkagesworld.com/") != 0 && url.search("http://smuta.com/") != 0) return;
 		// Do not corrupt jquery
 		if(url.search("jquery") != -1) return;
-		var lst = [];
+		var replacer = new ru.dclan.ffdawfix.replace.Replacer(url);
 		for(var i = 0; i < this.rlist.length; ++i) {
-			var checker = this.rlist[i].check;
-			if(checker(url)) {
-				lst.push(this.rlist[i].replace);
-			}
+			this.rlist[i]( replacer );
 		}
-		if(lst.length > 0) {
+		if(replacer.needReplace()) {
 			var RL = ru.dclan.ffdawfix.ReplaceListener;
-			var newListener = new RL(lst);
+			var newListener = new RL( replacer );
 			subject.QueryInterface(Ci.nsITraceableChannel);
 			newListener.originalListener = subject.setNewListener(newListener);
 		}
@@ -48,19 +129,9 @@ ru.dclan.ffdawfix.replace.observer = {
 		this.observerService.addObserver(this, "http-on-examine-merged-response", false);
 		this.rlist = [];
 		var rs = ru.dclan.ffdawfix.replacers;
-		var errors = "";
 		for(var i in rs) {
-			var cur = rs[i];
-			if(!cur.check) {
-				errors += ( "ru.dclan.ffdawfix.replacers." + i + " have no check function!\n");
-				continue;
-			}
-			if(!cur.replace) {
-				errors += ( "ru.dclan.ffdawfix.replacers." + i + " have no replace function!\n");
-				continue;
-			}
 			ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.replacers." + i);
-			this.rlist.push(cur)
+			this.rlist.push( rs[i] )
 		}
 	},  
 

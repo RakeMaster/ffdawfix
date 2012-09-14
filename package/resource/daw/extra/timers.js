@@ -72,7 +72,7 @@ function injectAndStartTimers() {
 	startTimers();
 }
 
-(function() {
+ffAddOnLoad(function() {
 	injectAndStartTimers();
 	addAjaxHandler(injectAndStartTimers);
-})();
+});

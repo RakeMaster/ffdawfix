@@ -1,13 +1,5 @@
-ru.dclan.ffdawfix.replacers.altMenu = {
-	check: function(url) {
-		var r = (
-				ru.dclan.ffdawfix.utils.getBool("altMenu") 
-				&&
-			(url.search("http://darkagesworld.com/vr/scripts/fighter.js") == 0)
-		);
-		return r;
-	},
-	replace: function(text) {
-		return ""; // Just empty
-	}
-};
+ru.dclan.ffdawfix.replacers.altMenu = function( f ) {
+	var r = f.checkFlag( "altMenu" ) && f.checkLocation( "/vr/scripts/fighter.js" );
+	if(!r) return;
+	f.emptify();
+}

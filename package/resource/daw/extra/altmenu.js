@@ -57,7 +57,7 @@ function altMenuInvert() {
 	altMenuCurrent();
 }
 
-(function() {
+ffAddOnLoad(function() {
 	var ref = document.getElementById( "menu_ref" );
 	if(!ref) return;
 	var menu = document.getElementById( "div_menu" );
@@ -84,4 +84,4 @@ function altMenuInvert() {
 	
 	var div_win = document.getElementById( "div_win" );
 	div_win.style.zIndex = 1;
-})();
+});

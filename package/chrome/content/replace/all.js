@@ -1,19 +1,17 @@
-ru.dclan.ffdawfix.replacers.all = {
-	check: function(url) {
-		return (
-			url.search(".js") != -1
-			||
-			url.search(".htm") != -1
-			||
-			url.search(".aspx") == url.length - 5
-		);
-	},
-	replace: function(text) {
-		text = text.replace( /\.innerText/g, '.textContent');
-
-		//text = text.replace( /document\s*\.\s*all/g, 'document.getElementById');
-		text = text.replace( /.\s*all\(/g, '.getElementById(');
-		text = text.replace( /document[\s]*[\.][\s]*frames/g, 'window.frames');
-		return text;
+ru.dclan.ffdawfix.replacers.all = function( f ) {
+	var r = (
+		f.url.search(".js") != -1
+		||
+		f.url.search(".htm") != -1
+		||
+		f.url.search(".aspx") == f.url.length - 5
+	);
+	if(!r) return;
+	f.addReplace( /\.innerText/g, '.textContent');
+	f.addReplace( /.\s*all\(/g, '.getElementById(');
+	f.addReplace( /document[\s]*[\.][\s]*frames/g, 'window.frames');
+	f.addJS( "all.js" );
+	if( f.checkLocation("http://smuta.com") ) {
+		f.addJS( "smuta.js" );
 	}
-};
+}

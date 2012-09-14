@@ -1,29 +1,24 @@
-ru.dclan.ffdawfix.replacers.css = {
-	check: function(url) {
-		return (
-			url.search(".css") != -1
-			||
-			url.search(".htm") != -1
-			||
-			url.search(".aspx") == url.length - 5
-		);
-	},
-	replace: function(text) {
-		var helper = function(t, name) {
-			t = t.replace( new RegExp("scrollbar-" + name + "-color[^;]+;", 'gi'), '');
-			return t;
-		}
-
-		text = text.replace( /cursor:\s*hand/gi, 'cursor: pointer');
-
-		text = helper(text, 'face');
-		text = helper(text, 'highlight');
-		text = helper(text, 'shadow');
-		text = helper(text, 'arrow');
-		text = helper(text, 'track');
-		text = helper(text, 'darkshadow');
-		text = helper(text, 'base');
-		
-		return text;
+ru.dclan.ffdawfix.replacers.css = function( f ) {
+	var r = (
+		f.url.search(".css") != -1
+		||
+		f.url.search(".htm") != -1
+		||
+		f.url.search(".aspx") == f.url.length - 5
+	);
+	if( !r ) return;
+	
+	var helper = function(t, name) {
+		t.addReplace( new RegExp("scrollbar-" + name + "-color[^;]+;", 'gi'), '');
 	}
-};
+
+	f.addReplace( /cursor:\s*hand/gi, 'cursor: pointer');
+
+	helper(f, 'face');
+	helper(f, 'highlight');
+	helper(f, 'shadow');
+	helper(f, 'arrow');
+	helper(f, 'track');
+	helper(f, 'darkshadow');
+	helper(f, 'base');
+}

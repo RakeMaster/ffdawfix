@@ -10,7 +10,7 @@ function fireUpdateRoomHandlers() {
 	}
 }
 
-(function() {
+ffAddOnLoad(function() {
 	var menu_ref = document.getElementById('menu_ref');
 	if(menu_ref) {
 		var div_rmenu = document.getElementById('div_rmenu');
@@ -37,4 +37,4 @@ function fireUpdateRoomHandlers() {
 	injectTag("body", function(node) {
 		node.style.height = null;
 	});
-})();
+});

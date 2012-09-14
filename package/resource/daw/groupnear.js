@@ -1,4 +1,4 @@
-(function() {
+ffAddOnLoad(function() {
 	var headNode = false;
 	injectTag("tr",function(node) {
 		var cur = node.getElementsByTagName("td")[0];
@@ -18,4 +18,4 @@
 			cur.appendChild(e);
 		}
 	});
-})();
+});
