@@ -20,6 +20,6 @@ testReplace: function() {
 	this.assert( !r.needReplace() );
 	r.addJSText("alert('hello!');");
 	this.assert( r.needReplace() );
-	this.assertEquals( r.replace("<head></head>"), '<head><script type="text/javascript"><!-- alert(\'hello!\'); --></script></head>');
+	this.assertEquals( r.replace("<head></head>"), '<head><script type="text/javascript"><!--\nalert(\'hello!\');\n--></script></head>');
 }
 });

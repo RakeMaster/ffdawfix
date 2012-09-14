@@ -15,7 +15,7 @@ ru.dclan.ffdawfix.replace.StringReplacer.prototype = {
 
 //Copy response listener implementation.
 ru.dclan.ffdawfix.replace.Replacer = function(url) {
-	this.url = url;
+	this.url = ru.dclan.ffdawfix.utils.trimLocation(url);
 	this.replacers = [];
 	this.includes = [];
 	this.isEmpty = false;
@@ -103,7 +103,11 @@ ru.dclan.ffdawfix.replace.observer = {
 		//important to have next line before trying to access subject.URI
 		var httpChannel = subject.QueryInterface(Components.interfaces.nsIHttpChannel);
 		var url = subject.URI.spec.toLowerCase();
-		if(url.search("http://darkagesworld.com/") != 0 && url.search("http://smuta.com/") != 0) return;
+		if(
+			url.search("http://darkagesworld.com/") != 0
+			&& url.search"http://[a-z0-9A-Z]+.darkagesworld.com/") != 0
+			&& url.search("http://smuta.com/") != 0
+		) return;
 		// Do not corrupt jquery
 		if(url.search("jquery") != -1) return;
 		var replacer = new ru.dclan.ffdawfix.replace.Replacer(url);

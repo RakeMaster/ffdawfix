@@ -1,10 +1,10 @@
 ru.dclan.ffdawfix.replacers.css = function( f ) {
 	var r = (
-		f.url.search(".css") != -1
+		f.checkLocation(".css")
 		||
-		f.url.search(".htm") != -1
+		f.checkLocation(".htm")
 		||
-		f.url.search(".aspx") == f.url.length - 5
+		f.checkLocation(".aspx")
 	);
 	if( !r ) return;
 	

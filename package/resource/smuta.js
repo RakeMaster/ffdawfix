@@ -1,3 +1,12 @@
+//TODO: refactor
+function injectCSSText(txt) {
+	var doc = document;
+	var style = doc.createElement('style');
+	style.setAttribute('type', 'text/css');
+	style.textContent = txt;
+	doc.getElementsByTagName('head')[0].appendChild(style);
+}
+
 ffAddOnLoad(function() {
 	if(window.panelClick)
 	window.panelClick = function(ctrl) {

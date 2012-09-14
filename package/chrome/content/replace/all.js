@@ -1,10 +1,10 @@
 ru.dclan.ffdawfix.replacers.all = function( f ) {
 	var r = (
-		f.url.search(".js") != -1
+		f.checkLocation(".js")
 		||
-		f.url.search(".htm") != -1
+		f.checkLocation(".htm")
 		||
-		f.url.search(".aspx") != -1
+		f.checkLocation((".aspx")
 	);
 	if(!r) return;
 	f.addReplace( /\.innerText/g, '.textContent');

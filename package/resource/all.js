@@ -76,13 +76,6 @@ function updateTimers() {
 	startTimers();
 }
 //end of timers
-function injectCSSText(txt) {
-	var doc = document;
-	var style = doc.createElement('style');
-	style.setAttribute('type', 'text/css');
-	style.textContent = txt;
-	doc.getElementsByTagName('head')[0].appendChild(style);
-}
 
 function multiIdEnum(id) {
 	var i = document.getElementById(id);
