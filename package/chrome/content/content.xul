@@ -5,7 +5,6 @@
 	<script src="chrome://ffdawfix/content/core/utils.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/replace_listener.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/replacers.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/core/onload.js" type="application/x-javascript" />
 <!-- REPLACE section -->
 	<script src="chrome://ffdawfix/content/replace/smiles.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
