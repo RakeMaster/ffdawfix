@@ -4,7 +4,7 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		||
 		f.checkLocation(".htm")
 		||
-		f.checkLocation((".aspx")
+		f.checkLocation(".aspx")
 	);
 	if(!r) return;
 	f.addReplace( /\.innerText/g, '.textContent');

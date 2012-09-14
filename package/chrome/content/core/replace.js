@@ -105,7 +105,7 @@ ru.dclan.ffdawfix.replace.observer = {
 		var url = subject.URI.spec.toLowerCase();
 		if(
 			url.search("http://darkagesworld.com/") != 0
-			&& url.search"http://[a-z0-9A-Z]+.darkagesworld.com/") != 0
+			&& url.search("http://[a-z0-9A-Z]+.darkagesworld.com/") != 0
 			&& url.search("http://smuta.com/") != 0
 		) return;
 		// Do not corrupt jquery
