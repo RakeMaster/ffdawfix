@@ -37,7 +37,7 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 		this.originalListener.onStartRequest(request, context);
 	},
 
-	onStopRequest: function(request, context, statusCode) {
+	onStopRequest: function(request, context, statusCode, multi) {
 		var original = this.receivedData.join('');
 		var changed = this.replacer.replace( original );
 		var count = changed.length;
@@ -63,8 +63,7 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 				}
 			}
 		}
-
-		this.originalListener.onStopRequest(request, context, statusCode);
+		this.originalListener.onStopRequest(request, context, statusCode, true);
 	},
 
 	QueryInterface: function (aIID) {

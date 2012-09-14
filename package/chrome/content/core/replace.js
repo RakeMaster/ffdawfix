@@ -8,22 +8,37 @@ ru.dclan.ffdawfix.replace.StringReplacer = function(src, dst) {
 }
 
 ru.dclan.ffdawfix.replace.StringReplacer.prototype = {
-		run: function(txt) {
+		run: function(txt,i) {
+			if(i) {
+				ru.dclan.ffdawfix.utils.log( i + ": " + this.src +" to "+ this.dst );
+			}
 			return txt.replace(this.src, this.dst);
+		}
+}
+
+ru.dclan.ffdawfix.replace.Logger = function(prefix) {
+	this.prefix = prefix;
+}
+
+ru.dclan.ffdawfix.replace.Logger.prototype = {
+		run: function(txt) {
+			ru.dclan.ffdawfix.utils.log( this.prefix + txt);
+			return txt;
 		},
 }
 
 //Copy response listener implementation.
 ru.dclan.ffdawfix.replace.Replacer = function(url) {
-	this.url = ru.dclan.ffdawfix.utils.trimLocation(url);
+	this.url = url?ru.dclan.ffdawfix.utils.trimLocation(url):"";
 	this.replacers = [];
 	this.includes = [];
-	this.isEmpty = false;
+	this.newContent = null;
+	this.called = false;
 }
 
 ru.dclan.ffdawfix.replace.Replacer.prototype = {
-	emptify: function() {
-		this.isEmpty = true;
+	replaceContent: function(txt) {
+		this.newContent = txt;
 	},
 	addReplacer: function( f ) {
 		this.replacers[ this.replacers.length ] = f;
@@ -32,7 +47,7 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 		this.addReplacer ( new ru.dclan.ffdawfix.replace.StringReplacer(from, to) );
 	},
 	needReplace: function() {
-		return this.isEmpty || (this.replacers.length > 0) || (this.includes.length > 0);
+		return this.newContent || (this.replacers.length > 0) || (this.includes.length > 0);
 	},
 	checkFlag: function( flag, def ) {
 		return ru.dclan.ffdawfix.utils.getBool( flag, def );
@@ -41,12 +56,19 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 		return ru.dclan.ffdawfix.utils.checkLocation( this.url, loc );
 	},
 	replace: function(txt) {
-		if(this.isEmpty) return "";
+		if(this.called) alert("Replacer multicall");
+		if(this.newContent) {
+			return this.newContent;
+		}
 		for(var i = 0; i < this.replacers.length; ++i) {
 			var cur = this.replacers[i];
 			try {
 				if(cur.run) {
-					txt = cur.run(txt);
+					var index = null
+					if(this.url.search("layout") != -1) {
+						index = i;
+					}
+					txt = cur.run(txt, i);
 				} else {
 					txt = cur(txt);
 				}
@@ -91,8 +113,8 @@ ru.dclan.ffdawfix.replace.observer = {
 		var cached = true;
 		if (
 				topic == "http-on-examine-response"
-				||
-				topic == "http-on-examine-merged-response"
+//				||
+//				topic == "http-on-examine-merged-response"
 		) {
 			cached = false;
 		} else if( topic == "http-on-examine-cached-response" ) {
@@ -109,7 +131,10 @@ ru.dclan.ffdawfix.replace.observer = {
 			&& url.search("http://smuta.com/") != 0
 		) return;
 		// Do not corrupt jquery
-		if(url.search("jquery") != -1) return;
+		if(url.search("jquery") != -1) {
+			return;
+		}
+		ru.dclan.ffdawfix.utils.log( "topic" + topic );
 		var replacer = new ru.dclan.ffdawfix.replace.Replacer(url);
 		for(var i = 0; i < this.rlist.length; ++i) {
 			this.rlist[i]( replacer );

@@ -11,13 +11,12 @@ function setTitle(name) {
 	document.getElementsByTagName("title")[0].innerHTML = name;
 }
 
+function ffReplaceMessage(msg) {
+	msg = msg.replace(/(http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+)/gi, '<a href="$1" style="color: blue" target="_blank">$1</a>');
+	return msg;
+}
+
 ffAddOnLoad(function() {
-	window.originalAddAMsg = AddAMsg;
-	window.AddAMsg = function(txt) {
-		alert("MESSAGE: " + txt);
-		return originalAddAMsg(txt);
-	}
-	
 	var mf = document.getElementById('MasterFrameset');
 	if(mf) {
 		mf.style.borderColor = 'black';

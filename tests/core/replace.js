@@ -21,5 +21,11 @@ testReplace: function() {
 	r.addJSText("alert('hello!');");
 	this.assert( r.needReplace() );
 	this.assertEquals( r.replace("<head></head>"), '<head><script type="text/javascript"><!--\nalert(\'hello!\');\n--></script></head>');
+	
+	r = new ru.dclan.ffdawfix.replace.Replacer("TheUrl");
+	this.assert( !r.needReplace() );
+	r.addReplace("hello", "hello.world");
+	this.assert( r.needReplace() );
+	this.assertEquals( r.replace("hello"), 'hello.world');
 }
 });
