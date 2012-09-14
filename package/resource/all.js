@@ -2,29 +2,6 @@
 var timers = new Array();
 var timersTimeout = null;
 
-var ffOnLoadList = new Array();
-var ffLoaded = false;
-
-function ffAddOnLoad(f) {
-	if(ffLoaded) {
-		alert("onLoad already called");
-		f();
-	} else {
-		ffOnLoadList[ffOnLoadList.length] = f;
-	}
-}
-
-function ffOnLoad() {
-	if( !ffLoaded ) {
-		for(var i=0; i < ffOnLoadList.length; ++i) {
-			ffOnLoadList[i]();
-		}
-		ffLoaded = true;
-	}
-}
-
-window.addEventListener('load', function() ffOnLoad(), false);
-
 function trim(str) {
 	return str.replace(/^\s*([\S\s]*?)\s*$/, '$1');
 }

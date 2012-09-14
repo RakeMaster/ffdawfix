@@ -4,7 +4,7 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		||
 		f.url.search(".htm") != -1
 		||
-		f.url.search(".aspx") == f.url.length - 5
+		f.url.search(".aspx") != -1
 	);
 	if(!r) return;
 	f.addReplace( /\.innerText/g, '.textContent');

@@ -15,7 +15,6 @@ function fixLists() {
 
 function renewImage() {
 	//ctl00_PageContent_imgReg
-	//alert("Called");
 	var i = document.getElementById("ctl00_PageContent_imgReg");
 	if(i) {
 		var src = i.src;//"/vr/common/imgcache.aspx"
@@ -24,7 +23,6 @@ function renewImage() {
 		if(!match) return;
 		var now = (new Date()).getTime();
 		src = match[1]+"?"+now;
-		//alert(src);
 		i.src = src;		
 	}
 }

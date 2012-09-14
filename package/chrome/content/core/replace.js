@@ -34,8 +34,8 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	needReplace: function() {
 		return this.isEmpty || (this.replacers.length > 0) || (this.includes.length > 0);
 	},
-	checkFlag: function( flag ) {
-		return ru.dclan.ffdawfix.utils.getBool( flag );
+	checkFlag: function( flag, def ) {
+		return ru.dclan.ffdawfix.utils.getBool( flag, def );
 	},
 	checkLocation: function( loc ) {
 		return ru.dclan.ffdawfix.utils.checkLocation( this.url, loc );
@@ -73,7 +73,7 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 		this.addToHead( '<script type="text/javascript" src="' + src + '"></script>' );
 	},
 	addJSText : function( text ) {
-		this.addToHead( '<script type="text/javascript"><!-- ' + text+ ' --></script>' );
+		this.addToHead( '<script type="text/javascript"><!--\n' + text+ '\n--></script>' );
 	},
 	addPrefs: function( prefs ) {
 		var utils = ru.dclan.ffdawfix.utils;

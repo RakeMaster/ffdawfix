@@ -8,10 +8,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	var stats = f.checkFlag( "stats" );
 	if( f.checkLocation( "/vr/common/FighterInfo.aspx" ) ) {
 		var prefs = {};
-		prefs.ringsFix = utils.getBool( "ringsFix", true);
-		prefs.giftsFix = utils.getBool( "giftsFix", true);
-		utils.injectPrefs(doc, prefs);
-		d.addJS( "daw/extra/info.js" );
+		prefs.ringsFix = f.checkFlag( "ringsFix", true );
+		prefs.giftsFix = f.checkFlag( "giftsFix", true );
+		f.addPrefs( prefs );
+		f.addJS( "daw/extra/info.js" );
 		if( f.checkFlag(stats) ) {
 			f.addJS( "daw/extra/stats.js" );
 		}
@@ -19,17 +19,17 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	}
 	if( f.checkLocation( "/vr/battle/battle.aspx" ) ) {
 		var prefs = {};
-		prefs.battleLinks   = utils.getBool( "battleLinks");
-		prefs.battleCounter = utils.getBool( "battleCounter");
-		prefs.battleHealth  = utils.getBool( "battleHealth");
-		prefs.battleSmall   = utils.getBool( "battleSmall");
+		prefs.battleLinks   = f.checkFlag( "battleLinks");
+		prefs.battleCounter = f.checkFlag( "battleCounter");
+		prefs.battleHealth  = f.checkFlag( "battleHealth");
+		prefs.battleSmall   = f.checkFlag( "battleSmall");
 		f.addPrefs( prefs );
 		if( f.checkFlag( "title" ) ) {
 			f.addJS( "daw/extra/title.js" );
 		}
 		f.addJS( "daw/battle.js" );
 		if( f.checkFlag( "dice" ) ) {
-			faddJS( "daw/extra/dice.js" );
+			f.addJS( "daw/extra/dice.js" );
 		}
 		if(stats) {
 			f.addJS( "daw/extra/stats.js" );

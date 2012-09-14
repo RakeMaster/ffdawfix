@@ -6,9 +6,10 @@
 	<script src="chrome://ffdawfix/content/core/replace_listener.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/replacers.js" type="application/x-javascript" />
 <!-- REPLACE section -->
+	<script src="chrome://ffdawfix/content/replace/onload.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/smiles.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/css.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/inject.js" type="application/x-javascript" />
 	
