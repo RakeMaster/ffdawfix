@@ -40,6 +40,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/groupnear.js" );
 		return;
 	}
+	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {
+		f.addJS( "daw/PMsgs.js" );
+		return;
+	}
 	if( f.checkLocation( "/vr/Places/" ) ) {
 		if( f.checkFlag( "title" ) ) {
 			f.addJS( "daw/extra/title.js" );
