@@ -78,7 +78,7 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 		}
 		if(this.includes.length > 0) {
 			var incs = this.includes.join('');
-			var rep = new ru.dclan.ffdawfix.replace.StringReplacer("</head>", incs + "</head>");
+			var rep = new ru.dclan.ffdawfix.replace.StringReplacer("</head>", incs + "</head >");
 			txt = rep.run(txt);
 		}
 		return txt;
@@ -113,8 +113,8 @@ ru.dclan.ffdawfix.replace.observer = {
 		var cached = true;
 		if (
 				topic == "http-on-examine-response"
-//				||
-//				topic == "http-on-examine-merged-response"
+				||
+				topic == "http-on-examine-merged-response"
 		) {
 			cached = false;
 		} else if( topic == "http-on-examine-cached-response" ) {
