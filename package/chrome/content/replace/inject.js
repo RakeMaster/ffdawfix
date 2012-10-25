@@ -41,7 +41,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		return;
 	}
 	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {
-		f.addJS( "daw/pmsgs.js" );
+		f.addJS( "daw/PMsgs.js" );
 		return;
 	}
 	if( f.checkLocation( "/vr/Places/" ) ) {
