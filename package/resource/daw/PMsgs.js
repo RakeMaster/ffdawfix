@@ -1,11 +1,11 @@
-﻿ffAddOnLoad(function() {
+ffAddOnLoad(function() {
 	var mlist = document.getElementById('pnlMsgList');
 	if(!mlist){return;}
 	var tds = mlist.getElementsByTagName('td');
 
 	for(i=4;i<tds.length;i=i+3){
 		var name = tds[i].textContent.substring(0,tds[i].textContent.indexOf(':')).replace("От","").trim();
-		if(name!="" && name.search("Вам выдано")==-1){
+		if(name!="" && name!="Письмо гласит" && name.search("Вам выдано")==-1){
 			tds[i].innerHTML=tds[i].textContent.replace(name,'<a target="_blank" href='+createPersLinkWithText(name)+'>'+name+'</a><img src="resource://ffdawfix/img/reply.gif">');
 		}
 	}
