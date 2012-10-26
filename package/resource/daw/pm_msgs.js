@@ -1,4 +1,4 @@
-ffAddOnLoad(function() {
+﻿ffAddOnLoad(function() {
 	var mlist = document.getElementById('pnlMsgList');
 	if(!mlist){return;}
 	var tds = mlist.getElementsByTagName('td');
