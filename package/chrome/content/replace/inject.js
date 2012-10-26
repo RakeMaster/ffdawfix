@@ -41,7 +41,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		return;
 	}
 	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {
-		f.addJS( "daw/PMsgs.js" );
+		f.addJS( "daw/pm_msgs.js" );
 		return;
 	}
 	if( f.checkLocation( "/vr/Places/" ) ) {
@@ -85,8 +85,8 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		return;
 	}
 	if(  f.checkLocation( "/vr/Menus/BackPack.aspx" ) ) {
-		if( f.checkFlag( "itemStats" ) ){
-		f.addJS( "daw/extra/itemstats.js" );
+		if( f.checkFlag( "itemStats" ) ) {
+			f.addJS( "daw/extra/itemstats.js" );
 		}
 		f.addJS( "daw/gifts.js" );
 		return;
