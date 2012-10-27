@@ -1,4 +1,4 @@
-function fixImageMag(node) {
+﻿function fixImageMag(node) {
 	if(node.title) return;
 	var txt = node.src;
 	var regex = /voc([1-6])sm/;
@@ -16,6 +16,18 @@ function fixImageMag(node) {
 	case 6: name = "Природа"; break;
 	}
 	node.title = "Склонность: " + name;
+}
+
+function createLinks() {
+	var a = document.getElementsByTagName('span');
+	for(i=0;i<a.length;i++) {
+		if(a[i].id=="lbName") {
+			var s = a[i].children[0];
+			var n = s.textContent;
+			s.innerHTML="";
+			s.appendChild(createPersLinkWithText(n));
+		}
+	}	
 }
 
 function injectBattlePlayerNode(node, enemy) {
@@ -250,5 +262,7 @@ ffAddOnLoad(function() {
 	for(var i = 0;i < 4; ++i) {
 		setCheck("cblDefence_" + i);
 	}
+
 	SetAttackType();
+	createLinks();
 });

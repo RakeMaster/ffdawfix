@@ -12,7 +12,7 @@ function setTitle(name) {
 }
 
 function ffReplaceMessage(msg) {
-	msg = msg.replace(/(http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+)/gi, '<a href="$1" style="color: blue" target="_blank">$1</a>');
+	msg = msg.replace(/http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+(?:&amp;page=\d+)?/gi, '<a href="$&" target="_blank" style="color:blue;">$&</a>');
 	return msg;
 }
 
