@@ -19,15 +19,18 @@
 }
 
 function createLinks() {
-	var a = document.getElementsByTagName('span');
-	for(i=0;i<a.length;i++) {
-		if(a[i].id=="lbName") {
-			var s = a[i].children[0];
-			var n = s.textContent;
-			s.innerHTML="";
-			s.appendChild(createPersLinkWithText(n));
+	injectTag("span",function(node) {
+		if(node.id=="lbName"){
+			var cur = node.getElementsByTagName("b")[0];
 		}
-	}	
+		if(cur) {
+			var nick = cur.textContent;
+			var e = createPersLinkWithText(nick);
+			cur.innerHTML = "";
+			cur.appendChild(e);
+		}
+	});
+	
 }
 
 function injectBattlePlayerNode(node, enemy) {
