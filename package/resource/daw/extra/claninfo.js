@@ -24,8 +24,9 @@ function countFreeSpaces(cnt){
 	return cnt;
 }
 
-
 ffAddOnLoad(function(){
+	var table = document.getElementById('Table10');
+	if(!table) return;
 	var s = document.createElement('span');
 	s.innerHTML="<b>Количество игроков:</b> "+countAll()+"<br>"+"<b>Онлайн: </b>"+countOnline()+"<br>"+"<b>Оффлайн: </b>"+countOffline()+"<br>"+"<b>Свободных мест: </b>"+countFreeSpaces();
 	s.style.position="absolute";
