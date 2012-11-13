@@ -17,6 +17,7 @@
 			<preference name="ru.dclan.ffdawfix.dice" id="dice" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.title" id="title" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.clanInfo" id="clanInfo" type="bool"/>
 		</preferences>
 		<hbox align="center">
 			<groupbox flex="1">
@@ -25,6 +26,7 @@
 				<checkbox preference="chatList" label="Список чата (компактнее)"/>
 				<checkbox preference="title" label="Имя персонажа в заголовке"/>
 				<checkbox preference="altMenu" label="Алтернативное меню"/>
+				<checkbox preference="clanInfo" label="Статистика клана"/>
 			</groupbox>
 		</hbox>
 	</prefpane>
