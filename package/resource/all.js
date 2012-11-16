@@ -4,9 +4,11 @@ var timersTimeout = null;
 
 window.getTop = function() {
 	if(!window.topFramePointer) {
-		var tmp = window.parent;
-		while(tmp) {
-			var p = tmp.window.topFramePointer;
+		var tmp = window;
+		while(1) {
+			if(tmp == tmp.parent) break;
+			tmp = tmp.parent;
+			var p = tmp.topFramePointer;
 			if(p) {
 				window.topFramePointer = p;
 				break;
