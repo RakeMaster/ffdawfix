@@ -23,7 +23,7 @@ function altMenuShow() {
 	var menu = document.getElementById( "div_menu" );
 	if(!menu) return;
 	getTop().altMenuFlag = true;
-	
+
 	// menu.innerHTML = getTop().MenuStr.replace( /MenuLnk/g, "FFMenuLnk");
 	menu.innerHTML = getTop().MenuStr;
 	
