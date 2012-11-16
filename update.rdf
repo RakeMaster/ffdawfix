@@ -11,7 +11,7 @@
 								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 								<em:minVersion>3.0</em:minVersion>
 								<em:maxVersion>99.*</em:maxVersion>
-								<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_3_5.xpi</em:updateLink>
+								<em:updateLink>https://github.com/downloads/RakeMaster/ffdawfix/ffdawfix_0_3_6.xpi</em:updateLink>
 								<em:updateHash>sha256:eeb624fcc5c5397b11d2e77f125cb973fc6be8b8df54ccf5a124ba2e873d34df</em:updateHash>
 							</RDF:Description>
 						</em:targetApplication>
