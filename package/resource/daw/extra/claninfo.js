@@ -19,8 +19,12 @@ function countOnline(cnt){
 	return cnt;
 }
 
+function getMaxClanPlayerCount() {
+	return 90;
+}
+
 function countFreeSpaces(cnt){
-	cnt = 80-countAll();
+	cnt = getMaxClanPlayerCount()-countAll();
 	return cnt;
 }
 
