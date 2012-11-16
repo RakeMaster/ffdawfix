@@ -32,7 +32,7 @@ ffAddOnLoad(function(){
 	var table = document.getElementById('Table10');
 	if(!table) return;
 	var s = document.createElement('span');
-	s.innerHTML="<b>Количество игроков:</b> "+countAll()+"<br>"+"<b>Онлайн: </b>"+countOnline()+"<br>"+"<b>Оффлайн: </b>"+countOffline()+"<br>"+"<b>Свободных мест: </b>"+countFreeSpaces();
+	s.innerHTML="<b style='color:green;'>Онлайн: </b>"+countOnline()+"/"+countAll()+"<br>"+"<b>Количество вакансий: </b>"+countFreeSpaces();
 	s.style.position="absolute";
 	s.style.top="15px";
 	s.style.right="0px";
