@@ -10,7 +10,7 @@ ru.dclan.ffdawfix.replacers.tripbutton = function( f ) {
 		+ '<a style="font-size: 20pt; color: red; font-weight: bold;" href="/vr/Places/Group.aspx?Create=1">'
 		+ u8("Поход")
 		+ '</a>'
-		+ '<span onclick="top.MenuLnk(window, 0);" style="text-decoration: underline; cursor: pointer; font-size: 20pt; color: white; font-weight: bold;">'
+		+ '<span onclick="getTop().MenuLnk(window, 0);" style="text-decoration: underline; cursor: pointer; font-size: 20pt; color: white; font-weight: bold;">'
 		+ u8("Карта")
 		+ '</span>'
 			);

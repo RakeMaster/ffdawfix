@@ -22,10 +22,10 @@ function altMenuShow() {
 	if(!ref) return;
 	var menu = document.getElementById( "div_menu" );
 	if(!menu) return;
-	top.altMenuFlag = true;
+	getTop().altMenuFlag = true;
 	
-	// menu.innerHTML = top.MenuStr.replace( /MenuLnk/g, "FFMenuLnk");
-	menu.innerHTML = top.MenuStr;
+	// menu.innerHTML = getTop().MenuStr.replace( /MenuLnk/g, "FFMenuLnk");
+	menu.innerHTML = getTop().MenuStr;
 	
 	menu.style.position = "absolute";
 
@@ -38,12 +38,12 @@ function altMenuShow() {
 
 function altMenuHide() {
 	var menu = document.getElementById( "div_menu" );
-	top.altMenuFlag = false;
+	getTop().altMenuFlag = false;
 	menu.style.display = "none";
 }
 
 function altMenuCurrent() {
-	var flag = (top.altMenuFlag == true);
+	var flag = (getTop().altMenuFlag == true);
 	if(flag) {
 		altMenuShow();
 	} else {
@@ -52,8 +52,8 @@ function altMenuCurrent() {
 }
 
 function altMenuInvert() {
-	var flag = (top.altMenuFlag == true);
-	top.altMenuFlag = !flag;
+	var flag = (getTop().altMenuFlag == true);
+	getTop().altMenuFlag = !flag;
 	altMenuCurrent();
 }
 
@@ -70,14 +70,14 @@ ffAddOnLoad(function() {
 	menu.onmouseout = null;
 	
 	// Install only once
-	if(!top.FFMenuLnk) {
-		top.FFMenuLnk = function(w, b) {
-			var r = top.MenuLnkOrig(w, b);
+	if(!getTop().FFMenuLnk) {
+		getTop().FFMenuLnk = function(w, b) {
+			var r = getTop().MenuLnkOrig(w, b);
 			w.altMenuCurrent();
 			return r;
 		}
-		top.MenuLnkOrig = top.MenuLnk;
-		top.MenuLnk = top.FFMenuLnk;
+		getTop().MenuLnkOrig = getTop().MenuLnk;
+		getTop().MenuLnk = getTop().FFMenuLnk;
 	}
 	
 	altMenuCurrent();

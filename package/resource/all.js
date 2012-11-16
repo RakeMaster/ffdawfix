@@ -2,6 +2,20 @@
 var timers = new Array();
 var timersTimeout = null;
 
+window.getTop = function() {
+	if(!window.topFramePointer) {
+		var tmp = window.parent;
+		while(tmp) {
+			var p = tmp.window.topFramePointer;
+			if(p) {
+				window.topFramePointer = p;
+				break;
+			}
+		}
+	}
+	return window.topFramePointer;
+}
+
 function trim(str) {
 	return str.replace(/^\s*([\S\s]*?)\s*$/, '$1');
 }

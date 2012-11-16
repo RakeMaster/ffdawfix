@@ -15,13 +15,13 @@ function play_sound(src) {
 }
 
 function get_sound_place() {
-	var doc = top.window.frames["chouter"].document;
+	var doc = getTop().window.frames["chouter"].document;
 	var s = doc.getElementById("sound_place");
 	return s;
 }
 
 function install_sound() {
-	var doc = top.window.frames["chouter"].document;
+	var doc = getTop().window.frames["chouter"].document;
 	var sp = null;
 	injectTag("body", function(node) {
 		sp = document.createElement("div");

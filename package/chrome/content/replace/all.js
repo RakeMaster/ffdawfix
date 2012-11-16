@@ -14,4 +14,6 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 	if( f.checkLocation("http://smuta.com") ) {
 		f.addJS( "smuta.js" );
 	}
+	
+	f.addReplace( /([^A-Za-z0-9_])top\./g, '$1getTop().');
 }

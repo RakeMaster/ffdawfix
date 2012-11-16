@@ -35,6 +35,6 @@ ffAddOnLoad(function() {
 		pn = getPersName();
 	}
 	if(pn) {
-		top.setPersName(pn);
+		getTop().setPersName(pn);
 	}
 });

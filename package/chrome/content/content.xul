@@ -7,14 +7,15 @@
 	<script src="chrome://ffdawfix/content/core/replacers.js" type="application/x-javascript" />
 <!-- REPLACE section -->
 	<script src="chrome://ffdawfix/content/replace/onload.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/smiles.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/css.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/inject.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/send_message.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/layout.js" type="application/x-javascript" />
-	
+	<script src="chrome://ffdawfix/content/replace/top.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
+
 	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />
 	

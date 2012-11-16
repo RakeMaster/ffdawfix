@@ -78,7 +78,7 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 		}
 		if(this.includes.length > 0) {
 			var incs = this.includes.join('');
-			var rep = new ru.dclan.ffdawfix.replace.StringReplacer("</head>", incs + "</head >");
+			var rep = new ru.dclan.ffdawfix.replace.StringReplacer("<head>", "<head >" + incs);
 			txt = rep.run(txt);
 		}
 		return txt;

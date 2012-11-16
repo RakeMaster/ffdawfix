@@ -170,7 +170,7 @@ function fixBattleGroups() {
 		var a = document.createElement("span");
 		a.style.cursor = "pointer";
 		a.style.textDecoration ="underline";
-		a.onclick = function() { top.addprcpt("Соратники"); };
+		a.onclick = function() { getTop().addprcpt("Соратники"); };
 		a.textContent = "Соратники";
 		friendNode.textContent = "";
 		friendNode.appendChild(a);
@@ -181,7 +181,7 @@ function fixBattleGroups() {
 		var a = document.createElement("span");
 		a.style.cursor = "pointer";
 		a.style.textDecoration ="underline";
-		a.onclick = function() { top.addprcpt("Противники"); };
+		a.onclick = function() { getTop().addprcpt("Противники"); };
 		a.textContent = "Противники";
 		enemyNode.textContent = "";
 		enemyNode.appendChild(a);

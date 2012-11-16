@@ -43,7 +43,7 @@ ffAddOnLoad(function() {
 
 	if(window.RetrieveData) {
 		var str = String(window.RetrieveData);
-		str = str.replace(/if \(cmd\.soundUrl\)/,"if (cmd.soundUrl) {top.window.play_sound(cmd.soundUrl);} else if(false) ");
+		str = str.replace(/if \(cmd\.soundUrl\)/,"if (cmd.soundUrl) {getTop().window.play_sound(cmd.soundUrl);} else if(false) ");
 		eval("window.RetrieveData = " + str);
 	}
 });
