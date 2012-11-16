@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ffdawfix" default="build">
 	<target name="build">
+		<mkdir dir="build"/>
 		<zip destfile="build/ffdawfix.xpi" basedir="package"/>
 	</target>
 	<target name="install" depends="build">
