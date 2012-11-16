@@ -104,4 +104,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/friends.js" );
 		return;
 	}
+	if( f.checkLocation( "/vr/Menus/Clan.aspx" ) ) {
+		if( f.checkFlag( "clanInfo" ) ) {
+			f.addJS( "daw/extra/claninfo.js" );
+		}
+		return;
+	}
 }
