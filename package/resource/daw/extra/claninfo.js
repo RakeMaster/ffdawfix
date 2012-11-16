@@ -1,5 +1,5 @@
 function countAll(cnt){
-	cnt = document.getElementById('Table10').getElementsByTagName('a').length/2;
+	cnt = document.getElementById('Table10').getElementsByTagName('img').length;
 	return cnt;
 }
 
@@ -20,7 +20,7 @@ function countOnline(cnt){
 }
 
 function getMaxClanPlayerCount() {
-	return 90;
+	return 80;
 }
 
 function countFreeSpaces(cnt){
