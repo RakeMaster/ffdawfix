@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <overlay id="ffdawfix" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<!-- MENU ITEM -->
+<script type="text/javascript">
+	function openPrefs(){
+		window.open('chrome://ffdawfix/content/preferences.xul','Preferences','toolbar=0')
+	}
+</script> 
+<menupopup id="menu_ToolsPopup">
+	<menuitem image="resource://ffdawfix/img/daw.gif" id="ffdawfixPrefs" label="Настройки" oncommand="openPrefs()" />
+</menupopup>
+
 <!-- CORE section -->
 	<script src="chrome://ffdawfix/content/core/namespace.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/core/utils.js" type="application/x-javascript" />
@@ -12,19 +22,19 @@
 	<script src="chrome://ffdawfix/content/replace/timespan.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/css.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/inject.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/send_message.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/layout.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/top.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/send_message.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/layout.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/top.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
 
-	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />
-	
+ 	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />
+
 <!-- EXTRA section -->
-	<script src="chrome://ffdawfix/content/replace/extra/tripbutton.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/extra/altmenu.js" type="application/x-javascript" />
-	<script src="chrome://ffdawfix/content/replace/extra/chatlist.js" type="application/x-javascript" />
-	
+ 	<script src="chrome://ffdawfix/content/replace/extra/tripbutton.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/extra/altmenu.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/replace/extra/chatlist.js" type="application/x-javascript" />
+
 <!-- REPLACE engine should be included the after all replacers -->
-	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
+ 	<script src="chrome://ffdawfix/content/core/replace.js" type="application/x-javascript" />
 </overlay>
