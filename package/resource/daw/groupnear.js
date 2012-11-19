@@ -1,14 +1,12 @@
 ffAddOnLoad(function() {
 	var headNode = false;
 	injectTag("tr",function(node) {
-		var n = node.children[0];
-		var txt = n.textContent.trim()
-		if(txt=="нет"){
-			return "delete";
-		} 
-		var cur = node.children[0];
-
+		var cur = node.getElementsByTagName('td');
 		if(cur) {
+			var txt = n.textContent.trim()
+			if(txt=="нет"){
+				return "delete";
+			} 
 			var nick = cur.textContent.trim()
 			if(nick == "Глава") {
 				headNode = true;
