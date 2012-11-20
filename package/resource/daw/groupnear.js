@@ -1,13 +1,13 @@
 ffAddOnLoad(function() {
 	var headNode = false;
 	injectTag("tr",function(node) {
-		var cur = node.getElementsByTagName('td');
+		var cur = node.getElementsByTagName('td')[0];
 		if(cur) {
-			var txt = n.textContent.trim()
-			if(txt=="нет"){
+			var nick = cur.textContent.trim();
+			/*if(nick=="нет"){
 				return "delete";
-			} 
-			var nick = cur.textContent.trim()
+			}
+			*/
 			if(nick == "Глава") {
 				headNode = true;
 				return;
