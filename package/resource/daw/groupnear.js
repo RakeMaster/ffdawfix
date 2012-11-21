@@ -1,9 +1,13 @@
 ffAddOnLoad(function() {
 	var headNode = false;
 	injectTag("tr",function(node) {
-		var cur = node.getElementsByTagName("td")[0];
+		var cur = node.getElementsByTagName('td')[0];
 		if(cur) {
-			var nick = trim(cur.textContent);
+			var nick = cur.textContent.trim();
+			/*if(nick=="нет"){
+				return "delete";
+			}
+			*/
 			if(nick == "Глава") {
 				headNode = true;
 				return;
@@ -13,9 +17,16 @@ ffAddOnLoad(function() {
 			if(nick=="нет") {
 				return;
 			}
-			var e = createPersLinkWithText(nick);
-			cur.innerHTML = "";
-			cur.appendChild(e);
+			if(cur.innerHTML.indexOf('clb.gif')>-1) {
+				return;
+			}
+			if(cur.innerHTML.indexOf('gang.gif')>-1) {
+				cur.innerHTML = "<img src='http://darkagesworld.com/vr/images/gang.gif'>";
+			}
+			else {
+				cur.innerHTML="";
+			}
+			cur.appendChild(createPersLinkWithText(nick));
 		}
 	});
 });
