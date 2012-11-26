@@ -1,13 +1,17 @@
-function countAll(cnt){
-	cnt = document.getElementById('Table10').getElementsByTagName('img').length;
-	return cnt;
+function countAll(){
+	var imgs = document.getElementById('Table10').getElementsByTagName('img');
+	for(i=0,c=0;i<imgs.length;++i){
+		if(imgs[i].src.indexOf('Info.gif')>0){
+			++c;
+		}
+	}
+return c;
 }
 
 function countOffline(){
 	var tds = document.getElementById('Table10').getElementsByTagName('tr');
-	var c = -1;
-	for(i=0;i<tds.length;++i){
-		if(tds[i].textContent.search('вне Смутных Времен')>-1){
+	for(i=0,c=-1;i<tds.length;++i){
+		if(tds[i].textContent.indexOf('вне Смутных Времен')>-1){
 			++c;
 		}
 	}
