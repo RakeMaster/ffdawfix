@@ -3,11 +3,11 @@
 <!-- MENU ITEM -->
 <script type="text/javascript">
 	function openPrefs(){
-		window.open('chrome://ffdawfix/content/preferences.xul','Preferences','toolbar=0')
+		window.open('chrome://ffdawfix/content/preferences.xul','Preferences','width=242px,height=278px,toolbar=0')
 	}
 </script> 
 <menupopup id="menu_ToolsPopup">
-	<menuitem image="resource://ffdawfix/img/daw.gif" id="ffdawfixPrefs" label="Настройки" oncommand="openPrefs()" />
+	<menuitem image="resource://ffdawfix/img/daw.gif" id="ffdawfixPrefs" label="ffdawfix" oncommand="openPrefs()" />
 </menupopup>
 
 <!-- CORE section -->

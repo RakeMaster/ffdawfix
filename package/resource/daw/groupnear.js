@@ -4,10 +4,9 @@ ffAddOnLoad(function() {
 		var cur = node.getElementsByTagName('td')[0];
 		if(cur) {
 			var nick = cur.textContent.trim();
-			/*if(nick=="нет"){
+			if(nick=="нет"){
 				return "delete";
 			}
-			*/
 			if(nick == "Глава") {
 				headNode = true;
 				return;
