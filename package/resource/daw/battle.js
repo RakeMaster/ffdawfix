@@ -20,7 +20,7 @@
 
 function createLinks() {
 	injectTag("span",function(node) {
-		if(node.id=="lbName"){
+		if(node.id=="lbName") {
 			var cur = node.getElementsByTagName("b")[0];
 		}
 		if(cur) {
