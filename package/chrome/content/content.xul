@@ -2,8 +2,8 @@
 <overlay id="ffdawfix" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <!-- MENU ITEM -->
 <script type="text/javascript">
-	function openPrefs(){
-		window.open('chrome://ffdawfix/content/preferences.xul','Preferences','width=242px,height=278px,toolbar=0')
+	function openPrefs() {
+		window.open('chrome://ffdawfix/content/preferences.xul','Preferences','width=242px,height=278px,screenX=500,screenY=300,toolbar=0');
 	}
 </script> 
 <menupopup id="menu_ToolsPopup">

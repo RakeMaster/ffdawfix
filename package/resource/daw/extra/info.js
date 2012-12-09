@@ -32,7 +32,7 @@ ffAddOnLoad(function() {
 	});
 
 	injectTag("strong", function(node) {
-		node.innerHTML=node.innerHTML+"&nbsp;";
+		node.innerHTML = node.innerHTML + "&nbsp;";
 	});
 
 });

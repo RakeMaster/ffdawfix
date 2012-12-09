@@ -1,6 +1,6 @@
 ffAddOnLoad(function() {
 	var dm = document.getElementById('d_menu');
-	dm.onclick=function(){
+	dm.onclick=function() {
 		getTop().CloseCMenu(window, window.event);
 	}
 	dm.onmouseout = function(e) {
