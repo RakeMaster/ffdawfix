@@ -7,7 +7,10 @@
 	}
 </script> 
 <menupopup id="menu_ToolsPopup">
-	<menuitem image="resource://ffdawfix/img/daw.gif" id="ffdawfixPrefs" label="ffdawfix" oncommand="openPrefs()" />
+	<menuitem id="ffdawfixPrefs" oncommand="openPrefs()">
+		<image src="resource://ffdawfix/img/daw.gif" />	
+		<label value="ffdawfix" />
+	</menuitem>
 </menupopup>
 
 <!-- CORE section -->
