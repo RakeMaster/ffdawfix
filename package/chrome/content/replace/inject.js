@@ -108,6 +108,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "clanInfo" ) ) {
 			f.addJS( "daw/extra/claninfo.js" );
 		}
+		f.addJS( "daw/clan.js" );
 		return;
 	}
 }
