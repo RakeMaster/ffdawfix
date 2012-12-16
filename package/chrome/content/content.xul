@@ -30,7 +30,7 @@
 	<script src="chrome://ffdawfix/content/replace/top.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/clan.js" type="application/x-javascript" />
-
+	<script src="chrome://ffdawfix/content/replace/info.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />
 

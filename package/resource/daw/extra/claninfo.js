@@ -1,7 +1,7 @@
 function countAll() {
 	var imgs = document.getElementById('Table10').getElementsByTagName('img');
 	for(i=0, c=0; i<imgs.length; ++i){
-		if(imgs[i].src.indexOf('Info.gif') > 0){
+		if(imgs[i].src.indexOf('Info.gif') > 0) {
 			++c;
 		}
 	}

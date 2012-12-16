@@ -30,9 +30,4 @@ ffAddOnLoad(function() {
 		if(ffdawfix.prefs.ringsFix) fixRingLink(node);
 		if(ffdawfix.prefs.giftsFix) fixGiftLink(node);
 	});
-
-	injectTag("strong", function(node) {
-		node.innerHTML = node.innerHTML + "&nbsp;";
-	});
-
 });
