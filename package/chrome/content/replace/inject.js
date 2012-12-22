@@ -96,6 +96,12 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/map.js"  );
 		return;
 	}
+	if( f.checkLocation( "smuta.com" ) ) {
+		if( f.checkFlag( "forumButtons" ) ) {
+			f.addJS( "daw/extra/forummenu.js" );
+		}
+		return;
+	}
 	if( f.checkLocation( "/vr/Cht/ChOuter1.htm" ) ) {
 		f.addJS( "daw/chmsgs.js" );
 		return;

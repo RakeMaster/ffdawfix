@@ -18,6 +18,7 @@
 			<preference name="ru.dclan.ffdawfix.title" id="title" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.clanInfo" id="clanInfo" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.forumButtons" id="forumButtons" type="bool"/>
 		</preferences>
 		<hbox align="center">
 			<groupbox flex="1">
@@ -40,7 +41,7 @@
 				<checkbox preference="dice" label="Кубик"/>
 			</groupbox>
 		</hbox>
-</prefpane>
+	</prefpane>
 	<prefpane id="ThirdTab" flex="1" label="Инфо" image="resource://ffdawfix/img/tab_3.png">
 		<hbox align="center">
 			<groupbox flex="1">
@@ -51,6 +52,13 @@
 			</groupbox>
 		</hbox>
 
-</prefpane>
+	</prefpane>
+	<prefpane id="fourthTab" flex="1" label="Форум" image="resource://ffdawfix/img/tab_4.png">
+		<hbox align="center">
+			<groupbox flex="1">
+				<checkbox preference="forumButtons" label="Переключатели страниц"/>
+			</groupbox>
+		</hbox>
+	</prefpane>
 </prefwindow>
 
