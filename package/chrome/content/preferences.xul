@@ -53,12 +53,5 @@
 		</hbox>
 
 	</prefpane>
-	<prefpane id="fourthTab" flex="1" label="Форум" image="resource://ffdawfix/img/tab_4.png">
-		<hbox align="center">
-			<groupbox flex="1">
-				<checkbox preference="forumButtons" label="Переключатели страниц"/>
-			</groupbox>
-		</hbox>
-	</prefpane>
 </prefwindow>
 

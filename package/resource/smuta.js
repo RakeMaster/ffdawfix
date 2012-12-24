@@ -7,6 +7,22 @@ function injectCSSText(txt) {
 	doc.getElementsByTagName('head')[0].appendChild(style);
 }
 
+function arrangeGuests() {
+	var a = document.getElementsByTagName('td');
+	for(i=0; i<a.length; i++) {
+		if(a[i].getAttribute('class') && a[i].getAttribute('class').indexOf('frm_cell') > -1 && a[i].textContent.indexOf('\u0413\u043e\u0441\u0442\u044c') != -1) {
+			var l = a[i].textContent.match(/\u0413\u043e\u0441\u0442\u044c/g).length;
+			a[i].innerHTML = a[i].innerHTML.replace(/\u0413\u043e\u0441\u0442\u044c(,( )?)?/g,'').replace(/\)/g,'') + "<i> \u0413\u043e\u0441\u0442\u044c: " + l + "</i>)";
+		}
+	}
+
+	var h = document.getElementById('lbAlsoHere');
+	if(h) {
+		var len = h.textContent.match(/\u0413\u043e\u0441\u0442\u044c/g).length;
+		h.innerHTML = h.innerHTML.replace(/\u0413\u043e\u0441\u0442\u044c(,( )?)?/g,'') + "<i> \u0413\u043e\u0441\u0442\u044c: " + len + "</i>";
+	}
+}
+
 ffAddOnLoad(function() {
 	if(window.panelClick)
 	window.panelClick = function(ctrl) {
@@ -36,4 +52,5 @@ ffAddOnLoad(function() {
 			location.href = loc;
 		}
 	}
+	arrangeGuests();
 });
