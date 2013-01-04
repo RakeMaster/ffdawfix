@@ -3,9 +3,9 @@ function fixRooms() {
 	if(!menu_ref) {
 		return;
 	}
-	menu_ref.onclick = null;
-	menu_ref.onmouseover = null;
-	menu_ref.onmouseout = null;
+	menu_ref.removeAttribute('onclick');
+	menu_ref.removeAttribute('onmouseover');
+	menu_ref.removeAttribute('onmouseout');
 	var chtRoomName = document.getElementById('chtRoomName').textContent;
 	menu_ref.innerHTML = "Комнаты:";
 	menu_ref.className = null;
@@ -23,7 +23,10 @@ function fixRooms() {
 			//d.className = node.className;
 			d.style.textDecoration = "underline";
 			d.style.cursor = "pointer";
-			d.onclick = node.onclick; //.replace("top\\.RMenuLnk\\(window, ","ff_selectRoom(");
+			d.onclick = function() {
+				node.click(); //.replace("top\\.RMenuLnk\\(window, ","ff_selectRoom(");
+				window.location.reload();
+			}
 		}
 		d.style.marginLeft = "5px";
 		d.textContent = node.textContent[0];//First letter
@@ -75,7 +78,7 @@ ffAddOnLoad(function() {
 	});
 
 	//GROUPS
-	addUpdateRoomHandler(fixRooms);
+	setTimeout("addUpdateRoomHandler(fixRooms())",100);
 	//endof compact
 	
 	// Change table to divs
