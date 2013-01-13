@@ -36,6 +36,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		return;
 	}
+	if( f.checkLocation( "/vr/places/SPQuest.aspx" ) ) {
+		f.addJS( "daw/spquest.js" );
+		return;
+	}
 	if( f.checkLocation( "/vr/places/GroupNear.aspx" ) ) {
 		f.addJS( "daw/groupnear.js" );
 		return;
@@ -68,6 +72,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		return;
 	}
+
 	if( f.checkLocation( "Cht/pplOuter" ) ) {
 		f.addJS( "daw/pplouter.js" );
 		return;
