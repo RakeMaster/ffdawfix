@@ -36,10 +36,6 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		return;
 	}
-	if( f.checkLocation( "/vr/places/SPQuest.aspx" ) ) {
-		f.addJS( "daw/spquest.js" );
-		return;
-	}
 	if( f.checkLocation( "/vr/places/GroupNear.aspx" ) ) {
 		f.addJS( "daw/groupnear.js" );
 		return;
@@ -62,6 +58,9 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkLocation( "/vr/places/MazeInside.aspx" )) {
 			f.addCSS( "scrolling.css" );
 		}
+		if( f.checkLocation( "/vr/places/SPQuest.aspx" ) ) {
+			f.addJS( "daw/spquest.js" );
+		}
 
 		if( f.checkFlag( "liveTimers" )) {
 			f.addJS( "daw/extra/timers.js" );
@@ -82,6 +81,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/layout.js" );
 		return;
 	}
+
 	if( f.checkLocation( "/vr/Cht/ChPeople" ) ) {
 		f.addJS( "daw/chpeople.js" );
 		if( f.checkFlag( "chatList" ) ) {
@@ -116,4 +116,5 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/clan.js" );
 		return;
 	}
+
 }
