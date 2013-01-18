@@ -3,10 +3,6 @@ function openMessagesWithNick(e) {
 }
 
 ffAddOnLoad(function() {
-	var t = document.getElementById('Table1');
-	if(t) {
-		t.cellPadding = "15px";
-	}
 	injectTag("td",function(node) {
 		if(node && node.textContent.indexOf('От') > -1) {
 			var name = trim(node.textContent.substring(0,node.textContent.indexOf(':')).replace("От",""));
