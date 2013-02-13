@@ -18,7 +18,7 @@
 			<preference name="ru.dclan.ffdawfix.title" id="title" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.clanInfo" id="clanInfo" type="bool"/>
-			<preference name="ru.dclan.ffdawfix.forumButtons" id="forumButtons" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.gsearch" id="gsearch" type="bool"/>
 		</preferences>
 		<hbox align="center">
 			<groupbox flex="1">
@@ -49,6 +49,14 @@
 				<checkbox preference="giftsFix" label="Ссылки с подарков в инфе"/>
 				<checkbox preference="stats" label="Статы полосками"/>
 				<checkbox preference="itemStats" label="Состояние вещей"/>
+			</groupbox>
+		</hbox>
+
+	</prefpane>3
+	<prefpane id="fourthTab" flex="1" label="Форум" image="resource://ffdawfix/img/tab_4.png">
+		<hbox align="center">
+			<groupbox flex="1">
+				<checkbox preference="gsearch" label="Поиск от Google"/>
 			</groupbox>
 		</hbox>
 
