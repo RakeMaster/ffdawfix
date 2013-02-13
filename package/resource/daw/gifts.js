@@ -1,8 +1,9 @@
 ffAddOnLoad(function() {
-	var inf = document.getElementById('Stuff_ctl01_lbItemInfo');
-	if(inf) {
-		inf.parentNode.style.width = "400px";
-	}
+	injectTag("td",function(node) {
+		if(document.body.innerHTML.indexOf('Выбросить') > -1 && node.width == "10%") {
+			node.width = "100%";
+		}
+	});
 	injectTag("div",function(node) {
 		var cur = node.getElementsByTagName("b")[0];
 		if(cur) {
