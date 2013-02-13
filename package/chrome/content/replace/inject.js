@@ -24,15 +24,15 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		prefs.battleHealth  = f.checkFlag( "battleHealth");
 		prefs.battleSmall   = f.checkFlag( "battleSmall");
 		f.addPrefs( prefs );
-		if( f.checkFlag( "title" ) ) {
-			f.addJS( "daw/extra/title.js" );
-		}
 		f.addJS( "daw/battle.js" );
 		if( f.checkFlag( "dice" ) ) {
 			f.addJS( "daw/extra/dice.js" );
 		}
 		if(stats) {
 			f.addJS( "daw/extra/stats.js" );
+		}
+		if( f.checkFlag( "title" ) ) {
+			f.addJS( "daw/extra/title.js" );
 		}
 		return;
 	}
