@@ -51,15 +51,13 @@
 				<checkbox preference="itemStats" label="Состояние вещей"/>
 			</groupbox>
 		</hbox>
-
-	</prefpane>3
+	</prefpane>
 	<prefpane id="fourthTab" flex="1" label="Форум" image="resource://ffdawfix/img/tab_4.png">
 		<hbox align="center">
 			<groupbox flex="1">
 				<checkbox preference="gsearch" label="Поиск от Google"/>
 			</groupbox>
 		</hbox>
-
 	</prefpane>
 </prefwindow>
 
