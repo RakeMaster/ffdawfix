@@ -24,15 +24,15 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		prefs.battleHealth  = f.checkFlag( "battleHealth");
 		prefs.battleSmall   = f.checkFlag( "battleSmall");
 		f.addPrefs( prefs );
-		if( f.checkFlag( "title" ) ) {
-			f.addJS( "daw/extra/title.js" );
-		}
 		f.addJS( "daw/battle.js" );
 		if( f.checkFlag( "dice" ) ) {
 			f.addJS( "daw/extra/dice.js" );
 		}
 		if(stats) {
 			f.addJS( "daw/extra/stats.js" );
+		}
+		if( f.checkFlag( "title" ) ) {
+			f.addJS( "daw/extra/title.js" );
 		}
 		return;
 	}
@@ -58,6 +58,9 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkLocation( "/vr/places/MazeInside.aspx" )) {
 			f.addCSS( "scrolling.css" );
 		}
+		if( f.checkLocation( "/vr/places/SPQuest.aspx" ) ) {
+			f.addJS( "daw/spquest.js" );
+		}
 
 		if( f.checkFlag( "liveTimers" )) {
 			f.addJS( "daw/extra/timers.js" );
@@ -68,6 +71,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		return;
 	}
+
 	if( f.checkLocation( "Cht/pplOuter" ) ) {
 		f.addJS( "daw/pplouter.js" );
 		return;
@@ -77,6 +81,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/layout.js" );
 		return;
 	}
+
 	if( f.checkLocation( "/vr/Cht/ChPeople" ) ) {
 		f.addJS( "daw/chpeople.js" );
 		if( f.checkFlag( "chatList" ) ) {
@@ -108,6 +113,8 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "clanInfo" ) ) {
 			f.addJS( "daw/extra/claninfo.js" );
 		}
+		f.addJS( "daw/clan.js" );
 		return;
 	}
+
 }

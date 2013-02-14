@@ -7,7 +7,10 @@
 	}
 </script> 
 <menupopup id="menu_ToolsPopup">
-	<menuitem image="resource://ffdawfix/img/daw.gif" id="ffdawfixPrefs" label="ffdawfix" oncommand="openPrefs()" />
+	<menuitem id="ffdawfixPrefs" oncommand="openPrefs()">
+		<image src="resource://ffdawfix/img/daw.gif" />	
+		<label value="ffdawfix" />
+	</menuitem>
 </menupopup>
 
 <!-- CORE section -->
@@ -26,9 +29,11 @@
 	<script src="chrome://ffdawfix/content/replace/layout.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/top.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/all.js" type="application/x-javascript" />
-
+	<script src="chrome://ffdawfix/content/replace/clan.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/info.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/scripts/layout.js" type="application/x-javascript" />
 	<script src="chrome://ffdawfix/content/replace/scripts/chinp.js" type="application/x-javascript" />
+	<script src="chrome://ffdawfix/content/replace/pmmsgs.js" type="application/x-javascript" />
 
 <!-- EXTRA section -->
 	<script src="chrome://ffdawfix/content/replace/extra/tripbutton.js" type="application/x-javascript" />
