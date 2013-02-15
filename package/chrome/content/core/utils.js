@@ -1,6 +1,15 @@
 // Contains useful utilities
 
+ru.dclan.ffdawfix.unloaderList = [];
+
 ru.dclan.ffdawfix.utils = {
+	addUnloader: function( f ) {
+		var calls = ru.dclan.ffdawfix.unloaderList;
+		calls[ calls.length ] = f;
+	},
+	unloadAll: function() {
+		Array.forEach(ru.dclan.ffdawfix.unloaderList, function(call) { call.unload(); } );
+	},
 	trimLocation: function( url ) {
 		var p1 = url.search('[?]');
 		var p2 = url.search("#");
@@ -19,7 +28,7 @@ ru.dclan.ffdawfix.utils = {
 		return unescape(encodeURIComponent( text ));
 	},
 	getBool : function(name, def) {
-		var pm = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+		var pm = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
 		var prefix = "ru.dclan.ffdawfix.";
 		var prefName = prefix + name;
 		try {
@@ -30,7 +39,7 @@ ru.dclan.ffdawfix.utils = {
 	},
 	log :function(message) {
 		try {
-			var consoleService = Components.classes["@mozilla.org/consoleservice;1"].getService(Components.interfaces.nsIConsoleService);  
+			var consoleService = Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService);  
 			consoleService.logStringMessage(message);
 		} catch(e) {}
 	},
@@ -38,13 +47,13 @@ ru.dclan.ffdawfix.utils = {
 		ru.dclan.ffdawfix.utils.log(module + " module loaded");
 	},
 	getPreferencesService: function() {
-		return Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("");
+		return Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService).getBranch("");
 	},
 	setStringPreference: function(preference, value) {
 		if(preference) {
 			var utils = ru.dclan.ffdawfix.utils;
-			var supportsStringInterface = Components.interfaces.nsISupportsString;
-			var string                  = Components.classes["@mozilla.org/supports-string;1"].createInstance(supportsStringInterface);
+			var supportsStringInterface = Ci.nsISupportsString;
+			var string                  = Cc["@mozilla.org/supports-string;1"].createInstance(supportsStringInterface);
 			string.data = value;
 			utils.getPreferencesService().setComplexValue(preference, supportsStringInterface, string);
 		}
@@ -67,7 +76,7 @@ ru.dclan.ffdawfix.utils = {
 		if(preference) {
 			if(utils.isPreferenceSet(preference)) {
 				try {
-					return utils.getPreferencesService().getComplexValue(preference, Components.interfaces.nsISupportsString).data;
+					return utils.getPreferencesService().getComplexValue(preference, Ci.nsISupportsString).data;
 				} catch(exception) {}
 			}
 		}

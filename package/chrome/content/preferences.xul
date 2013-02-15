@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <prefwindow id="ffdawfix-prefwindow" title="Настройки" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" minwidth="200" minheight="100">
-	<prefpane id="FirstTab" flex="1" image="resource://ffdawfix/img/tab_1.png" label="Общее">
+	<prefpane id="FirstTab" flex="1" image="chrome://ffdawfix/content/img/tab_1.png" label="Общее">
 		<preferences>
 			<preference name="ru.dclan.ffdawfix.tripButton" id="tripButton" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.ringsFix" id="ringsFix" type="bool"/>
@@ -31,7 +31,7 @@
 			</groupbox>
 		</hbox>
 	</prefpane>
-	<prefpane id="SecondTab" flex="1" label="Бой" image="resource://ffdawfix/img/tab_2.png">
+	<prefpane id="SecondTab" flex="1" label="Бой" image="chrome://ffdawfix/content/img/tab_2.png">
 		<hbox align="center">
 			<groupbox flex="1">
 				<checkbox preference="battleLinks" label="Ссылки в логах, соратниках"/>
@@ -42,7 +42,7 @@
 			</groupbox>
 		</hbox>
 	</prefpane>
-	<prefpane id="ThirdTab" flex="1" label="Инфо" image="resource://ffdawfix/img/tab_3.png">
+	<prefpane id="ThirdTab" flex="1" label="Инфо" image="chrome://ffdawfix/content/img/tab_3.png">
 		<hbox align="center">
 			<groupbox flex="1">
 				<checkbox preference="ringsFix" label="Ссылки с колец (муж/жена)"/>
@@ -52,7 +52,7 @@
 			</groupbox>
 		</hbox>
 	</prefpane>
-	<prefpane id="fourthTab" flex="1" label="Форум" image="resource://ffdawfix/img/tab_4.png">
+	<prefpane id="fourthTab" flex="1" label="Форум" image="chrome://ffdawfix/content/img/tab_4.png">
 		<hbox align="center">
 			<groupbox flex="1">
 				<checkbox preference="gsearch" label="Поиск от Google"/>

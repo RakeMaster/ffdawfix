@@ -123,8 +123,12 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	},
 }
 
-ru.dclan.ffdawfix.replace.observer = {
-	rlist: [],
+ru.dclan.ffdawfix.replace.observer = function() {
+	this.rlist = [];
+	this.register();
+}
+
+ru.dclan.ffdawfix.replace.observer.prototype = {
 	observe: function(subject, topic, data) {
 		var cached = true;
 		if (
@@ -139,7 +143,7 @@ ru.dclan.ffdawfix.replace.observer = {
 			return;
 		}
 		//important to have next line before trying to access subject.URI
-		var httpChannel = subject.QueryInterface(Components.interfaces.nsIHttpChannel);
+		var httpChannel = subject.QueryInterface(Ci.nsIHttpChannel);
 		var url = subject.URI.spec.toLowerCase();
 		if(
 			url.search("http://darkagesworld.com") != 0
@@ -164,8 +168,8 @@ ru.dclan.ffdawfix.replace.observer = {
 	},
 
 	get observerService() {
-		return Components.classes["@mozilla.org/observer-service;1"]
-			.getService(Components.interfaces.nsIObserverService);
+		return Cc["@mozilla.org/observer-service;1"]
+			.getService(Ci.nsIObserverService);
 	},
 
 	register: function() {
@@ -180,12 +184,15 @@ ru.dclan.ffdawfix.replace.observer = {
 		}
 	},  
 
-	unregister: function() {
+	unload: function() {
 		this.observerService.removeObserver(this, "http-on-examine-response");
 		this.observerService.removeObserver(this, "http-on-examine-cached-response");
 		this.observerService.removeObserver(this, "http-on-examine-merged-response");
 	}
 };
 
-ru.dclan.ffdawfix.replace.observer.register();
+ru.dclan.ffdawfix.replace.observerInstance = new ru.dclan.ffdawfix.replace.observer();
+
+ru.dclan.ffdawfix.utils.addUnloader( ru.dclan.ffdawfix.replace.observerInstance );
+
 ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.replace");
