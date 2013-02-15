@@ -1,5 +1,7 @@
 ru.dclan.ffdawfix.replacers.css = function( f ) {
 	var r = (
+		f.isPathEmpty()
+		||
 		f.checkLocation(".css")
 		||
 		f.checkLocation(".htm")

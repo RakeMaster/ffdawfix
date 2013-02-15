@@ -1,5 +1,5 @@
 ru.dclan.ffdawfix.replacers.onload = function( f ) {
-	if( !f.checkLocation(".htm") && !f.checkLocation(".aspx")) return;
+	if( !f.checkLocation(".htm") && !f.checkLocation(".aspx") && !f.isPathEmpty() ) return;
 		f.addJSText( 
  'var ffOnLoadList = new Array();\n'
 +'var ffLoaded = false;\n'

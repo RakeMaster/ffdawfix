@@ -1,5 +1,5 @@
 ru.dclan.ffdawfix.replacers.inject = function( f ) {
-	if(f.checkLocation(".htm") || f.checkLocation(".aspx")) {
+	if(f.isPathEmpty() || f.checkLocation(".htm") || f.checkLocation(".aspx")) {
 		f.addCSS( "daw.css" );
 	} else {
 		return;
