@@ -30,6 +30,16 @@ ru.dclan.ffdawfix.replace.Logger.prototype = {
 //Copy response listener implementation.
 ru.dclan.ffdawfix.replace.Replacer = function(url) {
 	this.url = url?ru.dclan.ffdawfix.utils.trimLocation(url):"";
+	var i = this.url.search("://");
+	var pStr = this.url.substr((i==-1)?0:i+3);
+	i = pStr.search("/");
+	if( i == -1) {
+		pStr = "";
+	} else {
+		pStr = pStr.substr(i+1);
+	}
+	this.path = pStr;
+
 	this.replacers = [];
 	this.includes = [];
 	this.newContent = null;
@@ -54,6 +64,9 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	},
 	checkLocation: function( loc ) {
 		return ru.dclan.ffdawfix.utils.checkLocation( this.url, loc );
+	},
+	isPathEmpty: function() {
+		return this.path == "";
 	},
 	replace: function(txt) {
 		if(this.called) alert("Replacer multicall");
@@ -89,6 +102,9 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	addCSS : function( name ) {
 		var src = 'resource://ffdawfix/' + name;
 		this.addToHead( '<link rel="stylesheet" type="text/css" href="' + src + '" />' );
+	},
+	addCSSText : function( text ) {
+		this.addToHead( '<style type="text/css">' + text + '</style>' );
 	},
 	addJS : function( name ) {
 		var src = 'resource://ffdawfix/' + name;
@@ -126,15 +142,15 @@ ru.dclan.ffdawfix.replace.observer = {
 		var httpChannel = subject.QueryInterface(Components.interfaces.nsIHttpChannel);
 		var url = subject.URI.spec.toLowerCase();
 		if(
-			url.search("http://darkagesworld.com/") != 0
-			&& url.search("http://[a-z0-9A-Z]+.darkagesworld.com/") != 0
-			&& url.search("http://smuta.com/") != 0
+			url.search("http://darkagesworld.com") != 0
+			&& url.search("http://[a-z0-9A-Z]+.darkagesworld.com") != 0
+			&& url.search("http://smuta.com") != 0
 		) return;
 		// Do not corrupt jquery
 		if(url.search("jquery") != -1) {
 			return;
 		}
-		ru.dclan.ffdawfix.utils.log( "topic" + topic );
+		// ru.dclan.ffdawfix.utils.log( "topic" + topic );
 		var replacer = new ru.dclan.ffdawfix.replace.Replacer(url);
 		for(var i = 0; i < this.rlist.length; ++i) {
 			this.rlist[i]( replacer );

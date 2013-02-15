@@ -31,8 +31,6 @@ ffAddOnLoad(function() {
 		}
 	}
 
-	injectCSSText("body,td {font-size: 12px;}");
-
 	var rep = getClassFirst('frm_repbody');
 	if(rep) {
 		var tr = rep.parentNode;
