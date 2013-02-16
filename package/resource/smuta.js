@@ -49,5 +49,11 @@ ffAddOnLoad(function() {
 			location.href = loc;
 		}
 	}
+	injectTag("span",function(node) {
+		if(node && node.className == "lstts") {
+			node.style.fontSize = "12px";
+		}
+	});
+
 	combineGuests();
 });
