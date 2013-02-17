@@ -61,8 +61,8 @@
 	</prefpane>
 	<prefpane id="aboutTab" flex="1" image="chrome://ffdawfix/content/img/tab_5.png" label="О версии">
 		<hbox style="color:blue; font-size:20px; font-weight:bold;" id="version" pack="center"/>
-		<hbox style="color:green;">
-			<html:div id="text"></html:div>
+		<hbox style="color:green; cursor:default;">
+			<html:div style="margin-bottom:40px;" id="text"></html:div>
 			<script type="application/x-javascript" src="whatsnew.js"></script>
 		</hbox>
 	</prefpane>
