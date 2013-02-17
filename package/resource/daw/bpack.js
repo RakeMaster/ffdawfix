@@ -15,7 +15,7 @@ ffAddOnLoad(function() {
 	});
 
 	injectTag("a",function(node) {
-		if(node.textContent.trim() == "Надеть") {
+		if(node.textContent.trim() == "Открыть") {
 			node.href = node.href.replace('__doPostBack','if(confirm("Открыть письмо?")) { __doPostBack').replace("')", "'); }"); 
 			node.style.marginRight = "5px";
 		}
