@@ -247,3 +247,4 @@ ffAddOnLoad(function() {
 	fixA();
 	fixInput();
 });
+

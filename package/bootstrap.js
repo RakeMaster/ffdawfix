@@ -66,6 +66,7 @@ function loadScripts() {
 	load("replace/scripts/layout.js");
 	load("replace/scripts/chinp.js");
 	load("replace/pmmsgs.js");
+	load("replace/clock.js");
 
 	// EXTRA section
 	load("replace/extra/tripbutton.js");
