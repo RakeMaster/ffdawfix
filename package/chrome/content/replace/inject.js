@@ -93,7 +93,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "itemStats" ) ) {
 			f.addJS( "daw/extra/itemstats.js" );
 		}
-		f.addJS( "daw/gifts.js" );
+		f.addJS( "daw/bpack.js" );
 		return;
 		
 	}
