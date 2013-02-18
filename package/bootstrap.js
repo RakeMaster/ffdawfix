@@ -81,7 +81,7 @@ function openPrefs() {
 	.getService(Components.interfaces.nsIWindowMediator);
 	var mainWindow = wm.getMostRecentWindow("navigator:browser");
 	if(!mainWindow) return;
-	mainWindow.openDialog( 'chrome://ffdawfix/content/preferences.xul','Preferences' );
+	mainWindow.openDialog( 'chrome://ffdawfix/content/preferences.xul','Preferences', null, 'aboutTab' );
 }
 
 function startup(data, reason) {

@@ -9,7 +9,7 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		f.checkLocation(".aspx")
 	);
 	if(!r) {
-		ru.dclan.ffdawfix.utils.log("Skip " + f.url + " path=" + f.path);
+//		ru.dclan.ffdawfix.utils.log("Skip " + f.url + " path=" + f.path);
 		return;
 	}
 	f.addReplace( /\.innerText/g, '.textContent');

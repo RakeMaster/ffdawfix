@@ -29,8 +29,8 @@ ffAddOnLoad(function() {
 
 	addUpdateRoomHandler(fixImgTitle);
 	if(window.UpdateRoom) {
-		var s = String(window.UpdateRoom);
-		s=s.replace(/\}\}\,/,"}fireUpdateRoomHandlers();},");
+		var oldS = String(window.UpdateRoom);
+		var s = oldS.replace(/\}\s*\}\s*\,/,"}fireUpdateRoomHandlers();},");
 		eval("window.UpdateRoom = "+s);
 		window.UpdateRoom();
 	}

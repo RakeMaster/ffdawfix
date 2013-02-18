@@ -9,9 +9,9 @@ ru.dclan.ffdawfix.replace.StringReplacer = function(src, dst) {
 
 ru.dclan.ffdawfix.replace.StringReplacer.prototype = {
 		run: function(txt,i) {
-			if(i) {
-				ru.dclan.ffdawfix.utils.log( i + ": " + this.src +" to "+ this.dst );
-			}
+//			if(i) {
+//				ru.dclan.ffdawfix.utils.log( i + ": " + this.src +" to "+ this.dst );
+//			}
 			return txt.replace(this.src, this.dst);
 		}
 }
