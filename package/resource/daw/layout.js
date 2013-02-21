@@ -11,8 +11,19 @@ function setTitle(name) {
 	document.getElementsByTagName("title")[0].innerHTML = name;
 }
 
-function ffReplaceMessage(msg) {
-	msg = msg.replace(/http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+(?:&amp;page=\d+)?/gi, '<a href="$&" target="_blank" style="color:blue;">$&</a>');
+function ffReplaceMessage( msg ) {
+	// msg format
+	// id:"Msg"
+	// time:"02:56"
+	// creator:"abc"
+	// txt:"abc"
+	// isMarked:false
+	// isPrivate:false
+	// isSystem:true
+	// isSelf:false
+	// isClan:false
+	// isBattle:false
+	msg.txt = msg.txt.replace(/http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+(?:&amp;page=\d+)?/gi, '<a href="$&" target="_blank" style="color:blue;">$&</a>');
 	return msg;
 }
 
