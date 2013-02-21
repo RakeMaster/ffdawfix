@@ -18,6 +18,14 @@ window.getTop = function() {
 	return window.topFramePointer;
 }
 
+function ffMessage( txt ) {
+	var t = getTop();
+	if( !t ) return;
+	var f = t.ffAddonMessage;
+	if( !f ) return;
+	f( txt );
+}
+
 function trim(str) {
 	return str.replace(/^\s*([\S\s]*?)\s*$/, '$1');
 }

@@ -11,6 +11,21 @@ function setTitle(name) {
 	document.getElementsByTagName("title")[0].innerHTML = name;
 }
 
+function ffAddonMessage( txt ) {
+	getTop().DoMessage( {
+		id:"ffMsg",
+		time:"FirefoxAddon",
+		creator:"",
+		txt:txt,
+		isMarked:true,
+		isPrivate:false,
+		isSystem:true,
+		isSelf:false,
+		isClan:false,
+		isBattle:false,
+	} );
+}
+
 function ffReplaceMessage( msg ) {
 	// msg format
 	// id:"Msg"
