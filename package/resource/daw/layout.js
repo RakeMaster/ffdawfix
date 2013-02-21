@@ -39,7 +39,11 @@ function ffReplaceMessage( msg ) {
 	// isClan:false
 	// isBattle:false
 	msg.txt = msg.txt.replace(/http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+(?:&amp;page=\d+)?/gi, '<a href="$&" target="_blank" style="color:blue;">$&</a>');
+	if(msg.isSystem) {
+		msg.txt = msg.txt.replace(/(.*?)( [а-я]+ в Смутные Времена)/, '<a target="_blank" href="/vr/common/FighterInfo.aspx?username=$1">$1</a>$2');
+	}
 	return msg;
+
 }
 
 ffAddOnLoad(function() {
