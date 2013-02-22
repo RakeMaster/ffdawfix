@@ -36,7 +36,7 @@ ru.dclan.ffdawfix.replace.Replacer = function(url) {
 	if( i == -1) {
 		pStr = "";
 	} else {
-		pStr = pStr.substr(i+1);
+		pStr = pStr.substr(i+1).replace(/^(.+)[\/]$/, "$1");
 	}
 	this.path = pStr;
 

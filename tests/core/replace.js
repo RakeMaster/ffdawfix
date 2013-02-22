@@ -34,6 +34,24 @@ testReplace: function() {
 	r.addJS("js3.js");
 	r.addJS("js2.js");
 	this.assertEquals( r.replace("<head></head>"), '<head ><script type="text/javascript"><!--\nhi\n--></script><script type="text/javascript" src="resource://ffdawfix/js1.js"></script><script type="text/javascript" src="resource://ffdawfix/js3.js"></script><script type="text/javascript" src="resource://ffdawfix/js2.js"></script></head>');
-
-}
+},
+testReplacePath: function() {
+	var getPath = function( url ) {
+		var r = new ru.dclan.ffdawfix.replace.Replacer( url );
+		return r.path;
+	};
+	this.assertEquals( getPath("smuta.com"), "" );
+	this.assertEquals( getPath("smuta.com/"), "" );
+	this.assertEquals( getPath("smuta.com/?"), "" );
+	this.assertEquals( getPath("smuta.com/#"), "" );
+	this.assertEquals( getPath("http://smuta.com/"), "" );
+	this.assertEquals( getPath("http://smuta.com/hello"), "hello" );
+	this.assertEquals( getPath("http://smuta.com/hello/"), "hello" );
+	this.assertEquals( getPath("http://smuta.com/hello/w"), "hello/w" );
+	this.assertEquals( getPath("http://smuta.com/hello/w/"), "hello/w" );
+	this.assertEquals( getPath("http://smuta.com/hello/w/#"), "hello/w" );
+	this.assertEquals( getPath("http://smuta.com/hello/w/?"), "hello/w" );
+	this.assertEquals( getPath("http://smuta.com/hello/w#"), "hello/w" );
+	this.assertEquals( getPath("http://smuta.com/hello/w?"), "hello/w" );
+},
 });
