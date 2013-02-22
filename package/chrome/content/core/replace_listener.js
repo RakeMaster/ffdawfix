@@ -74,5 +74,3 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 		throw Components.results.NS_NOINTERFACE;
 	}
 }
-
-ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.ReplaceListener");

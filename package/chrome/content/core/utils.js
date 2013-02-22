@@ -1,15 +1,6 @@
 // Contains useful utilities
 
-ru.dclan.ffdawfix.unloaderList = [];
-
 ru.dclan.ffdawfix.utils = {
-	addUnloader: function( f ) {
-		var calls = ru.dclan.ffdawfix.unloaderList;
-		calls[ calls.length ] = f;
-	},
-	unloadAll: function() {
-		Array.forEach(ru.dclan.ffdawfix.unloaderList, function(call) { call.unload(); } );
-	},
 	trimLocation: function( url ) {
 		var p1 = url.search('[?]');
 		var p2 = url.search("#");
@@ -37,14 +28,8 @@ ru.dclan.ffdawfix.utils = {
 		if(def) return true;
 		return false;
 	},
-	log :function(message) {
-		try {
-			var consoleService = Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService);  
-			consoleService.logStringMessage(message);
-		} catch(e) {}
-	},
-	trackLoad :function(module) {
-		ru.dclan.ffdawfix.utils.log(module + " module loaded");
+	log :function( message ) {
+		logMsg( message );
 	},
 	getPreferencesService: function() {
 		return Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService).getBranch("");
@@ -83,5 +68,3 @@ ru.dclan.ffdawfix.utils = {
 		return null;
 	},
 }
-
-ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.utils");
