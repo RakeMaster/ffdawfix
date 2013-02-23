@@ -40,7 +40,12 @@ function ffReplaceMessage( msg ) {
 	// isBattle:false
 	msg.txt = msg.txt.replace(/http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+(?:&amp;page=\d+)?/gi, '<a href="$&" target="_blank" style="color:blue;">$&</a>');
 	if(msg.isSystem) {
-		msg.txt = msg.txt.replace(/(.*?)( [а-я]+ в Смутные Времена)/, '<a target="_blank" href="/vr/common/FighterInfo.aspx?username=$1">$1</a>$2');
+		if(msg.txt.indexOf('зашел в Смутные Времена') > -1) {	
+			msg.txt = msg.txt.replace(' зашел в Смутные Времена','').replace(/.+/,function(f){return "<a target='_blank' href='" + createPersLinkWithText(f) + "'>" + f + "</a> ";}) + "зашел в Смутные Времена";
+		}
+		if(msg.txt.indexOf('зашла в Смутные Времена') > -1) {	
+			msg.txt = msg.txt.replace(' зашла в Смутные Времена','').replace(/.+/,function(f){return "<a target='_blank' href='" + createPersLinkWithText(f) + "'>" + f + "</a> ";}) + "зашла в Смутные Времена";
+		}
 	}
 	return msg;
 
