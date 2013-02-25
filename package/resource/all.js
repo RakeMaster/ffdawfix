@@ -2,18 +2,23 @@
 var timers = new Array();
 var timersTimeout = null;
 
-window.getTop = function() {
-	if(!window.topFramePointer) {
-		var tmp = window;
-		while(1) {
+function calculateTopFrame() {
+	var tmp = window;
+	while(1) {
+		try {
 			if(tmp == tmp.parent) break;
 			tmp = tmp.parent;
-			var p = tmp.topFramePointer;
-			if(p) {
-				window.topFramePointer = p;
-				break;
-			}
+			if( tmp.isTopFrame ) return tmp;
+		} catch(e) {
+			break;
 		}
+	}
+	return window;
+}
+
+window.getTop = function() {
+	if( !window.topFramePointer ) {
+		window.topFramePointer = calculateTopFrame();
 	}
 	return window.topFramePointer;
 }

@@ -35,6 +35,9 @@ ffAddOnLoad(function() {
 		pn = getPersName();
 	}
 	if(pn) {
-		getTop().setPersName(pn);
+		// Could be opened in window
+		if( getTop().setPersName ) {
+			getTop().setPersName(pn);
+		}
 	}
 });
