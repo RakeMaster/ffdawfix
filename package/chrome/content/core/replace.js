@@ -1,3 +1,7 @@
+require("core/namespace.js");
+require("core/utils.js");
+require("core/replace_listener.js");
+require("core/replacers.js");
 // Contains HTML text replace logic
 
 ru.dclan.ffdawfix.replace = {};
@@ -36,7 +40,7 @@ ru.dclan.ffdawfix.replace.Replacer = function(url) {
 	if( i == -1) {
 		pStr = "";
 	} else {
-		pStr = pStr.substr(i+1);
+		pStr = pStr.substr(i+1).replace(/^(.+)[\/]$/, "$1");
 	}
 	this.path = pStr;
 
@@ -123,9 +127,9 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	},
 }
 
-ru.dclan.ffdawfix.replace.observer = function() {
-	this.rlist = [];
+ru.dclan.ffdawfix.replace.observer = function( obj ) {
 	this.register();
+	this.rlist = obj;
 }
 
 ru.dclan.ffdawfix.replace.observer.prototype = {
@@ -155,8 +159,8 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 			return;
 		}
 		// ru.dclan.ffdawfix.utils.log( "topic" + topic );
-		var replacer = new ru.dclan.ffdawfix.replace.Replacer(url);
-		for(var i = 0; i < this.rlist.length; ++i) {
+		var replacer = new ru.dclan.ffdawfix.replace.Replacer( url );
+		for (var i in this.rlist) {
 			this.rlist[i]( replacer );
 		}
 		if(replacer.needReplace()) {
@@ -176,13 +180,7 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 		this.observerService.addObserver(this, "http-on-examine-response", false);
 		this.observerService.addObserver(this, "http-on-examine-cached-response", false);
 		this.observerService.addObserver(this, "http-on-examine-merged-response", false);
-		this.rlist = [];
-		var rs = ru.dclan.ffdawfix.replacers;
-		for(var i in rs) {
-			ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.replacers." + i);
-			this.rlist.push( rs[i] )
-		}
-	},  
+	},
 
 	unload: function() {
 		this.observerService.removeObserver(this, "http-on-examine-response");
@@ -190,9 +188,5 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 		this.observerService.removeObserver(this, "http-on-examine-merged-response");
 	}
 };
-
-ru.dclan.ffdawfix.replace.observerInstance = new ru.dclan.ffdawfix.replace.observer();
-
-ru.dclan.ffdawfix.utils.addUnloader( ru.dclan.ffdawfix.replace.observerInstance );
-
-ru.dclan.ffdawfix.utils.trackLoad("ru.dclan.ffdawfix.replace");
+var t = new ru.dclan.ffdawfix.replace.observer( ru.dclan.ffdawfix.replacers  );
+addOnShutdown( t.unload.bind(t) );

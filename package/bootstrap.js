@@ -2,6 +2,20 @@ const Cu = Components.utils;
 const Ci = Components.interfaces;
 const Cc = Components.classes;
 
+function Set() {
+	this.content = {};
+}
+
+Set.prototype.add = function(val) {
+	this.content[val]=true;
+}
+Set.prototype.remove = function(val) {
+	delete this.content[val];
+}
+Set.prototype.has = function(val) {
+	return (val in this.content);
+}
+
 Cu.import("resource://gre/modules/Services.jsm");
 
 function getResource() {
@@ -16,10 +30,22 @@ function log(message) {
 	consoleService.logStringMessage(message);
 }
 
+function setLoaded( ctx, path ) {
+	if( !ctx.loadedScripts ) {
+		ctx.loadedScripts = new Set();
+	} else if( ctx.loadedScripts.has( path ) ) {
+		return false;
+	}
+	ctx.loadedScripts.add( path );
+	return true;
+}
+
 // Load script from chrome/content folder
-function load( path ) {
+function loadScript( ctx, path) {
+	if( !setLoaded( ctx, path ) ) return false;
+	Services.scriptloader.loadSubScript( "chrome://ffdawfix/content/" + path, ctx, "UTF-8" );
 	log( path );
-	Services.scriptloader.loadSubScript( "chrome://ffdawfix/content/" + path, pluginContext, "UTF-8" );
+	return true;
 }
 
 function deinitResources() {
@@ -45,10 +71,12 @@ function unloadScripts() {
 function loadScripts() {
 	unloadScripts();
 
-	load("core/namespace.js");
-	load("core/utils.js");
-	load("core/replace_listener.js");
-	load("core/replacers.js");
+	var load = loadScript.bind( this, pluginContext );
+	pluginContext.require = load;
+	pluginContext.logMsg = log.bind( this );
+
+	load("core/onload.js");
+	load("core/replace.js");
 
 	// REPLACE section
 	load("replace/citymap.js");
@@ -74,7 +102,6 @@ function loadScripts() {
 	load("replace/extra/chatlist.js");
 
 	// REPLACE engine should be included the after all replacers
-	load("core/replace.js");
 }
 
 function openPrefs() {
@@ -113,9 +140,8 @@ function shutdown(data, reason) {
 	// When the application is shutting down we normally don't have to clean up any UI changes made
 	if (reason == APP_SHUTDOWN) return;
 	
-	// Unload everything if any
-	pluginContext.ru.dclan.ffdawfix.utils.unloadAll();
-
+	var load = loadScript.bind( this, pluginContext );
+	load("core/onunload.js");
 	unloadScripts();
 	deinitResources();
 
