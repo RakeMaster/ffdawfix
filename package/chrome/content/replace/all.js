@@ -13,7 +13,9 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		return;
 	}
 	f.addReplace( /\.innerText/g, '.textContent');
-	
+
+	f.addReplace(/(if \(11 < js\))|(if \(js > 11\))/gi, '//$&');
+	f.addReplace(/\/\/--> <\/style>/g, '</style>');
 	f.addReplace( /.\s*all\(/g, '.getElementById(');
 	f.addReplace( /document[\s]*[\.][\s]*frames/g, 'window.frames');
 	f.addJS( "all.js" );

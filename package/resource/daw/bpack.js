@@ -1,9 +1,11 @@
 ffAddOnLoad(function() {
-	injectTag("td",function(node) {
-		if(document.body.innerHTML.indexOf('Выбросить') > -1 && node.width == "10%") {
-			node.width = "100%";
-		}
-	});
+	if(document.body.innerHTML.indexOf('Выбросить') > -1) {
+		injectTag("td",function(node) {
+			if(node.width == "10%") {
+				node.width = "100%";
+			}
+		});
+	}
 
 	injectTag("div",function(node) {
 		var cur = node.getElementsByTagName("b")[0];
@@ -14,8 +16,8 @@ ffAddOnLoad(function() {
 		}
 	});
 
+	var bp = document.getElementById('lbBP');
 	injectTag("a",function(node) {
-		var bp = document.getElementById('lbBP');
 		var stuffName = node.parentNode.parentNode.parentNode.getElementsByTagName('span')[0];
 		if(stuffName) stuffName = stuffName.textContent;
 
