@@ -10,8 +10,12 @@ function checkAnchor() {
 }
 
 function injectGoogleSearchLink() {
-	var a = document.getElementById('Menu_lbMainMenu').getElementsByTagName('a')[2];
+	var a = document.getElementById('Menu_lbMainMenu');
+	if(!a) return;
+	a = a.getElementsByTagName('a')[2];
+	if(!a) return;
 	var e = document.createElement('a');
+	if(!e) return;
 	e.onclick = function() {
 		if(checkAnchor() == "google") {
 			window.location.reload();
