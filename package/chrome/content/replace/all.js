@@ -16,7 +16,6 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 
 	f.addReplace(/(if \(11 < js\))|(if \(js > 11\))/gi, '//$&');
 	f.addReplace(/\/\/-->/g, '');
-	f.addReplace(/\/\/-->/g, '');
 	f.addReplace( /.\s*all\(/g, '.getElementById(');
 	f.addReplace( /document[\s]*[\.][\s]*frames/g, 'window.frames');
 	f.addJS( "all.js" );

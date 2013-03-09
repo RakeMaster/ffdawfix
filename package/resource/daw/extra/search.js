@@ -15,7 +15,6 @@ function injectGoogleSearchLink() {
 	a = a.getElementsByTagName('a')[2];
 	if(!a) return;
 	var e = document.createElement('a');
-	if(!e) return;
 	e.onclick = function() {
 		if(checkAnchor() == "google") {
 			window.location.reload();
