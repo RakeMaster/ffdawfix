@@ -11,6 +11,7 @@ function checkAnchor() {
 
 function injectGoogleSearchLink() {
 	var a = document.getElementById('Menu_lbMainMenu');
+	if(!a) var a = document.getElementById('Menu1_lbMainMenu');
 	if(!a) return;
 	a = a.getElementsByTagName('a')[2];
 	if(!a) return;
