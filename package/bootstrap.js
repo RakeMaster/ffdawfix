@@ -93,6 +93,7 @@ function loadScripts() {
 	load("replace/info.js");
 	load("replace/scripts/layout.js");
 	load("replace/scripts/chinp.js");
+	load("replace/scripts/ui.js");
 	load("replace/pmmsgs.js");
 	load("replace/clock.js");
 
