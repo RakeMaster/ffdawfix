@@ -26,4 +26,10 @@ ffAddOnLoad(function() {
 			node.style.marginRight = "5px";
 		}
 	});
+
+	injectTag("img",function(node) {
+		if(node && document.getElementById('lbRes').style.fontWeight == "bold") {
+			node.src = node.src.replace(/\/vr\/avatars\/weapons\//g, '/vr/images/');
+		}
+	});
 });
