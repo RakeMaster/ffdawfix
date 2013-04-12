@@ -23,6 +23,26 @@ node.innerHTML = node.innerHTML.replace(/\u0413\u043e\u0441\u0442\u044c(,( )?)?/
 	});
 }
 
+function addScrollButtons() {
+	h = window.innerHeight/2;
+
+	var e = document.createElement('div');
+	e.style.position = "fixed";
+	e.style.cursor = "pointer";
+	e.onmouseover = function() { e.style.marginLeft = "-1px"; }
+	e.onmouseout = function() { e.style.marginLeft = "-35px"; }
+	e.style.marginLeft = "-35px";
+	e.style.top = h;
+	e.style.left = "-1px";
+	e.innerHTML = "<div style='opacity:0.4; border:1px solid black; border-radius:5px; background:white;'>"
+		+ "<img onmouseout='this.parentNode.style.opacity=\"0.4\"' onmouseover='this.parentNode.style.opacity=\"1\"' onclick='window.location=\"#top\"' src='resource://ffdawfix/img/up.png'>"
+		+ "</div>"
+		+ "<div style='opacity:0.4; border:1px solid black; border-radius:5px; background:white;'>"
+		+ "<img onmouseout='this.parentNode.style.opacity=\"0.4\"' onmouseover='this.parentNode.style.opacity=\"1\"' onclick='window.location=\"#bottom\"' src='resource://ffdawfix/img/down.png'>"
+	+ "</div>";
+	document.body.appendChild(e);
+}
+
 ffAddOnLoad(function() {
 	if(window.panelClick)
 	window.panelClick = function(ctrl) {
@@ -55,6 +75,8 @@ ffAddOnLoad(function() {
 			node.style.fontSize = "12px";
 		}
 	});
-
+	if(document.body.scrollHeight > window.innerHeight) {
+		addScrollButtons();
+	}
 	combineGuests();
 });
