@@ -265,6 +265,13 @@ ffAddOnLoad(function() {
 	for(var i = 0;i < 4; ++i) {
 		setCheck("cblDefence_" + i);
 	}
+	
+	if(ffdawfix.prefs.battleSound) {
+		var ref = document.referrer;
+		if(ref.search(/battle/i) == -1 && ref != "" && ref.search(/layout\.aspx/i) == -1) {
+			getTop().play_sound('/vr/sounds/pvtmsg.wav');
+		}
+	}
 
 	SetAttackType();
 	createLinks();

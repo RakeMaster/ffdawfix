@@ -23,6 +23,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		prefs.battleCounter = f.checkFlag( "battleCounter");
 		prefs.battleHealth  = f.checkFlag( "battleHealth");
 		prefs.battleSmall   = f.checkFlag( "battleSmall");
+		prefs.battleSound = f.checkFlag( "battleSound", true );
 		f.addPrefs( prefs );
 		f.addJS( "daw/battle.js" );
 		if( f.checkFlag( "dice" ) ) {
@@ -38,6 +39,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	}
 	if( f.checkLocation( "/vr/places/GroupNear.aspx" ) ) {
 		f.addJS( "daw/groupnear.js" );
+		return;
+	}
+	if( f.checkLocation( "/vr/places/ResBuyShop.aspx" ) ) {
+		f.addJS( "daw/sellall.js" );
 		return;
 	}
 	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {

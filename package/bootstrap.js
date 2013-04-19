@@ -80,6 +80,7 @@ function loadScripts() {
 
 	// REPLACE section
 	load("replace/citymap.js");
+	load("replace/maze.js");
 	load("replace/onload.js");
 	load("replace/smiles.js");
 	load("replace/timespan.js");
