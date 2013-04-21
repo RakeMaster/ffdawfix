@@ -268,8 +268,10 @@ ffAddOnLoad(function() {
 	
 	if(ffdawfix.prefs.battleSound) {
 		var ref = document.referrer;
-		if(ref.search(/battle/i) == -1 && ref != "" && ref.search(/layout\.aspx/i) == -1) {
-			getTop().play_sound('/vr/sounds/pvtmsg.wav');
+		if(ref.search(/battle.aspx/i) == -1) {
+			if(getTop().frames['chouter'] && !document.getElementById('Button2')) {
+				getTop().play_sound('/vr/sounds/pvtmsg.wav');
+			}
 		}
 	}
 
