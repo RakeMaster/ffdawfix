@@ -19,6 +19,7 @@
 			<preference name="ru.dclan.ffdawfix.altMenu" id="altMenu" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.clanInfo" id="clanInfo" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.gsearch" id="gsearch" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.battleSound" id="battleSound" type="bool"/>
 		</preferences>
 		<hbox align="center">
 			<groupbox flex="1">
@@ -39,6 +40,7 @@
 				<checkbox preference="battleHealth" label="Суммарные жизни комманд"/>
 				<checkbox preference="battleSmall" label="Уменьшенные аватары в бою"/>
 				<checkbox preference="dice" label="Кубик"/>
+				<checkbox preference="battleSound" label="Оповещение о начале боя"/>
 			</groupbox>
 		</hbox>
 	</prefpane>

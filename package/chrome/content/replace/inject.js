@@ -23,6 +23,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		prefs.battleCounter = f.checkFlag( "battleCounter");
 		prefs.battleHealth  = f.checkFlag( "battleHealth");
 		prefs.battleSmall   = f.checkFlag( "battleSmall");
+		prefs.battleSound = f.checkFlag( "battleSound", true );
 		f.addPrefs( prefs );
 		f.addJS( "daw/battle.js" );
 		if( f.checkFlag( "dice" ) ) {
@@ -40,6 +41,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/groupnear.js" );
 		return;
 	}
+	if( f.checkLocation( "/vr/places/ResBuyShop.aspx" ) ) {
+		f.addJS( "daw/sellall.js" );
+		return;
+	}
 	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {
 		f.addJS( "daw/pm_msgs.js" );
 		return;
@@ -51,7 +56,9 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "altMenu" ) ) {
 			f.addJS( "daw/extra/altmenu.js" );
 		}
-
+		if( f.checkFlag( "battleSound" )) {
+			f.addJS( "daw/battlesound.js" );
+		}
 		f.addJS( "daw/ajax.js" );
 		f.addJS( "daw/places.js" );
 
