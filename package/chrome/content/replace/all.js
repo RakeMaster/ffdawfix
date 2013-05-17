@@ -13,7 +13,9 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		return;
 	}
 	f.addReplace( /\.innerText/g, '.textContent');
-	
+
+	f.addReplace(/(if \(11 < js\))|(if \(js > 11\))/gi, '//$&');
+	f.addReplace(/\/\/-->/g, '');
 	f.addReplace( /.\s*all\(/g, '.getElementById(');
 	f.addReplace( /document[\s]*[\.][\s]*frames/g, 'window.frames');
 	f.addJS( "all.js" );
@@ -26,5 +28,5 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		}
 	}
 	
-	f.addReplace( /([^A-Za-z0-9_\/])top\./g, '$1getTop().');
+	// f.addReplace( /([^A-Za-z0-9_\/])top\./g, '$1getTop().');
 }

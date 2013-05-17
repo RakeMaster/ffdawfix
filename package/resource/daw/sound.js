@@ -11,7 +11,7 @@ function play_sound(src) {
 	if(!s) {
 		s = install_sound();
 	}
-	s.innerHTML = '<embed src="' + src + '" type="audio/wav" autostart="true" loop="false" mastersound hidden></embed>';
+	s.innerHTML = '<audio hidden autoplay><source src="' + src + '" type="audio/wav"></audio>';
 }
 
 function get_sound_place() {
