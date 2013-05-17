@@ -265,13 +265,10 @@ ffAddOnLoad(function() {
 	for(var i = 0;i < 4; ++i) {
 		setCheck("cblDefence_" + i);
 	}
-	
 	if(ffdawfix.prefs.battleSound) {
-		var ref = document.referrer;
-		if(ref.search(/battle.aspx/i) == -1) {
-			if(getTop().frames['chouter'] && !document.getElementById('Button2')) {
-				getTop().play_sound('/vr/sounds/pvtmsg.wav');
-			}
+		if(getTop().mainFrmLoc != null) {
+			getTop().play_sound('/vr/sounds/pvtmsg.wav');
+			getTop().mainFrmLoc = null;
 		}
 	}
 
