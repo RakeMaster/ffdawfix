@@ -4,4 +4,4 @@ function saveFlag() {
 
 ffAddOnLoad(function() {
 	saveFlag();
-});	
+});

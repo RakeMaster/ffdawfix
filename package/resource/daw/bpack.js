@@ -1,7 +1,7 @@
-﻿function getActiveTab(tab) {
+﻿function getActiveTab(tabId) {
 	var f = false;
-	injectTag("a",function(node) {
-		if(node.textContent == tab && node.style.fontWeight == "bold") {
+	injectTag("a", function(node) {
+		if(node.id == tabId && node.style.fontWeight == "bold") {
 			f = true;
 		}
 	});
@@ -9,8 +9,8 @@
 }
 
 ffAddOnLoad(function() {
-	if( getActiveTab('Подарки') ) {
-		injectTag("td",function(node) {
+	if( getActiveTab('lbGifts') ) {
+		injectTag("td", function(node) {
 			if(node.width == "10%") {
 				node.width = "100%";
 			}
@@ -26,8 +26,8 @@ ffAddOnLoad(function() {
 		});
 	}
 
-	if( getActiveTab('Рюкзак') ) {
-		injectTag("a",function(node) {
+	if( getActiveTab('lbRes') ) {
+		injectTag("a", function(node) {
 			var stuffName = node.parentNode.parentNode.parentNode.getElementsByTagName('span')[0];
 			if(stuffName) stuffName = stuffName.textContent;
 			if(stuffName == "Письмо" && node.textContent.trim() == "Открыть") {
@@ -37,8 +37,8 @@ ffAddOnLoad(function() {
 		});
 	}
 
-	injectTag("img",function(node) {
-		if( node && getActiveTab('Ресурсы') ) {
+	injectTag("img", function(node) {
+		if( node && getActiveTab('lbRes') ) {
 			node.src = node.src.replace(/\/vr\/avatars\/weapons\//g, '/vr/images/');
 		}
 	});
