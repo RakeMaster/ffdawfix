@@ -28,5 +28,5 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 		}
 	}
 	
-	f.addReplace( /([^A-Za-z0-9_\/])top\./g, '$1getTop().');
+	// f.addReplace( /([^A-Za-z0-9_\/])top\./g, '$1getTop().');
 }

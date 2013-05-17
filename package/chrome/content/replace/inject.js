@@ -56,7 +56,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "altMenu" ) ) {
 			f.addJS( "daw/extra/altmenu.js" );
 		}
-		if( f.checkFlag( "battleSound" ) {
+		if( f.checkFlag( "battleSound" )) {
 			f.addJS( "daw/battlesound.js" );
 		}
 		f.addJS( "daw/ajax.js" );
