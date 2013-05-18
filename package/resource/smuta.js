@@ -25,7 +25,7 @@ node.innerHTML = node.innerHTML.replace(/\u0413\u043e\u0441\u0442\u044c(,( )?)?/
 
 function addUrlIcons() {
 	injectTag("a", function(node) {
-		if(node.href.indexOf('PMEdit.aspx') > -1) {
+		if(node.href.indexOf('PMEdit.aspx') > -1 && window.location.href.search(/topic.aspx/i) != -1) {
 			var e = document.createElement('img');
 			e.style.marginLeft = "5px";
 			e.style.cursor = "pointer";
@@ -42,8 +42,7 @@ function addUrlIcons() {
 }
 
 function addScrollButtons() {
-	h = window.innerHeight/2;
-
+	var h = window.innerHeight/2;
 	var e = document.createElement('div');
 	e.style.position = "fixed";
 	e.style.cursor = "pointer";
