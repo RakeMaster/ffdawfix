@@ -1,5 +1,5 @@
 function openMessagesWithNick(e) {
-	window.location = "/vr/Menus/Friends.aspx?__EVENTTARGET=ebtSendMsg&__EVENTARGUMENT=" + e;
+	window.location = "/vr/Menus/Friends.aspx?__EVENTTARGET=ebtSendMsg&__EVENTARGUMENT=" + e + "#msgs";
 }
 
 ffAddOnLoad(function() {
