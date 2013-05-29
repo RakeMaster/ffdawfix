@@ -36,7 +36,8 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 			f.addJS( "daw/extra/title.js" );
 		}
 		return;
-	}
+	}	
+	
 	if( f.checkLocation( "/vr/places/GroupNear.aspx" ) ) {
 		f.addJS( "daw/groupnear.js" );
 		return;
@@ -62,17 +63,17 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/ajax.js" );
 		f.addJS( "daw/places.js" );
 
-		if( f.checkLocation( "/vr/places/MazeInside.aspx" )) {
+		if( f.checkLocation( "MazeInside.aspx" )) {
 			f.addCSS( "scrolling.css" );
 		}
-		if( f.checkLocation( "/vr/places/SPQuest.aspx" ) ) {
+		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );
 		}
 
 		if( f.checkFlag( "liveTimers" )) {
 			f.addJS( "daw/extra/timers.js" );
 		}
-
+		
 		if(stats) {
 			f.addJS( "daw/extra/stats.js" );
 		}
@@ -83,16 +84,23 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/pplouter.js" );
 		return;
 	}
+	
 	if( f.checkLocation( "/vr/Layout.aspx" ) ) {
 		f.addJS( "daw/sound.js" );
 		f.addJS( "daw/layout.js" );
 		return;
 	}
-
+ 
 	if( f.checkLocation( "/vr/Cht/ChPeople" ) ) {
 		f.addJS( "daw/chpeople.js" );
 		if( f.checkFlag( "chatList" ) ) {
 			f.addJS( "daw/extra/chatlist.js" );
+		}
+		return;
+	}
+	if( f.checkLocation( "/vr/Cht/ChInp3" ) ) {
+		if( f.checkFlag( "chatInp" ) ) {
+			f.addJS( "daw/extra/chinp.js" );
 		}
 		return;
 	}

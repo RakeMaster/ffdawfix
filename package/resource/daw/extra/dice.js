@@ -35,6 +35,7 @@ function randomAttack() {
 	for(var i=0;i<4;++i) {
 		setAttack(i,a==i);
 		setDefence(i,(d1==i)||(d2==i));
+		document.getElementById('EndTurn').focus();
 	}
 	var r = document.getElementById('randomButton');
 	if(r.textContent == "R/") {
@@ -89,7 +90,7 @@ ffAddOnLoad(function() {
 		b.onclick = function() { randomAttack(); };
 		insertAfter(b,r);
 	}
-	{
+	/*{
 		var b = document.createElement("span");
 		b.style.textDecoration = "underline";
 		b.style.fontWeight = "bold";
@@ -102,5 +103,5 @@ ffAddOnLoad(function() {
 		b.id = "randomEndTurnButton";
 		b.onclick = function() { randomAttack(); submitAttack();};
 		insertAfter(b,r);
-	}
+	}*/
 });
