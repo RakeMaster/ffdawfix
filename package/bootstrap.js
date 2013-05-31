@@ -163,8 +163,48 @@ function shutdown(data, reason) {
     /// &#10;  ADDON_DOWNGRADE
     /// </summary>
 }
+
+var branch = "ru.dclan.ffdawfix";
+
+function deletePrefs() {
+	var pm = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
+	pm.deleteBranch( branch );
+}
+
+function setTrueIfNotSet(name) {
+	var pm = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
+	var prefix = branch + ".";
+	var prefName = prefix + name;
+	try {
+		pm.getBoolPref(prefName);
+	} catch(e) {
+		pm.setBoolPref( prefName, true );
+		return true;
+	}
+	return false;
+}
+
 function install(data, reason) {
-    /// <summary>
+	log("install ffdawfix");
+
+	var defaults = [
+	  "ringsFix",
+	  "giftsFix",
+	  "battleSound",
+	  "tripButton",
+	  "battleLinks",
+	  "liveTimers",
+	  "chatList",
+	  "gsearch",
+	  "chatInp",
+	];
+
+	log("setting default properties");
+	Array.forEach(defaults, function(x) { 
+		if( setTrueIfNotSet(x)) { log("Default for "+ x + " set to true"); }
+	} );
+	
+	/// <summary>
     /// Bootstrap data structure @see https://developer.mozilla.org/en-US/docs/Extensions/Bootstrapped_extensions#Bootstrap_data
     /// &#10;  string id
     /// &#10;  string version
@@ -179,7 +219,10 @@ function install(data, reason) {
 }
 
 function uninstall(data, reason) {
-    /// <summary>
+	log("uninstall ffdawfix");
+	if( reason != ADDON_UNINSTALL ) return;
+	deletePrefs();
+	/// <summary>
     /// Bootstrap data structure @see https://developer.mozilla.org/en-US/docs/Extensions/Bootstrapped_extensions#Bootstrap_data
     /// &#10;  string id
     /// &#10;  string version

@@ -63,8 +63,8 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	needReplace: function() {
 		return this.newContent || (this.replacers.length > 0) || (this.includes.length > 0);
 	},
-	checkFlag: function( flag, def ) {
-		return ru.dclan.ffdawfix.utils.getBool( flag, def );
+	checkFlag: function( flag ) {
+		return ru.dclan.ffdawfix.utils.getBool( flag );
 	},
 	checkLocation: function( loc ) {
 		return ru.dclan.ffdawfix.utils.checkLocation( this.url, loc );
@@ -128,8 +128,9 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 }
 
 ru.dclan.ffdawfix.replace.observer = function( obj ) {
-	this.register();
 	this.rlist = obj;
+	this.topics = [];
+	this.register();
 }
 
 ru.dclan.ffdawfix.replace.observer.prototype = {
@@ -163,11 +164,11 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 		for (var i in this.rlist) {
 			this.rlist[i]( replacer );
 		}
-		if(replacer.needReplace()) {
-			var RL = ru.dclan.ffdawfix.ReplaceListener;
-			var newListener = new RL( replacer );
-			subject.QueryInterface(Ci.nsITraceableChannel);
-			newListener.originalListener = subject.setNewListener(newListener);
+
+		if( replacer.needReplace() ) {
+			var newListener = new ru.dclan.ffdawfix.ReplaceListener( replacer );
+			subject.QueryInterface( Ci.nsITraceableChannel );
+			newListener.originalListener = subject.setNewListener( newListener );
 		}
 	},
 
@@ -175,17 +176,21 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 		return Cc["@mozilla.org/observer-service;1"]
 			.getService(Ci.nsIObserverService);
 	},
-
+	addObserver: function(topic) {
+		this.topics[ this.topics.length ] = topic;
+		this.observerService.addObserver(this, topic, false);
+	},	
 	register: function() {
-		this.observerService.addObserver(this, "http-on-examine-response", false);
-		this.observerService.addObserver(this, "http-on-examine-cached-response", false);
-		this.observerService.addObserver(this, "http-on-examine-merged-response", false);
+		this.addObserver( "http-on-examine-response" );
+		this.addObserver( "http-on-examine-cached-response" );
+		this.addObserver( "http-on-examine-merged-response" );
 	},
 
 	unload: function() {
-		this.observerService.removeObserver(this, "http-on-examine-response");
-		this.observerService.removeObserver(this, "http-on-examine-cached-response");
-		this.observerService.removeObserver(this, "http-on-examine-merged-response");
+		var ths = this;
+		Array.forEach(this.topics, function(t) { 
+			ths.observerService.removeObserver(ths, t);
+		} );
 	}
 };
 var t = new ru.dclan.ffdawfix.replace.observer( ru.dclan.ffdawfix.replacers  );
