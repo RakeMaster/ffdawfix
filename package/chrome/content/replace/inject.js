@@ -8,8 +8,8 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	var stats = f.checkFlag( "stats" );
 	if( f.checkLocation( "/vr/common/FighterInfo.aspx" ) ) {
 		var prefs = {};
-		prefs.ringsFix = f.checkFlag( "ringsFix", true );
-		prefs.giftsFix = f.checkFlag( "giftsFix", true );
+		prefs.ringsFix = f.checkFlag( "ringsFix" );
+		prefs.giftsFix = f.checkFlag( "giftsFix" );
 		f.addPrefs( prefs );
 		f.addJS( "daw/extra/info.js" );
 		if( f.checkFlag(stats) ) {
@@ -23,7 +23,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		prefs.battleCounter = f.checkFlag( "battleCounter");
 		prefs.battleHealth  = f.checkFlag( "battleHealth");
 		prefs.battleSmall   = f.checkFlag( "battleSmall");
-		prefs.battleSound = f.checkFlag( "battleSound", true );
+		prefs.battleSound = f.checkFlag( "battleSound" );
 		f.addPrefs( prefs );
 		f.addJS( "daw/battle.js" );
 		if( f.checkFlag( "dice" ) ) {
