@@ -18,14 +18,13 @@ ru.dclan.ffdawfix.utils = {
 	encode: function(text) {
 		return unescape(encodeURIComponent( text ));
 	},
-	getBool : function(name, def) {
+	getBool : function(name) {
 		var pm = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
 		var prefix = "ru.dclan.ffdawfix.";
 		var prefName = prefix + name;
 		try {
 			return pm.getBoolPref(prefName);
 		} catch(e) {}
-		if(def) return true;
 		return false;
 	},
 	log :function( message ) {

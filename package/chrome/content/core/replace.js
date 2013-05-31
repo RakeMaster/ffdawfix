@@ -63,8 +63,8 @@ ru.dclan.ffdawfix.replace.Replacer.prototype = {
 	needReplace: function() {
 		return this.newContent || (this.replacers.length > 0) || (this.includes.length > 0);
 	},
-	checkFlag: function( flag, def ) {
-		return ru.dclan.ffdawfix.utils.getBool( flag, def );
+	checkFlag: function( flag ) {
+		return ru.dclan.ffdawfix.utils.getBool( flag );
 	},
 	checkLocation: function( loc ) {
 		return ru.dclan.ffdawfix.utils.checkLocation( this.url, loc );
