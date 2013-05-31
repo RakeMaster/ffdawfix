@@ -10,9 +10,36 @@ function fixFilter() {
 
 function fixCheckbox() {
 	var cb = document.getElementById('cbSound');
-	cb.title = "Звук";
+	cb.style.display = "none";
+	
 	var cbLabel = cb.nextSibling.nextSibling;
-	cbLabel.parentNode.removeChild(cbLabel);
+	cbLabel.textContent = "";
+	
+	var note = document.createElement('img');
+	note.title = "Звук";
+	note.id = "noteimg";
+	note.style.width = "9px";
+	note.style.height = "14px";
+	if(cb.checked) {
+		note.src = "resource://ffdawfix/img/note_ch.png";
+		note.title = "Отключить звук";
+	}
+	else {
+		note.src = "resource://ffdawfix/img/note_unch.png";
+		note.title = "Включить звук";
+	}
+	note.onclick = function() {
+		var noteimg = document.getElementById('cbSound');
+		if(!noteimg.checked) {
+			this.src = "resource://ffdawfix/img/note_ch.png";
+			this.title = "Отключить звук";
+		}
+		else {
+			this.src = "resource://ffdawfix/img/note_unch.png";
+			this.title = "Включить звук";
+		}
+	}
+	cbLabel.appendChild(note);
 }
 
 function addChatMenu() {
