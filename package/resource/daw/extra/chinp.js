@@ -29,8 +29,8 @@ function addChatMenu() {
 		+ '<option class="msg" onclick="getTop().addprcpt(\'Соратники\')">Соратники</option>'
 		+ '<option class="msg" onclick="getTop().addprcpt(\'Противники\')">Противники</option>'
 		+ '<option class="msg" onclick="getTop().addprcpt(\'Соратники\');getTop().addprcpt(\'Противники\')">Соратники+Противники</option>'
-		+ '<option class="msg" style="border-bottom:1px dotted black;" onclick="getTop().addprcpt(\'клан\')">Клан</option>'
-		+ '<option class="smile" onclick="document.getElementById(\'btSmiles\').click();">Смайлики</option>'
+		+ '<option id="clanOption" style="display:none;" onclick="getTop().addprcpt(\'клан\')">Клан</option>'
+		+ '<option class="smile" style="border-top:1px dotted grey;" onclick="document.getElementById(\'btSmiles\').click();">Смайлики</option>'
 		+ '<option class="del" onclick="document.getElementById(\'btClearTop\').click();">Стереть текст сообщений</option>'
 		+ '<option class="del" onclick="document.getElementById(\'btClearBottom\').click();">Стереть строку ввода</option>'
 		+ '<option class="translit" onclick="document.getElementById(\'btTranslit\').click();">Транслит</option>'
@@ -47,6 +47,8 @@ function hideButons() {
 }
 
 ffAddOnLoad(function() {
+	getTop().chatFrameLoaded = true;
+
 	var t = document.getElementById('tblMain');
 	t.getElementsByTagName('td')[0].style.width = "100%";
 	
@@ -54,5 +56,10 @@ ffAddOnLoad(function() {
 	fixCheckbox();
 	addChatMenu();
 	hideButons();
-	doResize();
+	
+	if(getTop().getClanObject) {
+		var clanOpt = document.getElementById('clanOption');
+		clanOpt.style.display = "";
+		clanOpt.style.backgroundImage = "url(" + getTop().getClanObject.src + ")";
+	}
 });

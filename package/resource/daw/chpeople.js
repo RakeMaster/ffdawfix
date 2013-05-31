@@ -10,6 +10,23 @@ function fireUpdateRoomHandlers() {
 	}
 }
 
+function setClanObject() {
+	injectTag('div', function(node) {
+		var clanLogo = node.getElementsByTagName('img')[1];
+		if(clanLogo && clanLogo.src.search('/vr/clans') > -1 && !node.getElementsByTagName('img')[0].className) {
+			if(getTop().chatFrameLoaded) {
+				var clanOpt = getTop().frames['ChInp'].document.getElementById('clanOption');
+				clanOpt.style.display = "";
+				clanOpt.style.backgroundImage = "url(" + clanLogo.src + ")";
+			}
+			getTop().getClanObject = clanLogo;
+		}
+		else {
+			getTop().getClanObject = null;
+		}
+	});
+}
+
 ffAddOnLoad(function() {
 	var menu_ref = document.getElementById('menu_ref');
 	if(menu_ref) {
@@ -37,4 +54,5 @@ ffAddOnLoad(function() {
 	injectTag("body", function(node) {
 		node.style.height = null;
 	});
+	addUpdateRoomHandler(setClanObject);
 });
