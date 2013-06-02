@@ -10,19 +10,19 @@ function fireUpdateRoomHandlers() {
 	}
 }
 
-function setClanObject() {
+function setClanIcon() {
 	injectTag('div', function(node) {
-		var clanLogo = node.getElementsByTagName('img')[1];
-		if(clanLogo && clanLogo.src.search('/vr/clans') > -1 && !node.getElementsByTagName('img')[0].className) {
+		var clanIcon = node.getElementsByTagName('img')[1];
+		if(clanIcon && clanIcon.src.search('/vr/clans') > -1 && !node.getElementsByTagName('img')[0].className) {
 			if(getTop().chatFrameLoaded) {
 				var clanOpt = getTop().frames['ChInp'].document.getElementById('clanOption');
 				clanOpt.style.display = "";
-				clanOpt.style.backgroundImage = "url(" + clanLogo.src + ")";
+				clanOpt.style.backgroundImage = "url(" + clanIcon.src + ")";
 			}
-			getTop().getClanObject = clanLogo;
+			getTop().getClanIcon = clanIcon;
 		}
 		else {
-			getTop().getClanObject = null;
+			getTop().getClanIcon = null;
 		}
 	});
 }
@@ -54,5 +54,5 @@ ffAddOnLoad(function() {
 	injectTag("body", function(node) {
 		node.style.height = null;
 	});
-	addUpdateRoomHandler(setClanObject);
+	addUpdateRoomHandler(setClanIcon);
 });

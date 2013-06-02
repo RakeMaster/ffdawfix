@@ -11,10 +11,10 @@ function fixFilter() {
 function fixCheckbox() {
 	var cb = document.getElementById('cbSound');
 	cb.style.display = "none";
-	
+
 	var cbLabel = cb.nextSibling.nextSibling;
 	cbLabel.textContent = "";
-	
+
 	var note = document.createElement('img');
 	note.title = "Звук";
 	note.id = "noteimg";
@@ -44,11 +44,11 @@ function fixCheckbox() {
 
 function addChatMenu() {
 	var c = document.getElementById('Inp');
-	c.style.width = "99%";
-	
+	c.style.width = "99.5%";
+
 	var ctouter = document.getElementById('ctOuter');
 	ctouter.style.whiteSpace = "nowrap";
-	
+
 	var e = document.createElement('td');
 	e.setAttribute('nowrap', '');
 	e.innerHTML = '<select id="chatmenu" title="Меню" style="width:35px;margin-right:3px;" onchange="this.selectedIndex=0;">'
@@ -78,15 +78,15 @@ ffAddOnLoad(function() {
 
 	var t = document.getElementById('tblMain');
 	t.getElementsByTagName('td')[0].style.width = "100%";
-	
+
 	fixFilter();
 	fixCheckbox();
 	addChatMenu();
 	hideButons();
-	
-	if(getTop().getClanObject) {
+
+	if(getTop().getClanIcon) {
 		var clanOpt = document.getElementById('clanOption');
 		clanOpt.style.display = "";
-		clanOpt.style.backgroundImage = "url(" + getTop().getClanObject.src + ")";
+		clanOpt.style.backgroundImage = "url(" + getTop().getClanIcon.src + ")";
 	}
 });

@@ -90,18 +90,4 @@ ffAddOnLoad(function() {
 		b.onclick = function() { randomAttack(); };
 		insertAfter(b,r);
 	}
-	/*{
-		var b = document.createElement("span");
-		b.style.textDecoration = "underline";
-		b.style.fontWeight = "bold";
-		b.style.color = "blue";
-		b.style.cursor = "pointer";
-		b.style.margin = "10px";
-		b.style.fontSize = "16px";
-		b.textContent = "RA";
-		b.title = "Случайный удар + Подтверждение";
-		b.id = "randomEndTurnButton";
-		b.onclick = function() { randomAttack(); submitAttack();};
-		insertAfter(b,r);
-	}*/
 });

@@ -73,7 +73,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "liveTimers" )) {
 			f.addJS( "daw/extra/timers.js" );
 		}
-		
+
 		if(stats) {
 			f.addJS( "daw/extra/stats.js" );
 		}
@@ -84,7 +84,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/pplouter.js" );
 		return;
 	}
-	
+
 	if( f.checkLocation( "/vr/Layout.aspx" ) ) {
 		f.addJS( "daw/sound.js" );
 		f.addJS( "daw/layout.js" );
