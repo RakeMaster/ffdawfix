@@ -12,4 +12,12 @@ function fixFriends() {
 
 ffAddOnLoad(function() {
 	fixFriends();
+	
+	var cancelMsg = document.getElementById('btSendMsgNo');
+	if(checkAnchor() == "msgs" && cancelMsg) {
+		cancelMsg.onclick = function() {
+			window.location.href = "/vr/Menus/Msgs.aspx";
+			return false;
+		}
+	}
 });
