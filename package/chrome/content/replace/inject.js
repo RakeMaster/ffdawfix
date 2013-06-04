@@ -36,8 +36,8 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 			f.addJS( "daw/extra/title.js" );
 		}
 		return;
-	}	
-	
+	}
+
 	if( f.checkLocation( "/vr/places/GroupNear.aspx" ) ) {
 		f.addJS( "daw/groupnear.js" );
 		return;
@@ -90,7 +90,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/layout.js" );
 		return;
 	}
- 
+
 	if( f.checkLocation( "/vr/Cht/ChPeople" ) ) {
 		f.addJS( "daw/chpeople.js" );
 		if( f.checkFlag( "chatList" ) ) {

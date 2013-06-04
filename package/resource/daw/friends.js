@@ -12,7 +12,7 @@ function fixFriends() {
 
 ffAddOnLoad(function() {
 	fixFriends();
-	
+
 	var cancelMsg = document.getElementById('btSendMsgNo');
 	if(checkAnchor() == "msgs" && cancelMsg) {
 		cancelMsg.onclick = function() {
