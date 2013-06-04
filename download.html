@@ -1,33 +1,33 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<title>Скачать</title>
-</head>
-<body>
-<h1>Скачать</h1>
-<div id="download_link"></div>
-<script>
-function loadXML(url) {
-	$.ajax({
-		type: "GET",
-		url: url,
-		dataType: "xml",
-		success: function(xml) {
-			var v = $(xml).find('em\\:version').text();
-			var l = $(xml).find('em\\:updateLink').text();
-			document.getElementById("download_link").innerHTML = 
-			"<a href=\"" + l + "\">Установить последнюю версию</a> (Версия " + v + ")";
-		}
-	});
-}
-var now = (new Date()).getTime();
-loadXML('update.rdf?' + now);
-</script>
-<br/>
-<div>
-Благодарности принимаются в виде подарка игрушки Лисы персонажу
-<a target="_blank" href="http://darkagesworld.com/vr/common/FighterInfo.aspx?username=%u043E%u0413%u0440%u0430%u0431%u043B%u0418%u0442%u0435%u043B%u044C">оГраблИтель</a></div>
-<div><img src="img/fox.gif" title="Кэп: это Лиса"/></div>
-
-</body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Скачать</title>
+  </head>
+  <body>
+    <h1>Скачать</h1>
+    <div id="download_link"></div>
+    <script>
+      function loadXML(url) {
+      	$.ajax({
+      		type: "GET",
+      		url: url,
+      		dataType: "xml",
+      		success: function(xml) {
+      			var v = $(xml).find('em\\:version').text();
+      			var l = $(xml).find('em\\:updateLink').text();
+      			document.getElementById("download_link").innerHTML = 
+      			"<a href=\"" + l + "\">Установить последнюю версию</a> (Версия " + v + ")";
+      		}
+      	});
+      }
+      var now = (new Date()).getTime();
+      loadXML('update.rdf?' + now);
+    </script>
+    <br/>
+    <div>
+      Благодарности принимаются в виде подарка игрушки Лисы персонажу
+      <a target="_blank" href="http://darkagesworld.com/vr/common/FighterInfo.aspx?username=%u043E%u0413%u0440%u0430%u0431%u043B%u0418%u0442%u0435%u043B%u044C">оГраблИтель</a>
+    </div>
+    <div><img src="img/fox.gif" title="Кэп: это Лиса"/></div>
+  </body>
 </html>
