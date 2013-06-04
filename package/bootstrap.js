@@ -26,7 +26,7 @@ function getResource() {
 var pluginContext = {};
 
 function log(message) {
-	var consoleService = Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService);  
+	var consoleService = Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService);
 	consoleService.logStringMessage(message);
 }
 
@@ -200,7 +200,7 @@ function install(data, reason) {
 	];
 
 	log("setting default properties");
-	Array.forEach(defaults, function(x) { 
+	Array.forEach(defaults, function(x) {
 		if( setTrueIfNotSet(x)) { log("Default for "+ x + " set to true"); }
 	} );
 

@@ -31,7 +31,7 @@ ffAddOnLoad(function() {
 			var stuffName = node.parentNode.parentNode.parentNode.getElementsByTagName('span')[0];
 			if(stuffName) stuffName = stuffName.textContent;
 			if(stuffName == "Письмо" && node.textContent.trim() == "Открыть") {
-				node.href = node.href.replace('__doPostBack','if(confirm("Открыть письмо?")) { __doPostBack').replace("')", "'); }"); 
+				node.href = node.href.replace('__doPostBack','if(confirm("Открыть письмо?")) { __doPostBack').replace("')", "'); }");
 				node.style.marginRight = "5px";
 			}
 		});

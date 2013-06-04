@@ -12,7 +12,7 @@ function fixRingLink(node) {
 
 function fixGiftLink(node) {
 	if(node.src.search("gift") == -1) return;
-	var txt = node.alt; 
+	var txt = node.alt;
 	if(!txt) return;
 	var regex = /[^\s]+[\s]([^\.]+)/;
 	var m = regex.exec(txt);

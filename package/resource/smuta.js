@@ -15,7 +15,7 @@ node.innerHTML = node.innerHTML.replace(/\u0413\u043e\u0441\u0442\u044c(,( )?)?/
 		}
 
 		var also = document.getElementById('lbAlsoHere');
-		if(also && also.textContent.match(/\u0413\u043e\u0441\u0442\u044c/g) != null) { 
+		if(also && also.textContent.match(/\u0413\u043e\u0441\u0442\u044c/g) != null) {
 			var len = also.textContent.match(/\u0413\u043e\u0441\u0442\u044c/g).length;
 		also.innerHTML = also.innerHTML.replace(/\u0413\u043e\u0441\u0442\u044c(,( )?)?/g,'') + "<i> \u0413\u043e\u0441\u0442\u0438: " + len + "</i>";
 		}
@@ -66,7 +66,7 @@ ffAddOnLoad(function() {
 	window.panelClick = function(ctrl) {
 		var panel = ctrl.parentNode.children[1];
 		if (panel) {
-			panel.style.display = (panel.style.display == 'none') ? '' : 'none'; 
+			panel.style.display = (panel.style.display == 'none') ? '' : 'none';
 		}
 	}
 

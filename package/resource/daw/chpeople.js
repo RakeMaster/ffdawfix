@@ -1,7 +1,7 @@
 var updateRoomHandlers = new Array();
 
 function addUpdateRoomHandler(handler) {
-	updateRoomHandlers[updateRoomHandlers.length] = handler; 
+	updateRoomHandlers[updateRoomHandlers.length] = handler;
 }
 
 function fireUpdateRoomHandlers() {

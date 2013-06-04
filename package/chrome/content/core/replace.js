@@ -188,7 +188,7 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 
 	unload: function() {
 		var ths = this;
-		Array.forEach(this.topics, function(t) { 
+		Array.forEach(this.topics, function(t) {
 			ths.observerService.removeObserver(ths, t);
 		} );
 	}

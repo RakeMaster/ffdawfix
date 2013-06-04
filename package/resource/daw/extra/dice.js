@@ -51,13 +51,13 @@ function clearAttack() {
 	}
 }
 
-function insertAfter(newChild, refChild) { 
-	 refChild.parentNode.insertBefore(newChild,refChild.nextSibling); 
+function insertAfter(newChild, refChild) {
+	 refChild.parentNode.insertBefore(newChild,refChild.nextSibling);
 }
 
-function insertBefore(newChild, refChild) { 
-	 refChild.parentNode.insertBefore(newChild,refChild); 
-} 
+function insertBefore(newChild, refChild) {
+	 refChild.parentNode.insertBefore(newChild,refChild);
+}
 
 ffAddOnLoad(function() {
 	var r = document.getElementById('EndTurn');

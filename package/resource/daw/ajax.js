@@ -1,7 +1,7 @@
 var ajaxHandlers = new Array();
 
 function addAjaxHandler(handler) {
-	ajaxHandlers[ajaxHandlers.length] = handler; 
+	ajaxHandlers[ajaxHandlers.length] = handler;
 }
 
 function fireAjaxHandlers() {

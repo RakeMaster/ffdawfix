@@ -9,9 +9,9 @@ ffAddOnLoad(function() {
 			if(name == "") return;
 			if(name.indexOf('Сообщения') > -1) return;
 			node.innerHTML = node.innerHTML.replace(name,'<a target="_blank" href='
-			+ createPersLinkWithText(name) 
-			+ '>' 
-			+ name 
+			+ createPersLinkWithText(name)
+			+ '>'
+			+ name
 			+ '</a>'
 			+ '<img alt="" onclick="openMessagesWithNick(this.previousSibling.textContent)" style="cursor:pointer; padding-left:3px;" title="Приватное сообщение" src="resource://ffdawfix/img/reply.gif">'
 			);

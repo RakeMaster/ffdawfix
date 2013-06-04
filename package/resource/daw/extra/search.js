@@ -28,8 +28,8 @@ function injectGoogleSearchLink() {
 
 ffAddOnLoad(function() {
 	if(checkAnchor() == "google") {
-		var s = document.createElement('script'); 
-		s.type = 'text/javascript'; 
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
 		s.async = true;
  		s.src = "resource://ffdawfix/cse.js";
 		document.head.appendChild(s);

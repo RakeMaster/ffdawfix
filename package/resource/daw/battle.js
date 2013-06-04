@@ -98,7 +98,7 @@ function fixBattleGroups() {
 		if( bg && bg == "/vr/uimg/whc.gif") {
 			var txt = node.textContent;
 			if(txt.search("Соратники") != -1) {
-				friendNode = node; 
+				friendNode = node;
 			}
 			if(txt.search("Противники") != -1) {
 				enemyNode = node;
@@ -156,7 +156,7 @@ function fixBattleGroups() {
 	});
 
 	injectClass(enemyClass, function(node) {
-		var d = injectBattlePlayerNode(node, true); 
+		var d = injectBattlePlayerNode(node, true);
 		if(!d) return;
 
 		if(node.innerHTML.search("<i>") != -1) {
@@ -208,7 +208,7 @@ function checkPoint(id) {
 
 function setCheck(id) {
 	var e = document.getElementById(id);
-	if(e) document.getElementById(id).onclick = function() { 
+	if(e) document.getElementById(id).onclick = function() {
 		SetAttackType();
 		var c = GetDefencePointsCount();
 		var ex = document.getElementById("lbExplain");
@@ -259,7 +259,7 @@ ffAddOnLoad(function() {
 			for(var i=  0; i < 4; ++i) {
 				s += checkPoint("cblDefence_" + i);
 			}
-			return s; 
+			return s;
 		}
 	}
 	for(var i = 0;i < 4; ++i) {

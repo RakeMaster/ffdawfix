@@ -4,7 +4,7 @@ ru.dclan.ffdawfix.replacers.tripbutton = function( f ) {
 
 	// add new row
 	var u8 = ru.dclan.ffdawfix.utils.encode;
-	f.addReplace( /pnlMail([12])">\s*<img([^>]+)>\s*/, 
+	f.addReplace( /pnlMail([12])">\s*<img([^>]+)>\s*/,
 		'pnlMail\$1" style="white-space: nowrap">'
 		+ '<img\$2>'
 		+ '<a style="font-size: 20pt; color: red; font-weight: bold;" href="/vr/Places/Group.aspx?Create=1">'
