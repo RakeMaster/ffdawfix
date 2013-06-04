@@ -23,7 +23,7 @@ function renewImage() {
 		if(!match) return;
 		var now = (new Date()).getTime();
 		src = match[1]+"?"+now;
-		i.src = src;	
+		i.src = src;
 	}
 }
 

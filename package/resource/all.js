@@ -211,7 +211,7 @@ function fixA() {
 		if(node.id) {
 			var code = "window." + node.id + " = document.getElementById('" + node.id + "');";
 			code += "window." + node.id + ".click = function() {window.location = document.getElementById('" + node.id + "').href};";
-			eval(code);		
+			eval(code);
 		}
 	});
 }
