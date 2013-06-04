@@ -1,4 +1,18 @@
 var persName = null;
+var clanIcon = null;
+var chatFrameLoaded = false;
+
+function setClanIcon( icon ) {
+	clanIcon = icon;
+	if( chatFrameLoaded ) {
+		getTop().window.frames['ChInp'].addClanOption();
+	}
+}
+
+function getClanIcon() {
+	chatFrameLoaded = true;
+	return clanIcon;
+}
 
 function setPersName(name) {
 	if(!persName) {

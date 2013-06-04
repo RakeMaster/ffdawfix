@@ -14,15 +14,7 @@ function setClanIcon() {
 	injectTag('div', function(node) {
 		var clanIcon = node.getElementsByTagName('img')[1];
 		if(clanIcon && clanIcon.src.search('/vr/clans') > -1 && !node.getElementsByTagName('img')[0].className) {
-			if(getTop().chatFrameLoaded) {
-				var clanOpt = getTop().frames['ChInp'].document.getElementById('clanOption');
-				clanOpt.style.display = "";
-				clanOpt.style.backgroundImage = "url(" + clanIcon.src + ")";
-			}
-			getTop().getClanIcon = clanIcon;
-		}
-		else {
-			getTop().getClanIcon = null;
+			getTop().setClanIcon( clanIcon.src );
 		}
 	});
 }

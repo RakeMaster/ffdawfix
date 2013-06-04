@@ -73,9 +73,15 @@ function hideButons() {
 	});
 }
 
-ffAddOnLoad(function() {
-	getTop().chatFrameLoaded = true;
+function addClanOption() {
+	var clanIcon = getTop().getClanIcon();
+	if(!clanIcon) return;
+	var clanOpt = document.getElementById('clanOption');
+	clanOpt.style.display = "";
+	clanOpt.style.backgroundImage = "url(" + clanIcon + ")";
+}
 
+ffAddOnLoad(function() {
 	var t = document.getElementById('tblMain');
 	t.getElementsByTagName('td')[0].style.width = "100%";
 
@@ -84,9 +90,5 @@ ffAddOnLoad(function() {
 	addChatMenu();
 	hideButons();
 
-	if(getTop().getClanIcon) {
-		var clanOpt = document.getElementById('clanOption');
-		clanOpt.style.display = "";
-		clanOpt.style.backgroundImage = "url(" + getTop().getClanIcon.src + ")";
-	}
+	addClanOption();
 });
