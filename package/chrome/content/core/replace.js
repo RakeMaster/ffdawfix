@@ -179,7 +179,7 @@ ru.dclan.ffdawfix.replace.observer.prototype = {
 	addObserver: function(topic) {
 		this.topics[ this.topics.length ] = topic;
 		this.observerService.addObserver(this, topic, false);
-	},	
+	},
 	register: function() {
 		this.addObserver( "http-on-examine-response" );
 		this.addObserver( "http-on-examine-cached-response" );

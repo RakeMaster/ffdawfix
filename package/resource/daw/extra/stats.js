@@ -19,7 +19,7 @@ function createStatLine(statId, statValue, maxValue, statMin) {
 		filled.style.display = "inline-block";
 		ln.appendChild(extra);
 	}
-	return ln;	
+	return ln;
 }
 
 function createStatValue(statId, statValue) {
@@ -28,7 +28,7 @@ function createStatValue(statId, statValue) {
 	val.id = statId;
 	val.className = statId + "Value";
 	val.innerHTML = statValue;
-	return val;	
+	return val;
 }
 
 function  replaceStat(statId, statIdFull, max, statMin) {

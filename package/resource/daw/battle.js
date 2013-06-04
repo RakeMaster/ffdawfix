@@ -116,7 +116,7 @@ function fixBattleGroups() {
 		return;
 	}
 
-	var italic_count = 0;	
+	var italic_count = 0;
 	var iter = friendNode;
 
 	while(iter && !(iter.className == "sh3" && iter.tagName.toLowerCase() == "tr")) {
