@@ -146,6 +146,17 @@ function injectClass(cssClass, injector, win) {
 	});
 }
 
+function checkAnchor() {
+	url = window.location.href;
+	var anc = url.search("#");
+	if(anc == -1) {
+		return "";
+	}
+ 	else {
+ 		return url.substr(anc + 1);
+	}
+}
+
 function getClassFirst(cssClass,win) {
 	if(!win) win = window;
 	var a = win.document.getElementsByClassName(cssClass);

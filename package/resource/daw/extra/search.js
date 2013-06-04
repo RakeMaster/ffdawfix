@@ -1,14 +1,3 @@
-function checkAnchor() {
-	url = window.location.href;
-	var anc = url.search("#");
-	if(anc == -1) {
-		return "";
-	}
- 	else {
- 		return url.substr(anc + 1);
-	}
-}
-
 function injectGoogleSearchLink() {
 	var a = document.getElementById('Menu_lbMainMenu');
 	if(!a) var a = document.getElementById('Menu1_lbMainMenu');
