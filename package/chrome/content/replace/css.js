@@ -9,7 +9,7 @@ ru.dclan.ffdawfix.replacers.css = function( f ) {
 		f.checkLocation(".aspx")
 	);
 	if( !r ) return;
-	
+
 	var helper = function(t, name) {
 		t.addReplace( new RegExp("scrollbar-" + name + "-color[^;]+;", 'gi'), '');
 	}

@@ -26,12 +26,12 @@ function altMenuShow() {
 
 	// menu.innerHTML = getTop().MenuStr.replace( /MenuLnk/g, "FFMenuLnk");
 	menu.innerHTML = getTop().MenuStr;
-	
+
 	menu.style.position = "absolute";
 
 	menu.style.display = "inline-block";
 	menu.style.zIndex = 0;
-	
+
 	menu.style.left = (getX(ref) + ref.clientWidth - menu.clientWidth) + "px";
 	menu.style.top = (getY(ref) + ref.clientHeight) + "px";
 }
@@ -62,13 +62,13 @@ ffAddOnLoad(function() {
 	if(!ref) return;
 	var menu = document.getElementById( "div_menu" );
 	if(!menu) return;
-	
+
 	ref.onmouseover = null;
 	ref.onmouseout = null;
 	ref.onclick = function() { altMenuInvert(); };
 	menu.onmouseover = null;
 	menu.onmouseout = null;
-	
+
 	// Install only once
 	if(!getTop().FFMenuLnk) {
 		getTop().FFMenuLnk = function(w, b) {
@@ -79,9 +79,9 @@ ffAddOnLoad(function() {
 		getTop().MenuLnkOrig = getTop().MenuLnk;
 		getTop().MenuLnk = getTop().FFMenuLnk;
 	}
-	
+
 	altMenuCurrent();
-	
+
 	var div_win = document.getElementById( "div_win" );
 	div_win.style.zIndex = 1;
 });

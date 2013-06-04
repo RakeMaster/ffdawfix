@@ -1,7 +1,7 @@
 ru.dclan.ffdawfix.replacers.tripbutton = function( f ) {
 	var r = f.checkFlag("tripButton") && f.checkLocation( "http://darkagesworld.com/vr/places/" );
 	if(!r) return;
-	
+
 	// add new row
 	var u8 = ru.dclan.ffdawfix.utils.encode;
 	f.addReplace( /pnlMail([12])">\s*<img([^>]+)>\s*/, 

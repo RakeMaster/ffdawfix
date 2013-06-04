@@ -118,7 +118,7 @@ function openPrefs() {
 function startup(data, reason) {
 	initResources( data.installPath );
 	loadScripts();
-	
+
 	if( reason == ADDON_INSTALL || reason == ADDON_UPGRADE || reason == ADDON_DOWNGRADE ) {
 		openPrefs();
 	}
@@ -142,7 +142,7 @@ function startup(data, reason) {
 function shutdown(data, reason) {
 	// When the application is shutting down we normally don't have to clean up any UI changes made
 	if (reason == APP_SHUTDOWN) return;
-	
+
 	var load = loadScript.bind( this, pluginContext );
 	load("core/onunload.js");
 	unloadScripts();
@@ -203,7 +203,7 @@ function install(data, reason) {
 	Array.forEach(defaults, function(x) { 
 		if( setTrueIfNotSet(x)) { log("Default for "+ x + " set to true"); }
 	} );
-	
+
 	/// <summary>
     /// Bootstrap data structure @see https://developer.mozilla.org/en-US/docs/Extensions/Bootstrapped_extensions#Bootstrap_data
     /// &#10;  string id

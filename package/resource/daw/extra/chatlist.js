@@ -77,7 +77,7 @@ ffAddOnLoad(function() {
 	//GROUPS
 	addUpdateRoomHandler(fixRooms);
 	//endof compact
-	
+
 	// Change table to divs
 	var cl = document.getElementById("peopleList");
 	var header = document.createElement("div"); //  <td style="text-align: right;" align="center" background="/vr/uimg/sbg.jpg">
@@ -92,7 +92,7 @@ ffAddOnLoad(function() {
 	tableParent.appendChild(header);
 	tableParent.appendChild(cl);
 	tableParent.removeChild(table);
-	
+
 	cl.style.top = "20px";
 	cl.style.bottom = "0px";
 	cl.style.position = "fixed";

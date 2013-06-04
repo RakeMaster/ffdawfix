@@ -102,7 +102,6 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		f.addJS( "daw/bpack.js" );
 		return;
-		
 	}
 	if( f.checkLocation( "/vr/Menus/CityMap.aspx" ) ) {
 		f.addJS( "daw/map.js"  );

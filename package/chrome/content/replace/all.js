@@ -27,6 +27,6 @@ ru.dclan.ffdawfix.replacers.all = function( f ) {
 			f.addJS( "daw/extra/search.js" );
 		}
 	}
-	
+
 	// f.addReplace( /([^A-Za-z0-9_\/])top\./g, '$1getTop().');
 }

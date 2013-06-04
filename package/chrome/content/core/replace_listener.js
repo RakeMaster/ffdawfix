@@ -44,7 +44,7 @@ ru.dclan.ffdawfix.ReplaceListener.prototype = {
 		{
 			var storageStream = CCIN("@mozilla.org/storagestream;1", "nsIStorageStream");
 			var binaryOutputStream = CCIN("@mozilla.org/binaryoutputstream;1", "nsIBinaryOutputStream");
-			
+
 			if(count > 0) { 
 				storageStream.init(1024, count, null);
 				binaryOutputStream.setOutputStream(storageStream.getOutputStream(0));

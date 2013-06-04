@@ -30,7 +30,7 @@ function createLinks() {
 			cur.appendChild(e);
 		}
 	});
-	
+
 }
 
 function injectBattlePlayerNode(node, enemy) {

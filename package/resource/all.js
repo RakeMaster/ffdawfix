@@ -260,4 +260,3 @@ ffAddOnLoad(function() {
 	fixA();
 	fixInput();
 });
-
