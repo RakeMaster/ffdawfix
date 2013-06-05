@@ -102,6 +102,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "chatInp" ) ) {
 			f.addJS( "daw/extra/chinp.js" );
 		}
+		f.addJS( "daw/translit.js" );
 		return;
 	}
 	if(  f.checkLocation( "/vr/Menus/BackPack.aspx" ) ) {
