@@ -137,7 +137,7 @@ table.list td
 	height:350px;
 }
 
-#frame2 {
+#frame2[src*="MazeFound"] {
 	width: 240px;
 	overflow-x: hidden;
 }
