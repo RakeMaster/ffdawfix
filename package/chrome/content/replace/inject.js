@@ -63,9 +63,6 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/ajax.js" );
 		f.addJS( "daw/places.js" );
 
-		if( f.checkLocation( "MazeInside.aspx" )) {
-			f.addCSS( "scrolling.css" );
-		}
 		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );
 		}

@@ -131,6 +131,17 @@ table.list td
 	-moz-appearance: none;
 }
 
+#frmView {
+	overflow: hidden;
+	width:450px;
+	height:350px;
+}
+
+#frame2 {
+	width: 240px;
+	overflow-x: hidden;
+}
+
 label {
 		cursor: pointer;
 		text-decoration: underline;
@@ -171,3 +182,4 @@ label {
 #chatmenu .translit {
 	background-image: url(resource://ffdawfix/img/chattranslit.png);
 }
+
