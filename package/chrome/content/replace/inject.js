@@ -128,5 +128,17 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/clan.js" );
 		return;
 	}
-
+	
+	if( f.checkLocation( "smuta.com" ) ) {
+		f.addJS( "smuta/all.js" );
+		f.addJS( "smuta/scroll.js" );
+		f.addJS( "smuta/guests.js" );
+		if( f.checkLocation( "/Forum/Topic.aspx" ) ) {
+			f.addJS( "smuta/urlicons.js" );
+		}
+		if( f.checkLocation( "/Forum/Moderate.aspx" ) ) {
+			f.addJS( "smuta/moderate.js" );
+		}
+		return;
+	}
 }
