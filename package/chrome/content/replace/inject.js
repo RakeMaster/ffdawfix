@@ -130,6 +130,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	}
 	
 	if( f.checkLocation( "smuta.com" ) ) {
+		f.addCSS( "smuta/smuta.css" );
 		f.addJS( "smuta/all.js" );
 		f.addJS( "smuta/scroll.js" );
 		f.addJS( "smuta/guests.js" );
