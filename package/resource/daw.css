@@ -147,6 +147,10 @@ label {
 		text-decoration: underline;
 }
 
+span[class="RSQ"]{
+	background: transparent !Important;
+}
+
 #msgtxt::-moz-selection {
 	background: transparent;
 }
