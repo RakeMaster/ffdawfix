@@ -7,11 +7,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 
 	var stats = f.checkFlag( "stats" );
 	if( f.checkLocation( "/vr/common/FighterInfo.aspx" ) ) {
-		var prefs = {};
-		prefs.ringsFix = f.checkFlag( "ringsFix" );
-		prefs.giftsFix = f.checkFlag( "giftsFix" );
-		f.addPrefs( prefs );
-		f.addJS( "daw/extra/info.js" );
+		f.addJS( "daw/info.js" );
 		if( stats ) {
 			f.addJS( "daw/extra/stats.js" );
 		}
@@ -65,13 +61,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/ajax.js" );
 		f.addJS( "daw/places.js" );
 		f.addJS( "daw/expcount.js" );
+		f.addJS( "daw/timers.js" );
 
 		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );
-		}
-
-		if( f.checkFlag( "liveTimers" )) {
-			f.addJS( "daw/extra/timers.js" );
 		}
 
 		if(stats) {

@@ -4,11 +4,8 @@
 	<prefpane id="FirstTab" flex="1" image="chrome://ffdawfix/content/img/tab_1.png" label="Общее">
 		<preferences>
 			<preference name="ru.dclan.ffdawfix.tripButton" id="tripButton" type="bool"/>
-			<preference name="ru.dclan.ffdawfix.ringsFix" id="ringsFix" type="bool"/>
-			<preference name="ru.dclan.ffdawfix.giftsFix" id="giftsFix" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.battleLinks" id="battleLinks" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.battleCounter" id="battleCounter" type="bool"/>
-			<preference name="ru.dclan.ffdawfix.liveTimers" id="liveTimers" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.battleHealth" id="battleHealth" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.battleSmall" id="battleSmall" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.chatList" id="chatList" type="bool"/>
@@ -25,7 +22,6 @@
 		<hbox align="center">
 			<groupbox flex="1">
 				<checkbox preference="tripButton" label="Кнопка Поход"/>
-				<checkbox preference="liveTimers" label="Живые таймеры"/>
 				<checkbox preference="chatList" label="Список чата (компактнее)"/>
 				<checkbox preference="title" label="Имя персонажа в заголовке"/>
 				<checkbox preference="altMenu" label="Алтернативное меню"/>
@@ -49,8 +45,6 @@
 	<prefpane id="ThirdTab" flex="1" label="Инфо" image="chrome://ffdawfix/content/img/tab_3.png">
 		<hbox align="center">
 			<groupbox flex="1">
-				<checkbox preference="ringsFix" label="Ссылки с колец (муж/жена)"/>
-				<checkbox preference="giftsFix" label="Ссылки с подарков в инфе"/>
 				<checkbox preference="stats" label="Статы полосками"/>
 				<checkbox preference="itemStats" label="Состояние вещей"/>
 			</groupbox>

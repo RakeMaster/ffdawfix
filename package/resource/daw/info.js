@@ -27,7 +27,7 @@ function fixGiftLink(node) {
 
 ffAddOnLoad(function() {
 	injectTag("img", function(node) {
-		if(ffdawfix.prefs.ringsFix) fixRingLink(node);
-		if(ffdawfix.prefs.giftsFix) fixGiftLink(node);
+		fixRingLink(node);
+		fixGiftLink(node);
 	});
 });
