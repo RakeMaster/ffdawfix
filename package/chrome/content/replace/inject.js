@@ -12,9 +12,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		prefs.giftsFix = f.checkFlag( "giftsFix" );
 		f.addPrefs( prefs );
 		f.addJS( "daw/extra/info.js" );
-		if( f.checkFlag(stats) ) {
+		if( stats ) {
 			f.addJS( "daw/extra/stats.js" );
 		}
+		f.addJS( "daw/expcount.js" );
 		return;
 	}
 	if( f.checkLocation( "/vr/battle/battle.aspx" ) ) {
@@ -35,6 +36,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "title" ) ) {
 			f.addJS( "daw/extra/title.js" );
 		}
+		f.addJS( "daw/expcount.js" );
 		return;
 	}
 
@@ -62,6 +64,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		f.addJS( "daw/ajax.js" );
 		f.addJS( "daw/places.js" );
+		f.addJS( "daw/expcount.js" );
 
 		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );

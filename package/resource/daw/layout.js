@@ -53,7 +53,7 @@ function ffReplaceMessage( msg ) {
 	// isClan:false
 	// isBattle:false
 	msg.txt = msg.txt.replace(/http:\/\/darkagesworld\.com\/vr\/battle\/BattleLog\.aspx\?id=[a-f\-0-9]+(?:&amp;page=\d+)?/gi, '<a href="$&" target="_blank" style="color:blue;">$&</a>');
-	msg.txt = msg.txt.replace(/<img/g, '<img style="cursor:pointer;" onclick="top.smile(this.src.replace(\'.gif\',\'\').replace(\'http:\/\/darkagesworld\.com\/vr\/smiles\/\',\'\'))"');
+	msg.txt = msg.txt.replace(/<img/g, '<img style="cursor:pointer;" onclick="top.smile(this.src.split(\'.gif\')[0].split(\'/\').pop())"');
 	if(msg.isSystem) {
 		if(msg.txt.indexOf('зашел в Смутные Времена') > -1) {
 			msg.txt = msg.txt.replace(' зашел в Смутные Времена','').replace(/.+/,function(f){return "<a target='_blank' href='" + createPersLinkWithText(f) + "'>" + f + "</a> ";}) + "зашел в Смутные Времена";
