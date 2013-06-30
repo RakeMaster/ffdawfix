@@ -11,5 +11,6 @@ ffAddOnLoad(function() {
 		var msgtxt = inp.value.split(/(\})|(\])/).pop().trim();
 		var nicks = inp.value.replace(msgtxt, "");
 		inp.value = nicks + transliterate(msgtxt);
+		inp.focus();
 	}
 });
