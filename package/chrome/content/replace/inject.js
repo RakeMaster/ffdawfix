@@ -62,6 +62,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/places.js" );
 		f.addJS( "daw/expcount.js" );
 		f.addJS( "daw/timers.js" );
+		f.addJS( "daw/labextras.js" );
 
 		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );
