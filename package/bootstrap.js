@@ -197,6 +197,7 @@ function install(data, reason) {
 	  "chatList",
 	  "gsearch",
 	  "chatInp",
+	  "giftGroups"
 	];
 
 	log("setting default properties");

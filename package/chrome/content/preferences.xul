@@ -18,6 +18,7 @@
 			<preference name="ru.dclan.ffdawfix.gsearch" id="gsearch" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.battleSound" id="battleSound" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.chatInp" id="chatInp" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.giftGroups" id="giftGroups" type="bool"/>
 		</preferences>
 		<hbox align="center">
 			<groupbox flex="1">
@@ -27,6 +28,7 @@
 				<checkbox preference="altMenu" label="Алтернативное меню"/>
 				<checkbox preference="clanInfo" label="Статистика клана"/>
 				<checkbox preference="chatInp" label="Улучшенный чат"/>
+				<checkbox preference="giftGroups" label="Группировка подарков"/>
 			</groupbox>
 		</hbox>
 	</prefpane>
