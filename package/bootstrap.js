@@ -98,6 +98,7 @@ function loadScripts() {
 	load("replace/scripts/ui.js");
 	load("replace/pmmsgs.js");
 	load("replace/clock.js");
+	load("replace/tavern.js");
 
 	// EXTRA section
 	load("replace/extra/tripbutton.js");
