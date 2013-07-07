@@ -57,7 +57,17 @@ function ffReplaceMessage( msg ) {
 	if(msg.isSystem) {
 		if(msg.txt.search(/(зашел)|(зашла) в Смутные Времена/) > -1) {
 			msg.txt = msg.txt.replace(msg.txt.split('заш')[0].trim(), function(name) {
-				return "<a target='_blank' href='" + createPersLink(name) + "'>" + name + "</a>";
+				return createHTMLPersLink(name);
+			});
+		}
+		if(msg.txt.search('закричала') > -1) {
+			msg.txt = msg.txt.replace(msg.txt.split('закричала')[0].trim(), function(name) {
+				return createHTMLPersLink(name);
+			});
+		}
+		if(msg.txt.search(/О (ключе)|(шкатулке) спроси/g) > -1) {
+			msg.txt = msg.txt.replace(msg.txt.split("у").pop().split(".")[0].trim(), function(name) {
+				return createHTMLPersLink(name);
 			});
 		}
 	}
