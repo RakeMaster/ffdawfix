@@ -104,8 +104,9 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 			f.addJS( "daw/extra/itemstats.js" );
 		}
 		f.addJS( "daw/bpack.js" );
-		if( f.checkFlag( "giftGroups" ) ) {
+		if( f.checkFlag( "bpackGroups" ) ) {
 			f.addJS( "daw/extra/giftgroups.js" );
+			f.addJS( "daw/extra/resgroups.js" );
 		}
 		return;
 	}
