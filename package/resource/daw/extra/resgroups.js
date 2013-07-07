@@ -117,14 +117,3 @@ ffAddOnLoad(function() {
 		}
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
