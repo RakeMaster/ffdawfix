@@ -44,6 +44,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/sellall.js" );
 		return;
 	}
+	if( f.checkLocation( "/vr/Places/GiftShop.aspx" ) ) {
+		f.addJS( "daw/giftextra.js"  );
+		return;
+	}
 	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {
 		f.addJS( "daw/pm_msgs.js" );
 		return;
