@@ -21,7 +21,7 @@ function isNumberKey(evt) {
 
 function sendGifts(uname, len) {
 	var nicks = new Array(len + 1).join(uname + ",");
-     var nicks = nicks.slice(0, -1);
+	var nicks = nicks.slice(0, -1);
      
 	var s = document.getElementById('ctl00_PageContent_tbSendTo');
 	s.value = nicks;
