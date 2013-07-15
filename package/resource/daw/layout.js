@@ -70,6 +70,11 @@ function ffReplaceMessage( msg ) {
 				return createHTMLPersLink(name);
 			});
 		}
+		if(msg.txt.search(/передал вам письмо/i) > -1) {
+			msg.txt = msg.txt.replace(msg.txt.split('передал')[0].trim(), function(name) {
+				return createHTMLPersLink(name);
+			});
+		}
 	}
 	return msg;
 }
