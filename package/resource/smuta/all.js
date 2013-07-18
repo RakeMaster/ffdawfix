@@ -31,4 +31,11 @@ ffAddOnLoad(function() {
 			node.style.fontSize = "12px";
 		}
 	});
+	
+	var reg = /(https:\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi;
+	injectTag('td', function(node) {
+		if(node.className == "frm_repbody" || node.className == "repbody") {
+			node.innerHTML = node.innerHTML.replace(reg, "<a target = '_blank' href='$1'>$1</a>"); 
+		}
+	});
 });
