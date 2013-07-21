@@ -75,6 +75,18 @@ function ffReplaceMessage( msg ) {
 				return createHTMLPersLink(name);
 			});
 		}
+		if(msg.txt.search('Защищайтесь!') > -1) {
+			msg.txt = msg.txt.replace(msg.txt.split('напал')[1].split('и,')[0].trim(), function(name) {
+				return createHTMLPersLink(name);
+			});
+		}
+		if(msg.txt.search('забрал у вас') > -1) {
+			var n = msg.txt.split('Проклятый')[1].split('забрал')[0].trim();
+			if(n == "монстр") return;
+			msg.txt = msg.txt.replace(n, function(name) {
+				return createHTMLPersLink(name);
+			});
+		}
 	}
 	return msg;
 }
