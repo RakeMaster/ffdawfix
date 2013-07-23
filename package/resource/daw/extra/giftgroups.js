@@ -65,17 +65,17 @@ ffAddOnLoad(function() {
 
 	var e = document.createElement('span');
 	e.innerHTML = "<div id='giftgroups'>"
-		+ "<a onclick='changeTab(this)' href='/VR/Menus/BackPack.aspx?BackPackState=Gifts#all'>Все"
+		+ "<a href='/VR/Menus/BackPack.aspx?BackPackState=Gifts#all'>Все"
 			+ "<i>("
 			+ giftLength()
 			+ ")</i>"
 		+ "</a>"
-		+ "<a style='margin:0px 5px' onclick='changeTab(this)' href='/Vr/Menus/BackPack.aspx?BackPackState=Gifts#opened'>Открытые" 
+		+ "<a style='margin:0px 5px' href='/Vr/Menus/BackPack.aspx?BackPackState=Gifts#opened'>Открытые" 
 			+ "<i>(" 
 			+ openedGiftLength() 
 			+ ")</i>" 
 		+ "</a>"
-		+ "<a href='/vR/Menus/BackPack.aspx?BackPackState=Gifts#closed' onclick='changeTab(this)'>Не открытые"
+		+ "<a href='/vR/Menus/BackPack.aspx?BackPackState=Gifts#closed'>Не открытые"
 			+ "<i>(" 
 			+ closedGiftLength()
 			+ ")</i>" 
