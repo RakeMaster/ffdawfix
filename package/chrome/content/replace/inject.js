@@ -7,14 +7,11 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 
 	var stats = f.checkFlag( "stats" );
 	if( f.checkLocation( "/vr/common/FighterInfo.aspx" ) ) {
-		var prefs = {};
-		prefs.ringsFix = f.checkFlag( "ringsFix" );
-		prefs.giftsFix = f.checkFlag( "giftsFix" );
-		f.addPrefs( prefs );
-		f.addJS( "daw/extra/info.js" );
-		if( f.checkFlag(stats) ) {
+		f.addJS( "daw/info.js" );
+		if( stats ) {
 			f.addJS( "daw/extra/stats.js" );
 		}
+		f.addJS( "daw/expcount.js" );
 		return;
 	}
 	if( f.checkLocation( "/vr/battle/battle.aspx" ) ) {
@@ -35,6 +32,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "title" ) ) {
 			f.addJS( "daw/extra/title.js" );
 		}
+		f.addJS( "daw/expcount.js" );
 		return;
 	}
 
@@ -44,6 +42,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	}
 	if( f.checkLocation( "/vr/places/ResBuyShop.aspx" ) ) {
 		f.addJS( "daw/sellall.js" );
+		return;
+	}
+	if( f.checkLocation( "/vr/Places/GiftShop.aspx" ) ) {
+		f.addJS( "daw/giftextra.js"  );
 		return;
 	}
 	if( f.checkLocation( "/vr/Menus/Msgs.aspx" ) ) {
@@ -62,16 +64,12 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		}
 		f.addJS( "daw/ajax.js" );
 		f.addJS( "daw/places.js" );
+		f.addJS( "daw/expcount.js" );
+		f.addJS( "daw/timers.js" );
+		f.addJS( "daw/labextras.js" );
 
-		if( f.checkLocation( "MazeInside.aspx" )) {
-			f.addCSS( "scrolling.css" );
-		}
 		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );
-		}
-
-		if( f.checkFlag( "liveTimers" )) {
-			f.addJS( "daw/extra/timers.js" );
 		}
 
 		if(stats) {
@@ -102,6 +100,7 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkFlag( "chatInp" ) ) {
 			f.addJS( "daw/extra/chinp.js" );
 		}
+		f.addJS( "daw/translit.js" );
 		return;
 	}
 	if(  f.checkLocation( "/vr/Menus/BackPack.aspx" ) ) {
@@ -109,6 +108,10 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 			f.addJS( "daw/extra/itemstats.js" );
 		}
 		f.addJS( "daw/bpack.js" );
+		if( f.checkFlag( "bpackGroups" ) ) {
+			f.addJS( "daw/extra/giftgroups.js" );
+			f.addJS( "daw/extra/resgroups.js" );
+		}
 		return;
 	}
 	if( f.checkLocation( "/vr/Menus/CityMap.aspx" ) ) {
@@ -130,5 +133,18 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		f.addJS( "daw/clan.js" );
 		return;
 	}
-
+	
+	if( f.checkLocation( "smuta.com" ) ) {
+		f.addCSS( "smuta/smuta.css" );
+		f.addJS( "smuta/all.js" );
+		f.addJS( "smuta/scroll.js" );
+		f.addJS( "smuta/guests.js" );
+		if( f.checkLocation( "/Forum/Topic.aspx" ) ) {
+			f.addJS( "smuta/urlicons.js" );
+		}
+		if( f.checkLocation( "/Forum/Moderate.aspx" ) ) {
+			f.addJS( "smuta/moderate.js" );
+		}
+		return;
+	}
 }

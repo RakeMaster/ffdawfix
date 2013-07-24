@@ -5,19 +5,26 @@ function confirmToBuy() {
 
 function sellAll() {
 	var txt = "";
+	var totalPrice = 0;
 	injectTag("input", function(node) {
 		if(node.type == "text") {
-			var t = node.parentNode.parentNode;
-			if(!t) return;
-			var val = t.getElementsByTagName('td')[2].textContent.trim();
-			if(val != 0) {
-				txt += t.getElementsByTagName('td')[1].textContent.trim() + " " + val + "\n";
-				node.value = val;
+			var nodeParent = node.parentNode.parentNode;
+			if(!nodeParent) return;
+			var amount = nodeParent.getElementsByTagName('td')[2];
+			if(!amount) return;
+			var amountTxt = amount.textContent.trim();
+			if(amountTxt != 0) {
+				var resPrice = nodeParent.getElementsByTagName('td')[5];
+				if(!resPrice) return;
+				var resPriceTxt = resPrice.textContent.replace(",", ".");
+				totalPrice +=  Number(resPriceTxt) * Number(amountTxt);
+				txt += nodeParent.getElementsByTagName('td')[1].textContent.trim() + " " + amountTxt + "\n";
+				node.value = amountTxt;
 			}
 		}
 	});
 	if(txt.trim() != "") {
-		if(confirm(txt + "\n" + "Продать всё?")) {
+		if(confirm(txt + "\n" + "Продать всё за " + totalPrice.toFixed(2) + " дт?")) {
 			confirmToBuy();
 		}
 	}
