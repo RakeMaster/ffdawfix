@@ -1,11 +1,19 @@
-var txt = 'Добавлена функция "Улучшенный чат".Из "Кубика" убран случайный удар + подтверждение.В кубике довавлено подтверждение кнопкой Enter.Добавлена возможность добавлять смайлики прямо из чата.Теперь кнопка "Отменить" при заходе из ПМ будет возвращать обратно в сообщения.Для модераторов исправлена "Информация".';
+(function() {
+	var xmlHttp = null;
+	xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("GET", 'chrome://ffdawfix/content/whatsnewtxt.js', false );
+	xmlHttp.send( null );
+	var txt = xmlHttp.responseText;
 
-var parts = txt.split('.').filter(function(item){return item});
-var html = '<html:ul><html:li>' + parts.join('.</html:li><html:li>') + '.</html:li></html:ul>';
+	var parts = txt.split('\n').filter(function(item){return item});
+	var html = '<html:ul><html:li>' 
+		+ parts.join('.</html:li><html:li>') 
+		+ '.</html:li></html:ul>';
 
-document.getElementById('text').innerHTML = html;
+	document.getElementById('text').innerHTML = html;
 
-Components.utils.import("resource://gre/modules/AddonManager.jsm");
-AddonManager.getAddonByID("ffdawfix@dclan.ru", function(addon) {
-	document.getElementById('version').textContent = "Версия " + addon.version;
-});
+	Components.utils.import("resource://gre/modules/AddonManager.jsm");
+	AddonManager.getAddonByID("ffdawfix@dclan.ru", function(addon) {
+		document.getElementById('version').textContent = "Версия " + addon.version;
+	});
+})();

@@ -215,6 +215,10 @@ function createPersLinkWithText(nick) {
 	return i;
 }
 
+function createHTMLPersLink(nick) {
+	return '<a target="_blank" href="' + createPersLink(nick) + '">' + nick + "</a>";
+}
+
 function fixA() {
 	//Some ajax forms uses links to submit form
 	//It is a workaround for all of them to work correctly

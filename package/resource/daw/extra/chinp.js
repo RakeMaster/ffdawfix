@@ -89,6 +89,5 @@ ffAddOnLoad(function() {
 	fixCheckbox();
 	addChatMenu();
 	hideButons();
-
 	addClanOption();
 });
