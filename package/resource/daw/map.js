@@ -46,4 +46,8 @@ ffAddOnLoad(function() {
 	injectTag("area",function(node) {
 		if(!node.title && node.alt) node.title = node.alt;
 	});
+	
+	if(document.getElementById('pnlGo')) {
+		window.scrollTo(0, document.body.scrollHeight);
+	}
 });
