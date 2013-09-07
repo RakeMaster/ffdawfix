@@ -71,6 +71,12 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 		if( f.checkLocation( "SPQuest.aspx" ) ) {
 			f.addJS( "daw/spquest.js" );
 		}
+		
+		if( f.checkLocation( "MazeFound.aspx" ) ) {
+			if( f.checkFlag('mazeGrouping') ) {
+				f.addJS( "daw/extra/mazegrouping.js" );
+			}
+		}
 
 		if(stats) {
 			f.addJS( "daw/extra/stats.js" );

@@ -198,7 +198,8 @@ function install(data, reason) {
 	  "chatList",
 	  "gsearch",
 	  "chatInp",
-	  "bpackGroups"
+	  "bpackGroups",
+	  "mazeGrouping"
 	];
 
 	log("setting default properties");

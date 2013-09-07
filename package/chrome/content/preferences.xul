@@ -19,6 +19,7 @@
 			<preference name="ru.dclan.ffdawfix.battleSound" id="battleSound" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.chatInp" id="chatInp" type="bool"/>
 			<preference name="ru.dclan.ffdawfix.bpackGroups" id="bpackGroups" type="bool"/>
+			<preference name="ru.dclan.ffdawfix.mazeGrouping" id="mazeGrouping" type="bool"/>
 		</preferences>
 		<hbox align="center">
 			<groupbox flex="1">
@@ -29,6 +30,7 @@
 				<checkbox preference="clanInfo" label="Статистика клана"/>
 				<checkbox preference="chatInp" label="Улучшенный чат"/>
 				<checkbox preference="bpackGroups" label="Группировка рюкзака"/>
+				<checkbox preference="mazeGrouping" label="Группировка в лабиринте"/>
 			</groupbox>
 		</hbox>
 	</prefpane>
