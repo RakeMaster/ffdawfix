@@ -2,6 +2,7 @@ ru.dclan.ffdawfix.replacers.layout5 = function( f ) {
 	if(!f.checkLocation( "/vr/scripts/layout5.js" )) return;
 	f.addReplace( /\.document;/g, '.window;' );
 	f.addReplace( /function DoMessage\(msg\) {/, "function DoMessage( msg ) {\n\tffReplaceMessage( msg );");
+	f.addReplace( "$(msgs).scrollTop(65000);", "msgs.scrollTop = 999999;" );
 	f.addReplace("if (topFrm) {", "$&"
 		+ "\n\t\t"
 		+ "var mazeFound = getTop().topfrm.document.getElementById('frame2');"
