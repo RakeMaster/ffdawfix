@@ -218,6 +218,21 @@ function setCheck(id) {
 	}
 }
 
+function setAttackPointImages() {
+	prefix = "resource://ffdawfix/img/";
+	injectTag('input', function(node) {
+		if(node.type == "radio" || node.type == "checkbox") {
+			var img = node.parentNode.getElementsByTagName('img')[0];
+			if(node.checked) {
+				img.src = ((node.type == "radio") ? prefix + "r_ch.png" : prefix + "cb_ch.png");
+			}
+			else {
+				img.src = ((node.type == "radio") ? prefix + "r_unch.png" : prefix + "cb_unch.png");
+			}
+		}
+	});
+}
+
 ffAddOnLoad(function() {
 	injectTag("td", function(node) {
 		if(node.onclick && String(node.onclick).search("EnemySelect")!=-1) {
@@ -225,6 +240,23 @@ ffAddOnLoad(function() {
 		}
 	});
 
+	injectTag('input', function(node) {
+		if(node.type == "checkbox" || node.type == "radio") {
+			var a = document.createElement('img');
+			a.src = "";
+			a.style.marginRight = "3px";
+			a.onclick = function() {
+				var r = this.parentNode.getElementsByTagName('input')[0];
+				r.checked = !r.checked;
+				setAttackPointImages();
+			}
+			node.style.display = "none";
+			node.parentNode.onclick = function() setAttackPointImages();
+			node.parentNode.insertBefore(a, node);
+		}
+	});
+
+	setAttackPointImages();
 	fixBattleGroups();
 
 	injectTag("img", function(node) {
