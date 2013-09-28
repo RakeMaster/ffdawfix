@@ -264,8 +264,8 @@ ffAddOnLoad(function() {
 			var x = 149;
 			var y = 230;
 			var k = 2 / 3;
-			node.style.width = (x * k) + "px";
-			node.style.height = (y * k) + "px";
+			node.style.width = Math.round(x * k) + "px";
+			node.style.height = Math.round(y * k) + "px";
 		}
 		if(node.src.toLowerCase().search("/vr/images/pvt.gif") != -1) {
 			var a = node.parentNode;
