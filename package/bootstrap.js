@@ -99,6 +99,7 @@ function loadScripts() {
 	load("replace/pmmsgs.js");
 	load("replace/clock.js");
 	load("replace/tavern.js");
+	load("replace/places.js");
 
 	// EXTRA section
 	load("replace/extra/tripbutton.js");
@@ -113,7 +114,7 @@ function openPrefs() {
 	.getService(Components.interfaces.nsIWindowMediator);
 	var mainWindow = wm.getMostRecentWindow("navigator:browser");
 	if(!mainWindow) return;
-	mainWindow.openDialog( 'chrome://ffdawfix/content/preferences.xul','Preferences', null, 'aboutTab' );
+	mainWindow.openDialog( 'chrome://ffdawfix/content/preferences.xul','Preferences', 'chrome,centerscreen', 'aboutTab' );
 }
 
 function startup(data, reason) {
