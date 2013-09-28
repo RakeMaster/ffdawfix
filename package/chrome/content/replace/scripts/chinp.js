@@ -7,4 +7,5 @@ ru.dclan.ffdawfix.replacers.chinp = function( f ) {
 	f.addReplace("$('#btTranslit').click(function () {", "$& return;");
 	f.addReplace("var lit_eng", "lit_eng");
 	f.addReplace("var lit_rus", "lit_rus");
+	f.addReplace( "$('#cbSound').attr('checked', data.sound);", "$('#cbSound').attr('checked', data.sound); \n document.getElementById('note').src = ((cb.checked) ? 'resource://ffdawfix/img/note_ch.png' : 'resource://ffdawfix/img/note_unch.png');");
 }
