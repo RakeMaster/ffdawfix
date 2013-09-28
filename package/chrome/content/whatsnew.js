@@ -1,7 +1,7 @@
 (function() {
 	var xmlHttp = null;
 	xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", 'chrome://ffdawfix/content/whatsnewtxt.js', false );
+	xmlHttp.open("GET", 'chrome://ffdawfix/content/whatsnew.txt', false );
 	xmlHttp.send( null );
 	var txt = xmlHttp.responseText;
 
