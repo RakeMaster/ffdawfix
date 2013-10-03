@@ -47,7 +47,7 @@ ffAddOnLoad(function() {
 	injectClass("sh2u",function(node) {
 		var iconSize = ' width="16px" height="16px"';
 		if(node.textContent == "Форум") {
-			node.innerHTML = '<img src="resource://ffdawfix/img/forum.gif" border=0 width="15px" height="15px" title="Форум" alt="Ф">'
+			node.innerHTML = '<img src="resource://ffdawfix/img/forum.gif" border=0 title="Форум" alt="Ф">'
 			return;
 		}
 		if(node.parentNode.href.search("search")!=-1) {
