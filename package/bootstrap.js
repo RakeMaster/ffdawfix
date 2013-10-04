@@ -114,7 +114,7 @@ function openPrefs() {
 	.getService(Components.interfaces.nsIWindowMediator);
 	var mainWindow = wm.getMostRecentWindow("navigator:browser");
 	if(!mainWindow) return;
-	mainWindow.openDialog( 'chrome://ffdawfix/content/preferences.xul','Preferences', 'chrome,centerscreen', 'aboutTab' );
+	mainWindow.openDialog( 'chrome://ffdawfix/content/preferences.xul','Preferences', 'chrome,centerscreen,alwaysraised', 'aboutTab' );
 }
 
 function startup(data, reason) {
