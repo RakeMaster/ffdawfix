@@ -92,6 +92,9 @@ ru.dclan.ffdawfix.replacers.inject = function( f ) {
 	if( f.checkLocation( "/vr/Layout.aspx" ) ) {
 		f.addJS( "daw/sound.js" );
 		f.addJS( "daw/layout.js" );
+		if( f.checkFlag( "altPopups" ) ) {
+			f.addJS( "daw/extra/altpopups.js" );
+		}
 		return;
 	}
 

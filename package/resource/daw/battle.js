@@ -234,6 +234,9 @@ function setAttackPointImages() {
 }
 
 ffAddOnLoad(function() {
+	if(getTop().hidePopupMenu) {
+		getTop().hidePopupMenu();
+	}
 	injectTag("td", function(node) {
 		if(node.onclick && String(node.onclick).search("EnemySelect")!=-1) {
 			node.onclick = null;
