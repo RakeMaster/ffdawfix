@@ -38,4 +38,9 @@ ffAddOnLoad(function() {
 			node.innerHTML = node.innerHTML.replace(reg, "<a target='_blank' href='$1'>$1</a>"); 
 		}
 	});
+	injectTag('a', function(node) {
+		if(node.href.search('smuta.com') == -1) {
+			node.target = "_blank";
+		}
+	});
 });
