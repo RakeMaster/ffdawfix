@@ -1,13 +1,45 @@
 function transliterate(msg) {
-	for (i=0;i<lit_eng.length;i++) {
+	for (i in lit_eng) {
 		msg = msg.replace(lit_eng[i], lit_rus[i]);
 	} 
 	return msg;
 }
 
+function toggleEncoding(txt) {
+    var letters = "?,/.аfб,вdгuдlеtё`ж;зpиbйqкrлkмvнyоjпgрhсcтnуeфaх[цwчxшiщoъ]ыsьmэ'ю.яz" +
+                 "АFБ<ВDГUДLЕTЁ~Ж:ЗPИBЙQКRЛKМVНYОJПGРHСCТNУEФAХ{ЦWЧXШIЩOЪ}ЫSЬMЭ\"Ю>ЯZ";
+	var reg = new RegExp('[' + letters.replace(/([\[\]\?])/g, '\\$1') + ']', 'gi')
+    return txt.replace(reg, function(letter) {
+        var index = letters.indexOf(letter);
+        if (index >= 0) {
+            return letters[index & 1 ? index - 1 : index + 1];
+        }
+        return letter;
+    });
+}
+
 ffAddOnLoad(function() {
+	var inp = document.getElementById('Inp');
+
+	inp.onkeydown = function(event) {
+		if(event.shiftKey) {
+			var msgtxt = inp.value.split(/(\})|(\])/).pop().trim();
+			var nicks = inp.value.replace(msgtxt, "");
+			if(event.keyCode == 82) {
+				inp.value = nicks + toggleEncoding(msgtxt);
+				return false;
+			}
+			// Shift + R
+			if(event.keyCode == 84) {
+				inp.value = nicks + transliterate(msgtxt);
+				return false;
+			}
+			// Shift + T
+		}
+	}
+	// HotKeys
+
 	document.getElementById('btTranslit').onclick = function() {
-		var inp = document.getElementById('Inp');
 		var msgtxt = inp.value.split(/(\})|(\])/).pop().trim();
 		var nicks = inp.value.replace(msgtxt, "");
 		inp.value = nicks + transliterate(msgtxt);
