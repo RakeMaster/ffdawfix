@@ -22,19 +22,19 @@ ffAddOnLoad(function() {
 	var inp = document.getElementById('Inp');
 
 	inp.onkeydown = function(event) {
-		if(event.shiftKey) {
+		if(event.altKey) {
 			var msgtxt = inp.value.split(/(\})|(\])/).pop().trim();
 			var nicks = inp.value.replace(msgtxt, "");
 			if(event.keyCode == 82) {
 				inp.value = nicks + toggleEncoding(msgtxt);
 				return false;
 			}
-			// Shift + R
+			//Alt + R
 			if(event.keyCode == 84) {
 				inp.value = nicks + transliterate(msgtxt);
 				return false;
 			}
-			// Shift + T
+			// Alt + T
 		}
 	}
 	// HotKeys
