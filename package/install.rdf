@@ -1,38 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-	<Description about="urn:mozilla:install-manifest">
-		<em:bootstrap>true</em:bootstrap>
-		<em:optionsURL>chrome://ffdawfix/content/preferences.xul</em:optionsURL>
-		<em:id>ffdawfix@dclan.ru</em:id>
-		<em:iconURL>chrome://ffdawfix/content/img/icon.png</em:iconURL>
-		<em:localized>
-			<Description>
-				<em:locale>ru-RU</em:locale>
-				<em:name>Смутные Времена под FireFox</em:name>
-				<em:description>Исправления, позволяющие играть в Смутные Времена
-					под Firefox
-				</em:description>
-				<em:creator>Дмитрий Новиков</em:creator>
-			</Description>
-		</em:localized>
-
-		<em:name>DarkAgesWorld in Firefox</em:name>
-		<em:version>0.4.3</em:version>
-		<em:description>Fixes allowing to play DarkAgesWorld in Firefox
-		</em:description>
-		<em:updateURL>http://rakemaster.github.com/ffdawfix/update.rdf</em:updateURL>
-		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcHq0xbSjhai7RYk7F18dLkx+gzGYZ350yNP8oTTBvDI5URHokLc0podE9xsTsH81V3vBZz4jqvnw05DnkiDXupcifqnvuzwmup2y8inIPPuUWOIELPpZ1PlrsZNjtU6/OVOVloBjLVbAdHeuE/ULjKFXqXilUCy9dfGHI2jqM+QIDAQAB</em:updateKey>
-		<em:creator>Dmitri Novikov</em:creator>
-		<em:optionsURL>chrome://ffdawfix/content/preferences.xul
-		</em:optionsURL>
-		<em:type>2</em:type> <!-- type=extension -->
-		<em:targetApplication>
-			<!-- Firefox -->
-			<Description>
-				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-				<em:minVersion>10.0</em:minVersion>
-				<em:maxVersion>99.0.*</em:maxVersion>
-			</Description>
-		</em:targetApplication>
-	</Description>
+   <Description about="urn:mozilla:install-manifest">
+      <em:bootstrap>true</em:bootstrap>
+      <em:optionsURL>chrome://ffdawfix/content/preferences.xul</em:optionsURL>
+      <em:id>ffdawfix@dclan.ru</em:id>
+      <em:iconURL>chrome://ffdawfix/content/img/icon.png</em:iconURL>
+      <em:localized>
+         <Description>
+            <em:locale>ru-RU</em:locale>
+            <em:name>Смутные Времена под FireFox</em:name>
+            <em:description>Исправления, позволяющие играть в Смутные Времена
+					под Firefox</em:description>
+            <em:creator>Дмитрий Новиков</em:creator>
+         </Description>
+      </em:localized>
+      <em:name>DarkAgesWorld in Firefox</em:name>
+      <em:version>0.4.4</em:version>
+      <em:description>Fixes allowing to play DarkAgesWorld in Firefox</em:description>
+      <em:updateURL>http://rakemaster.github.com/ffdawfix/update.rdf</em:updateURL>
+      <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcHq0xbSjhai7RYk7F18dLkx+gzGYZ350yNP8oTTBvDI5URHokLc0podE9xsTsH81V3vBZz4jqvnw05DnkiDXupcifqnvuzwmup2y8inIPPuUWOIELPpZ1PlrsZNjtU6/OVOVloBjLVbAdHeuE/ULjKFXqXilUCy9dfGHI2jqM+QIDAQAB</em:updateKey>
+      <em:creator>Dmitri Novikov</em:creator>
+      <em:optionsURL>chrome://ffdawfix/content/preferences.xul</em:optionsURL>
+      <em:type>2</em:type>
+      <!-- type=extension -->
+      <em:targetApplication>
+         <Description>
+            <!-- fennec2 -->
+            <em:id>{aa3c5121-dab2-40e2-81ca-7ea25febc110}</em:id>
+            <em:minVersion>16.0</em:minVersion>
+            <em:maxVersion>26.0</em:maxVersion>
+         </Description>
+      </em:targetApplication>
+      <em:targetApplication>
+         <Description>
+            <!-- firefox -->
+            <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+            <em:minVersion>16.0</em:minVersion>
+            <em:maxVersion>26.0</em:maxVersion>
+         </Description>
+      </em:targetApplication>
+      <em:targetApplication>
+         <Description>
+            <!-- seamonkey -->
+            <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+            <em:minVersion>2.13</em:minVersion>
+            <em:maxVersion>2.23</em:maxVersion>
+         </Description>
+      </em:targetApplication>
+      <em:targetApplication>
+         <Description>
+            <!-- thunderbird -->
+            <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+            <em:minVersion>16.0</em:minVersion>
+            <em:maxVersion>26.0</em:maxVersion>
+         </Description>
+      </em:targetApplication>
+      <em:targetApplication>
+         <Description>
+            <!-- toolkit -->
+            <em:id>toolkit@mozilla.org</em:id>
+            <em:minVersion>16.0</em:minVersion>
+            <em:maxVersion>26.0</em:maxVersion>
+         </Description>
+      </em:targetApplication>
+   </Description>
 </RDF>
