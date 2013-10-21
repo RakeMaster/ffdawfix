@@ -73,7 +73,7 @@ ffAddOnLoad(function() {
 		b.style.fontSize = "16px";
 		b.textContent = "C";
 		b.title = "Сбросить удар";
-		b.onclick = function() { clearAttack(); };
+		b.onclick = function() { clearAttack(); setAttackPointImages(); };
 		insertAfter(b,r);
 	}
 	{
@@ -87,7 +87,7 @@ ffAddOnLoad(function() {
 		b.textContent = "R/";
 		b.title = "Случайный удар";
 		b.id = "randomButton";
-		b.onclick = function() { randomAttack(); };
+		b.onclick = function() { randomAttack(); setAttackPointImages();};
 		insertAfter(b,r);
 	}
 });

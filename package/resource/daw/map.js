@@ -25,6 +25,22 @@ if(window.Event && document.captureEvents) {
 document.onmousemove = getMousePos;
 
 ffAddOnLoad(function() {
+	if(getTop().hidePopupMenu) {
+		injectTag('a', function(node) {
+			if( node.href.search('mode=area') == -1
+				&&
+				node.href.search('mode=conf') == -1
+				&&
+				node.href.slice(-1) != "?"
+			) {
+				node.onclick = function() {
+					var a = getTop().document.getElementById('popupfrm');
+					a.style.display = "none";
+				}
+			}
+		});
+	}
+
 	var ia = document.getElementById("imgAreaMap");
 	if(!ia) return;
 	window.MapClick = function() {
@@ -46,4 +62,9 @@ ffAddOnLoad(function() {
 	injectTag("area",function(node) {
 		if(!node.title && node.alt) node.title = node.alt;
 	});
+	
+	if(document.getElementById('pnlGo')) {
+		window.scrollTo(0, document.body.scrollHeight);
+	}
+
 });
