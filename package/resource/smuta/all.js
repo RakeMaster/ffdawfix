@@ -39,7 +39,7 @@ ffAddOnLoad(function() {
 		}
 	});
 	injectTag('a', function(node) {
-		if(node.href.search('smuta.com') == -1) {
+		if(node.href.search('smuta.com') == -1 && node.href.search('javascript:') == -1) {
 			node.target = "_blank";
 		}
 	});
