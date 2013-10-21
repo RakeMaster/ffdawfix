@@ -9,7 +9,7 @@ ru.dclan.ffdawfix.replacers.layout5 = function( f ) {
 		+ "\n\t\t"
 		+ "if(a) var img = a.getElementsByTagName('img')[0];"
 		+ "\n\t\t"
-		+ 'if(a) httpGet("/vr/places/redirector.aspx").replace(/<img onclick=.*.gif">/g, function(e){img.outerHTML = e.replace("alt","title");});'
+		+ 'if(a) httpGet(topfrm.location.href).replace(/<img onclick=.*.gif">/g, function(e){img.outerHTML = e.replace("alt","title");});'
 		+ "\n\t\t"
 		+ "var mazeFound = getTop().topfrm.document.getElementById('frame2');"
 		+ "\n\t\t"
