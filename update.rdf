@@ -5,20 +5,20 @@
 			<RDF:Seq>
 				<RDF:li>
 					<RDF:Description>
-						<em:version>0.4.3</em:version>
+						<em:version>0.4.4</em:version>
 						<em:targetApplication>
 							<RDF:Description>
 								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 								<em:minVersion>10.0</em:minVersion>
 								<em:maxVersion>99.*</em:maxVersion>
-								<em:updateLink>http://rakemaster.github.com/ffdawfix/download/ffdawfix_0_4_3.xpi</em:updateLink>
-								<em:updateHash>sha256:fc86f486d2cc7e5dc6361834c0da941908e3e79e9de6b65bd5458d47815304bc</em:updateHash>
+								<em:updateLink>http://rakemaster.github.com/ffdawfix/download/ffdawfix_0_4_4.xpi</em:updateLink>
+								<em:updateHash>sha256:46f8c0b21fea3858409e1c6683ff096cebe09a577a9c003473fa3909d846ad3a</em:updateHash>
 							</RDF:Description>
 						</em:targetApplication>
 					</RDF:Description>
 				</RDF:li>
 			</RDF:Seq>
 		</em:updates>
-		<em:signature>MIGTMA0GCSqGSIb3DQEBDQUAA4GBAHId2X8LsztSLj0fP/BQTNZesXoUNJ2C0bK1EtilVy57g3R8PXQJIacPlr4rgzLGa3AHqCx8uC23j2ORHwSt9YlHitYFiwKwmUVRwof9fLa7LB4xq+j/WG1G+csec9SZxj05f5ctoHIxixOxhk2asCNQFASQH9W98O2rKq7K/Ien</em:signature>
+		<em:signature>MIGTMA0GCSqGSIb3DQEBDQUAA4GBADl2y+YIPoQmcoJV9QocXsJekKQp2jCGbq6iXY36pHBPa8tH8zBbEY/Nnl7Z3+Xx0KIWa0UNvvf1m4VZDQoqLowPpd2Z404KaZxURoSe1VGcOyOlggKW2RlHrKx3votsCfQ9x2AeWa9lRVM1K35E4+3ug/WIK61Rm4AluGdNqk1/</em:signature>
 	</RDF:Description>
 </RDF:RDF>
