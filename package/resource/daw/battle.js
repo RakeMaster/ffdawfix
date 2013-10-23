@@ -219,6 +219,7 @@ function setCheck(id) {
 }
 
 function setAttackPointImages() {
+	if(document.getElementById('SelMBtn')) return;
 	prefix = "resource://ffdawfix/img/";
 	injectTag('input', function(node) {
 		if(node.type == "radio" || node.type == "checkbox") {
@@ -231,6 +232,8 @@ function setAttackPointImages() {
 			}
 		}
 	});
+	var e = document.getElementById('EndTurn');
+	if(e) e.focus();
 }
 
 ffAddOnLoad(function() {
@@ -244,6 +247,7 @@ ffAddOnLoad(function() {
 	});
 
 	injectTag('input', function(node) {
+		if(document.getElementById('SelMBtn')) return;
 		if(node.type == "checkbox" || node.type == "radio") {
 			var a = document.createElement('img');
 			a.src = "";
