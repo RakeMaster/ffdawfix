@@ -5,14 +5,14 @@
 			<RDF:Seq>
 				<RDF:li>
 					<RDF:Description>
-						<em:version>0.4.4</em:version>
+						<em:version>0.4.5</em:version>
 						<em:targetApplication>
 							<RDF:Description>
 								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 								<em:minVersion>10.0</em:minVersion>
 								<em:maxVersion>99.*</em:maxVersion>
-								<em:updateLink>http://rakemaster.github.com/ffdawfix/download/ffdawfix_0_4_4.xpi</em:updateLink>
-								<em:updateHash>sha256:46f8c0b21fea3858409e1c6683ff096cebe09a577a9c003473fa3909d846ad3a</em:updateHash>
+								<em:updateLink>http://rakemaster.github.com/ffdawfix/download/ffdawfix_0_4_5.xpi</em:updateLink>
+								<em:updateHash>sha256:3aaeb6eab7642ee3453478031827f42c64e48c09b2bfedb73d42b82e32968a96</em:updateHash>
 							</RDF:Description>
 						</em:targetApplication>
 					</RDF:Description>
