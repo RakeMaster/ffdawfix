@@ -239,14 +239,6 @@ function fixImgTitle() {
 	});
 }
 
-function httpGet(url) {
-	var xmlHttp = null;
-	xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", url, false );
-	xmlHttp.send( null );
-	return xmlHttp.responseText;
-}
-
 function fixInput() {
 	injectTag("input", function(node) {
 		if(node.name && !node.id) {
